@@ -1,6 +1,14 @@
 name: Daily News Update
 
 on:
+  push:
+    branches: [ main ]
+    paths:
+      - "scraper/**"
+      - "template/**"
+      - "build.py"
+      - "index.html"
+      - "data/**"
   schedule:
     # UTC 01:30 = 北京时间 09:30，每天10点前完成更新
     - cron: "30 1 * * *"
