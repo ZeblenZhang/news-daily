@@ -12,11 +12,17 @@
   - link_contains: 可选，仅 'html' 类使用，命中才采集（str 或 list）
   - max:      最多抓取条数
 
-说明（用户指定的科技源中，以下 3 个暂无法自动抓取，原因见下）：
-  - 中国科技网 stdaily.com  —— 首页有 JS 反爬（fec_wrapper），且无 RSS
-  - 科技部   most.gov.cn    —— 首页 JS 渲染返回空壳，且无 RSS
-  - 机器之心 jiqizhixin.com —— 前端 SPA 渲染，RSS 已下线，graphql API 需 token
-如需补充，可另接 RSSHub 或自建抓取。
+抓取原则：
+  1) 无法抓取内容的源自动忽略：抓取失败或返回空一律跳过，不影响整体生成。
+     用户指定但暂无法自动抓取的源（已从配置中移除，仅记录原因）：
+       - 中国科技网 stdaily.com  —— 首页有 JS 反爬（fec_wrapper），且无 RSS
+       - 科技部   most.gov.cn    —— 首页 JS 渲染返回空壳，且无 RSS
+       - 机器之心 jiqizhixin.com —— 前端 SPA 渲染，RSS 已下线，graphql API 需 token
+     如需补充，可另接 RSSHub 或自建抓取。
+  2) 源优先级（决定「行业趋势」子分类内的填充顺序与名额占比）：
+       - 国外源 > 国内源
+       - 国内源中：中科院 / 科技部 / C9 高校背景源 > 其他国内源
+     具体见下方 SOURCE_PRIORITY 字典（数字越小越优先，默认 2）。
 """
 
 SOURCES = [
@@ -333,4 +339,20 @@ HEADERS = {
     ),
     "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
     "Referer": "https://top.baidu.com/",
+}
+
+# 源优先级（数字越小越优先，默认 2）：
+#   1 = 国外权威源（顶级期刊 / 学会 / 媒体，如 Nature / Science / arXiv / MIT TR / IEEE 等）
+#   2 = 国内官方或中科院 / 科技部 / C9 高校背景源
+#   3 = 其他国内源（一般产业 / 媒体）
+# 规则：国外源 > 国内源；国内中科院 / 科技部 / C9 > 其他国内源。
+# 用于「行业趋势」子分类内（尤其科学技术 science）的填充顺序与名额占比。
+SOURCE_PRIORITY = {
+    # —— 科学技术(science)：国外源优先 ——
+    "Nature": 1,
+    "Science News": 1,
+    "ScienceDaily": 1,
+    "arXiv·机器人学": 1,
+    "中科院之声": 2,   # 中科院官网，官方科研源
+    "科学网": 2,       # 中科院/工程院主管，官方科研源
 }

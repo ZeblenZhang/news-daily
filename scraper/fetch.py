@@ -23,6 +23,7 @@ except ImportError:
 from sources import (
     SOURCES, KEYWORD_RULES, CATEGORY_LABEL, HEADERS,
     TREND_SUBCATEGORY_ORDER, TREND_SUBCATEGORY_LABEL, classify_trend_subcategory,
+    SOURCE_PRIORITY,
 )
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -335,12 +336,14 @@ def main():
         "industrial": 8, "construction": 8, "other": 10,
     }
     # 每个子分类内英文条目至少保留的条数
+    # 科学技术(science) 国外源优先：en_floor 调大，国外源占多数（8:4）
     en_floor = {
-        "science": 5, "robotics": 6, "digital": 6, "industrial": 4, "other": 6,
+        "science": 8, "robotics": 6, "digital": 6, "industrial": 4, "other": 6,
     }
-    # 每个子分类内中文条目至少保留的条数（保证官方中文源如科学网/中科院有稳定曝光）
+    # 每个子分类内中文条目至少保留的条数
+    # 国内源优先级：中科院/科技部/C9 > 其他（见 SOURCE_PRIORITY，填充时按此排序）
     zh_floor = {
-        "science": 5, "robotics": 5,
+        "science": 4, "robotics": 5,
     }
     buckets = {"major": [], "hot": [], "trend": []}
     trend_sub_count = {}
@@ -360,6 +363,10 @@ def main():
     trend_items = [it for it in trend_items if not any(k in it["title"] for k in ADMIN_NOISE)]
 
     from collections import defaultdict
+
+    def src_prio(name):
+        """源优先级：数字越小越优先（见 sources.SOURCE_PRIORITY）。"""
+        return SOURCE_PRIORITY.get(name, 2)
 
     def insert(item):
         sub = item.get("subcategory", "other")
@@ -382,50 +389,60 @@ def main():
             continue
         en_floor_n = en_floor.get(sub, 0)
         zh_floor_n = zh_floor.get(sub, 0)
-        en_src = list(by_sub[sub]["en"].values())  # 每个元素是一个源的条目列表
-        zh_src = list(by_sub[sub]["zh"].values())
 
-        # 1) 英文保底：轮询英文源直到满足 en_floor
-        en_idx = [0] * len(en_src)
+        # 组装源分组并按优先级排序（数字越小越优先）：
+        #   1=国外权威源  2=国内官方/中科院/科技部/C9  3=其他国内源
+        def build_groups(lang):
+            return sorted(
+                [(src_prio(n), n, items) for n, items in by_sub[sub][lang].items()],
+                key=lambda g: g[0],
+            )
+
+        en_groups = build_groups("en")
+        zh_groups = build_groups("zh")
+
+        # 1) 英文保底：轮询英文源直到满足 en_floor（科学技术板块国外源优先，en_floor 更大）
+        en_idx = [0] * len(en_groups)
         en_count = 0
         while en_count < en_floor_n:
             progressed = False
-            for i, sl in enumerate(en_src):
-                if en_idx[i] < len(sl) and en_count < en_floor_n:
-                    insert(sl[en_idx[i]])
+            for i, (_, _, items) in enumerate(en_groups):
+                if en_idx[i] < len(items) and en_count < en_floor_n:
+                    insert(items[en_idx[i]])
                     en_idx[i] += 1
                     en_count += 1
                     progressed = True
             if not progressed:
                 break
 
-        # 2) 中文保底：轮询中文源直到满足 zh_floor
-        zh_idx = [0] * len(zh_src)
+        # 2) 中文保底：按国内源优先级轮询（中科院/科技部/C9 > 其他国内源）
+        zh_idx = [0] * len(zh_groups)
         zh_count = 0
         while zh_count < zh_floor_n:
             progressed = False
-            for i, sl in enumerate(zh_src):
-                if zh_idx[i] < len(sl) and zh_count < zh_floor_n:
-                    insert(sl[zh_idx[i]])
+            for i, (_, _, items) in enumerate(zh_groups):
+                if zh_idx[i] < len(items) and zh_count < zh_floor_n:
+                    insert(items[zh_idx[i]])
                     zh_idx[i] += 1
                     zh_count += 1
                     progressed = True
             if not progressed:
                 break
 
-        # 3) 剩余名额：中文源与英文源（接续）一起轮询
-        all_src = zh_src + en_src
-        all_idx = [0] * len(all_src)
-        for i in range(len(zh_src), len(all_src)):
-            all_idx[i] = en_idx[i - len(zh_src)]
-        for i in range(len(zh_src)):
-            all_idx[i] = zh_idx[i]
-        while True:
+        # 3) 剩余名额：合并中英文源后按优先级从高到低轮询（国外源优先）
+        consumed = {}
+        for i, (_, name, _items) in enumerate(en_groups):
+            consumed[name] = en_idx[i]
+        for i, (_, name, _items) in enumerate(zh_groups):
+            consumed[name] = zh_idx[i]
+        all_groups = sorted(en_groups + zh_groups, key=lambda g: g[0])
+        cap = trend_sub_limits.get(sub, 6)
+        while trend_sub_count.get(sub, 0) < cap:
             progressed = False
-            for i, sl in enumerate(all_src):
-                if all_idx[i] < len(sl):
-                    insert(sl[all_idx[i]])
-                    all_idx[i] += 1
+            for (_, name, items) in all_groups:
+                i = consumed.get(name, 0)
+                if i < len(items) and insert(items[i]):
+                    consumed[name] = i + 1
                     progressed = True
             if not progressed:
                 break
