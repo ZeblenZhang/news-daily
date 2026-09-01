@@ -49,6 +49,16 @@ def truncate(s, n=120):
     return s if len(s) <= n else s[:n] + "…"
 
 
+def clean_arxiv_meta(s):
+    """去除 arXiv RSS 摘要/正文里的元数据前缀（arXiv 编号、Announce Type、Abstract 标签）。"""
+    if not s:
+        return ""
+    s = re.sub(r"arXiv:\S+\s*", "", s)
+    s = re.sub(r"Announce Type:\s*\S+\s*", "", s)
+    s = re.sub(r"^Abstract:\s*", "", s.strip())
+    return s.strip()
+
+
 def extract_real_url(url):
     """处理新浪等 redirect.php?url=xxx 形式的链接，提取真实地址。"""
     if "redirect" in url and "url=" in url:
@@ -100,14 +110,89 @@ def parse_baidu_hot(url, src):
     return items
 
 
+def normalize_link(base_url, href):
+    """把相对/协议相对/含 ../ 的链接规范化为绝对 URL。"""
+    from urllib.parse import urljoin, urlparse
+    import posixpath
+    href = (href or "").strip()
+    if not href or href.startswith("javascript:"):
+        return ""
+    if href.startswith("//"):
+        href = "https:" + href
+    joined = urljoin(base_url, href)
+    parsed = urlparse(joined)
+    path = posixpath.normpath(parsed.path)
+    return f"{parsed.scheme}://{parsed.netloc}{path}"
+
+
+def parse_html_list(url, src):
+    """通用 HTML 列表抓取：提取含指定特征（link_contains）的链接及其标题。
+    用于无 RSS 的站点（如中科院官网），标题优先取 title 属性，其次取锚文本。
+    link_contains 可为字符串（命中即采）或字符串列表（命中任一即采）。"""
+    items = []
+    link_contains = src.get("link_contains", "")
+    if isinstance(link_contains, str):
+        link_contains = [link_contains]
+    link_contains = [c for c in link_contains if c]
+    max_items = src.get("max", 15)
+    try:
+        resp = requests.get(url, headers=HEADERS, timeout=20)
+        if not (resp.encoding and resp.encoding.lower().startswith("utf")):
+            resp.encoding = resp.apparent_encoding or "utf-8"
+        soup = BeautifulSoup(resp.text, "html.parser")
+        seen = set()
+        for a in soup.find_all("a", href=True):
+            href = a.get("href", "")
+            if link_contains and not any(c in href for c in link_contains):
+                continue
+            title = clean_text(a.get("title", "") or a.get_text(strip=True))
+            if not title or len(title) < 6:
+                continue
+            link = normalize_link(url, href)
+            if not link or link in seen:
+                continue
+            seen.add(link)
+            items.append(
+                {
+                    "title": title,
+                    "url": link,
+                    "summary": "",
+                    "source": src["name"],
+                    "category": src["category"],
+                    "lang": src.get("lang", "zh"),
+                }
+            )
+            if len(items) >= max_items:
+                break
+    except Exception as exc:  # noqa: BLE001
+        print(f"[warn] HTML 抓取失败 {url}: {exc}")
+    return items
+
+
+def _feed_to_parse(url, src):
+    """获取 feed 内容：源指定了自定义 UA 时用 requests 抓取后交给 feedparser，否则直接解析。"""
+    custom_ua = src.get("ua")
+    if not custom_ua:
+        return url
+    headers = dict(HEADERS)
+    headers["User-Agent"] = custom_ua
+    try:
+        resp = requests.get(url, headers=headers, timeout=20)
+        return resp.content
+    except Exception as exc:  # noqa: BLE001
+        print(f"[warn] 自定义 UA 抓取失败 {url}: {exc}")
+        return url
+
+
 def parse_rss(url, src):
     """解析 RSS，返回条目列表（带一次重试，应对偶发限流）。"""
     items = []
     max_items = src.get("max", 30)
     feed = None
+    feed_input = _feed_to_parse(url, src)
     for attempt in range(2):
         try:
-            feed = feedparser.parse(url)
+            feed = feedparser.parse(feed_input)
             if feed.entries:
                 break
             time.sleep(2)  # 首次为空则稍候重试
@@ -129,6 +214,10 @@ def parse_rss(url, src):
         if not title or not link:
             continue
         lang = src.get("lang", "zh")
+        # arXiv：去除摘要/正文里的元数据前缀（如 "arXiv:2608.28656v1 Announce Type: new Abstract:"）
+        if src["name"].startswith("arXiv"):
+            summary = clean_text(clean_arxiv_meta(summary))
+            summary = truncate(summary, 160)
         item = {
             "title": title,
             "url": extract_real_url(link),
@@ -142,6 +231,8 @@ def parse_rss(url, src):
             item["title_en"] = title
             item["summary_en"] = summary
             full = extract_full_content(e)
+            if src["name"].startswith("arXiv") and full:
+                full = clean_arxiv_meta(full)
             if full:
                 item["content_en"] = full
         items.append(item)
@@ -202,6 +293,8 @@ def main():
                 items = parse_baidu_hot(src["url"], src)
             elif src["kind"] == "rss":
                 items = parse_rss(src["url"], src)
+            elif src["kind"] == "html":
+                items = parse_html_list(src["url"], src)
             else:
                 items = []
             for it in items:
@@ -238,16 +331,19 @@ def main():
     limits = {"major": 20, "hot": 30}
     # 每个 trend 子分类的上限
     trend_sub_limits = {
-        "science": 8, "robotics": 12, "finance": 6, "digital": 14,
-        "industrial": 10, "construction": 8, "other": 12,
+        "science": 12, "robotics": 14, "finance": 6, "digital": 14,
+        "industrial": 8, "construction": 8, "other": 10,
     }
     # 每个子分类内英文条目至少保留的条数
     en_floor = {
-        "digital": 6, "industrial": 5, "other": 8,
+        "science": 5, "robotics": 6, "digital": 6, "industrial": 4, "other": 6,
+    }
+    # 每个子分类内中文条目至少保留的条数（保证官方中文源如科学网/中科院有稳定曝光）
+    zh_floor = {
+        "science": 5, "robotics": 5,
     }
     buckets = {"major": [], "hot": [], "trend": []}
     trend_sub_count = {}
-    trend_sub_en_count = {}
 
     # 先填 major / hot
     for it in all_items:
@@ -256,16 +352,14 @@ def main():
             if len(buckets.get(cat, [])) < limits.get(cat, 20):
                 buckets.setdefault(cat, []).append(it)
 
-    # 填 trend：英文条目按「源」轮询插入（保证每个英文源都能进入）
+    # 填 trend：中英文均按「源」轮询插入，保证每个源都能进入且语言均衡
     trend_items = [it for it in all_items if it.get("category") == "trend"]
-    en_items = [it for it in trend_items if it.get("lang") == "en"]
-    zh_items = [it for it in trend_items if it.get("lang") != "en"]
 
-    # 按子分类分组英文条目，组内按源轮询
+    # 过滤纯行政/公示类噪声（如基金资助公示、论坛通知），保留真正的科技进展
+    ADMIN_NOISE = ("公示", "名单", "拟资助", "双清论坛")
+    trend_items = [it for it in trend_items if not any(k in it["title"] for k in ADMIN_NOISE)]
+
     from collections import defaultdict
-    en_by_sub = defaultdict(list)
-    for it in en_items:
-        en_by_sub[it.get("subcategory", "other")].append(it)
 
     def insert(item):
         sub = item.get("subcategory", "other")
@@ -276,37 +370,65 @@ def main():
             return True
         return False
 
-    # 英文：轮询各源，直到每个子类的英文名额用完
-    sub_en_sources = {}
-    for sub, items in en_by_sub.items():
-        sub_en_sources[sub] = defaultdict(list)
-        for it in items:
-            sub_en_sources[sub][it["source"]].append(it)
-    # 轮询插入
+    # 按子分类 -> 语言 -> 源 分组
+    by_sub = defaultdict(lambda: {"en": defaultdict(list), "zh": defaultdict(list)})
+    for it in trend_items:
+        sub = it.get("subcategory", "other")
+        lang = "en" if it.get("lang") == "en" else "zh"
+        by_sub[sub][lang][it["source"]].append(it)
+
     for sub in TREND_SUBCATEGORY_ORDER:
-        if sub not in sub_en_sources:
+        if sub not in by_sub:
             continue
-        floor = en_floor.get(sub, 0)
-        source_lists = list(sub_en_sources[sub].values())
-        # 轮询：每轮从每个源取一条
-        idx = [0] * len(source_lists)
-        inserted = 0
-        while inserted < floor:
+        en_floor_n = en_floor.get(sub, 0)
+        zh_floor_n = zh_floor.get(sub, 0)
+        en_src = list(by_sub[sub]["en"].values())  # 每个元素是一个源的条目列表
+        zh_src = list(by_sub[sub]["zh"].values())
+
+        # 1) 英文保底：轮询英文源直到满足 en_floor
+        en_idx = [0] * len(en_src)
+        en_count = 0
+        while en_count < en_floor_n:
             progressed = False
-            for i, sl in enumerate(source_lists):
-                if idx[i] < len(sl):
-                    if trend_sub_en_count.get(sub, 0) < floor:
-                        insert(sl[idx[i]])
-                        trend_sub_en_count[sub] = trend_sub_en_count.get(sub, 0) + 1
-                        inserted += 1
-                        idx[i] += 1
-                        progressed = True
+            for i, sl in enumerate(en_src):
+                if en_idx[i] < len(sl) and en_count < en_floor_n:
+                    insert(sl[en_idx[i]])
+                    en_idx[i] += 1
+                    en_count += 1
+                    progressed = True
             if not progressed:
                 break
 
-    # 中文：填充剩余名额
-    for it in zh_items:
-        insert(it)
+        # 2) 中文保底：轮询中文源直到满足 zh_floor
+        zh_idx = [0] * len(zh_src)
+        zh_count = 0
+        while zh_count < zh_floor_n:
+            progressed = False
+            for i, sl in enumerate(zh_src):
+                if zh_idx[i] < len(sl) and zh_count < zh_floor_n:
+                    insert(sl[zh_idx[i]])
+                    zh_idx[i] += 1
+                    zh_count += 1
+                    progressed = True
+            if not progressed:
+                break
+
+        # 3) 剩余名额：中文源与英文源（接续）一起轮询
+        all_src = zh_src + en_src
+        all_idx = [0] * len(all_src)
+        for i in range(len(zh_src), len(all_src)):
+            all_idx[i] = en_idx[i - len(zh_src)]
+        for i in range(len(zh_src)):
+            all_idx[i] = zh_idx[i]
+        while True:
+            progressed = False
+            for i, sl in enumerate(all_src):
+                if all_idx[i] < len(sl):
+                    insert(sl[all_idx[i]])
+                    all_idx[i] += 1
+                    progressed = True
+            if not progressed:
+                break
 
     final = buckets["major"] + buckets["hot"] + buckets["trend"]
 

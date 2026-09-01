@@ -3,10 +3,20 @@
 新闻源配置（已根据国内网络可达性与实时性实测筛选）。
 每个源一个 dict：
   - name:     来源显示名
-  - kind:     'rss' | 'baidu_hot'（百度热搜 JSON API）
+  - kind:     'rss' | 'html' | 'baidu_hot'
   - url:      地址
   - category: 默认分类（hot=热点, major=重大事件, trend=行业趋势）
+  - subcategory: 行业趋势子分类（science/robotics/digital/industrial/construction/other）
+  - lang:     'zh' | 'en'（en 保留英文原文并进入页面内阅读模式）
+  - ua:       可选，自定义 User-Agent（如量子位需 Googlebot UA）
+  - link_contains: 可选，仅 'html' 类使用，命中才采集（str 或 list）
   - max:      最多抓取条数
+
+说明（用户指定的科技源中，以下 3 个暂无法自动抓取，原因见下）：
+  - 中国科技网 stdaily.com  —— 首页有 JS 反爬（fec_wrapper），且无 RSS
+  - 科技部   most.gov.cn    —— 首页 JS 渲染返回空壳，且无 RSS
+  - 机器之心 jiqizhixin.com —— 前端 SPA 渲染，RSS 已下线，graphql API 需 token
+如需补充，可另接 RSSHub 或自建抓取。
 """
 
 SOURCES = [
@@ -26,20 +36,110 @@ SOURCES = [
         "category": "major",
         "max": 30,
     },
-    # ---------- 行业趋势：中文科技源 ----------
+    # ---------- 行业趋势：科学技术（官方科研 + 学术前沿） ----------
+    {
+        "name": "科学网",
+        "kind": "rss",
+        "url": "https://www.sciencenet.cn/xml/news-0.aspx?di=1",
+        "category": "trend",
+        "subcategory": "science",
+        "lang": "zh",
+        "max": 15,
+    },
+    {
+        "name": "中科院之声",
+        "kind": "html",
+        "url": "https://www.cas.cn/",
+        "category": "trend",
+        "subcategory": "science",
+        "lang": "zh",
+        # 只取科研进展(/syky/)与成果(/cg/)两类硬核科研新闻，排除导航/平台链接
+        "link_contains": ["/syky/", "/cg/"],
+        "max": 15,
+    },
+    {
+        "name": "Nature",
+        "kind": "rss",
+        "url": "https://www.nature.com/nature.rss",
+        "category": "trend",
+        "subcategory": "science",
+        "lang": "en",
+        "max": 10,
+    },
+    {
+        "name": "Science News",
+        "kind": "rss",
+        "url": "https://www.sciencenews.org/feed/",
+        "category": "trend",
+        "subcategory": "science",
+        "lang": "en",
+        "max": 10,
+    },
+    {
+        "name": "ScienceDaily",
+        "kind": "rss",
+        "url": "https://www.sciencedaily.com/rss/all.xml",
+        "category": "trend",
+        "subcategory": "science",
+        "lang": "en",
+        "max": 10,
+    },
+    {
+        "name": "arXiv·机器人学",
+        "kind": "rss",
+        "url": "https://rss.arxiv.org/rss/cs.RO",
+        "category": "trend",
+        "subcategory": "science",
+        "lang": "en",
+        "max": 10,
+    },
+    # ---------- 行业趋势：机器人AI（产业硬科技媒体） ----------
+    {
+        "name": "量子位",
+        "kind": "rss",
+        "url": "https://www.qbitai.com/feed",
+        "category": "trend",
+        "subcategory": "robotics",
+        "lang": "zh",
+        # 量子位对普通 UA 返回 403，需用 Googlebot 抓取
+        "ua": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)",
+        "max": 15,
+    },
     {
         "name": "InfoQ中文",
         "kind": "rss",
         "url": "https://www.infoq.cn/feed",
         "category": "trend",
-        "max": 20,
+        "subcategory": "robotics",
+        "lang": "zh",
+        "max": 15,
     },
     {
-        "name": "爱范儿",
+        "name": "arXiv·人工智能",
         "kind": "rss",
-        "url": "https://www.ifanr.com/feed",
+        "url": "https://rss.arxiv.org/rss/cs.AI",
         "category": "trend",
-        "max": 20,
+        "subcategory": "robotics",
+        "lang": "en",
+        "max": 10,
+    },
+    {
+        "name": "MIT科技评论",
+        "kind": "rss",
+        "url": "https://www.technologyreview.com/feed/",
+        "category": "trend",
+        "subcategory": "robotics",
+        "lang": "en",
+        "max": 10,
+    },
+    {
+        "name": "TechCrunch",
+        "kind": "rss",
+        "url": "https://techcrunch.com/feed/",
+        "category": "trend",
+        "subcategory": "robotics",
+        "lang": "en",
+        "max": 10,
     },
     # ---------- 数码电子（国外主流，附英文原文） ----------
     {
@@ -78,6 +178,15 @@ SOURCES = [
         "lang": "en",
         "max": 15,
     },
+    {
+        "name": "Ars Technica",
+        "kind": "rss",
+        "url": "https://feeds.arstechnica.com/arstechnica/index",
+        "category": "trend",
+        "subcategory": "digital",
+        "lang": "en",
+        "max": 15,
+    },
     # ---------- 工业制造（国外主流，附英文原文） ----------
     {
         "name": "IEEE Spectrum",
@@ -99,24 +208,6 @@ SOURCES = [
         "max": 20,
     },
     # ---------- 其他：教育/趣闻（国外主流，附英文原文） ----------
-    {
-        "name": "Nature",
-        "kind": "rss",
-        "url": "https://www.nature.com/nature.rss",
-        "category": "trend",
-        "subcategory": "other",
-        "lang": "en",
-        "max": 10,
-    },
-    {
-        "name": "ScienceDaily",
-        "kind": "rss",
-        "url": "https://www.sciencedaily.com/rss/all.xml",
-        "category": "trend",
-        "subcategory": "other",
-        "lang": "en",
-        "max": 10,
-    },
     {
         "name": "Atlas Obscura",
         "kind": "rss",
