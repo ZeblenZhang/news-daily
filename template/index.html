@@ -413,23 +413,22 @@
     });
   }
 
-  // 监听 mouseup：仅在英文原文区块（.en）内选中文字时触发
+  // 监听 mouseup：选中含英文字母的文字时自动翻译（覆盖英文标题/原文/摘要）
   document.addEventListener("mouseup", function(e) {
     var sel = window.getSelection();
     var text = (sel && sel.toString()) ? sel.toString().trim() : "";
     if (!text) { hideTransPop(); return; }
-    // 判断选区是否在 .en 区块内
+
+    // 排除在输入框/文本域内的选区
     var node = sel.anchorNode;
-    var inEn = false;
     if (node) {
       var el = node.nodeType === 1 ? node : node.parentElement;
-      while (el) {
-        if (el.classList && el.classList.contains("en")) { inEn = true; break; }
-        el = el.parentElement;
+      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA")) {
+        hideTransPop(); return;
       }
     }
-    if (!inEn) { hideTransPop(); return; }
-    // 仅翻译含英文字母的文本
+
+    // 仅翻译含英文字母的文本（中文选区不处理）
     if (!/[a-zA-Z]/.test(text)) { hideTransPop(); return; }
     if (text.length > 500) text = text.slice(0, 500);
 
