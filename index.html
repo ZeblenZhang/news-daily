@@ -16,7 +16,7 @@
     --major: #1a5276;
     --trend: #1e7a4f;
     --chip-bg: #f1efe9;
-    --radius: 14px;
+    --radius: 12px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -24,79 +24,99 @@
       "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     background: var(--bg);
     color: var(--ink);
-    line-height: 1.65;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
   /* 头部 */
-  header { padding: 56px 0 28px; }
+  header { padding: 34px 0 20px; }
   .masthead {
     display: flex; align-items: baseline; justify-content: space-between;
-    flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 8px;
   }
-  .brand { font-size: 15px; letter-spacing: .28em; color: var(--sub); text-transform: uppercase; }
+  .brand { font-size: 13px; letter-spacing: .28em; color: var(--sub); text-transform: uppercase; }
   .date { font-size: 13px; color: var(--sub); }
   h1 {
-    font-size: 40px; font-weight: 700; letter-spacing: -.5px; line-height: 1.2;
-    margin-bottom: 14px;
+    font-size: 30px; font-weight: 700; letter-spacing: -.5px; line-height: 1.2;
+    margin-bottom: 10px;
     font-family: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
   }
   .brief {
-    font-size: 16px; color: var(--sub); max-width: 640px;
-    border-left: 3px solid var(--accent); padding-left: 16px;
+    font-size: 14px; color: var(--sub); max-width: 720px;
+    border-left: 3px solid var(--accent); padding-left: 14px;
   }
 
   /* 标签导航 */
   .tabs {
-    display: flex; gap: 8px; flex-wrap: wrap; margin: 32px 0 24px;
-    position: sticky; top: 0; background: var(--bg); padding: 12px 0; z-index: 10;
+    display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0 16px;
+    position: sticky; top: 0; background: var(--bg); padding: 10px 0; z-index: 10;
   }
   .tab {
     border: 1px solid var(--line); background: var(--card); color: var(--sub);
-    padding: 8px 18px; border-radius: 999px; font-size: 14px; cursor: pointer;
+    padding: 6px 16px; border-radius: 999px; font-size: 13px; cursor: pointer;
     transition: all .18s ease; user-select: none;
   }
   .tab:hover { border-color: #c9c4bd; color: var(--ink); }
   .tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-  .tab .count { font-size: 12px; opacity: .6; margin-left: 4px; }
+  .tab .count { font-size: 11px; opacity: .6; margin-left: 4px; }
 
-  /* 新闻列表 */
-  .list { display: flex; flex-direction: column; gap: 14px; padding-bottom: 60px; }
+  /* 子分类导航（行业趋势内） */
+  .sub-tabs {
+    display: none; gap: 6px; flex-wrap: wrap; margin: 0 0 14px;
+  }
+  .sub-tabs.show { display: flex; }
+  .sub-tab {
+    border: 1px solid var(--line); background: var(--card); color: var(--sub);
+    padding: 4px 12px; border-radius: 999px; font-size: 12px; cursor: pointer;
+    transition: all .15s ease; user-select: none;
+  }
+  .sub-tab:hover { border-color: #c9c4bd; color: var(--ink); }
+  .sub-tab.active { background: var(--trend); color: #fff; border-color: var(--trend); }
+
+  /* 新闻列表：紧凑卡片，多列网格 */
+  .list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-bottom: 60px; }
   .card {
     background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 20px 22px; display: block; text-decoration: none; color: inherit;
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    padding: 13px 15px; display: block; text-decoration: none; color: inherit;
+    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
   }
   .card:hover {
-    transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.06);
+    transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.06);
     border-color: #d8d3cb;
   }
-  .card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .card-top { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
   .tag {
-    font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 600;
-    letter-spacing: .03em; white-space: nowrap;
+    font-size: 10px; padding: 2px 8px; border-radius: 5px; font-weight: 600;
+    letter-spacing: .02em; white-space: nowrap;
   }
   .tag.hot   { background: #fbe9e7; color: var(--hot); }
   .tag.major { background: #e8f0f7; color: var(--major); }
   .tag.trend { background: #e6f4ec; color: var(--trend); }
-  .source { font-size: 12px; color: var(--sub); }
+  .tag.sub   { background: var(--chip-bg); color: var(--sub); }
+  .source { font-size: 11px; color: #aaa; margin-left: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .card h2 {
-    font-size: 18px; font-weight: 600; line-height: 1.45; margin-bottom: 6px;
+    font-size: 15px; font-weight: 600; line-height: 1.4; margin-bottom: 4px;
     font-family: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
   }
-  .card .summary { font-size: 14px; color: var(--sub); }
-  .empty { text-align: center; color: var(--sub); padding: 60px 0; }
+  .card .summary {
+    font-size: 12.5px; color: var(--sub); line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .empty { text-align: center; color: var(--sub); padding: 60px 0; grid-column: 1 / -1; }
 
   footer {
-    text-align: center; color: #aaa; font-size: 12px; padding: 32px 0 48px;
+    text-align: center; color: #aaa; font-size: 12px; padding: 28px 0 44px;
   }
   footer a { color: #999; text-decoration: none; }
 
+  @media (max-width: 700px) {
+    .list { grid-template-columns: 1fr; }
+  }
   @media (max-width: 600px) {
-    h1 { font-size: 30px; }
-    .card { padding: 16px 18px; }
-    .card h2 { font-size: 16px; }
+    h1 { font-size: 26px; }
+    .card { padding: 12px 14px; }
   }
 </style>
 </head>
@@ -113,6 +133,8 @@
 
   <nav class="tabs" id="tabs"></nav>
 
+  <nav class="sub-tabs" id="subTabs"></nav>
+
   <main class="list" id="list"></main>
 
   <footer>
@@ -122,10 +144,18 @@
 
 <script>
   // 数据由 build.py 注入
-  var NEWS_DATA = {"generated_at": "2026-09-01 10:20:32", "date": "2026-09-01", "date_cn": "2026年09月01日", "weekday": "星期二", "total": 75, "categories": {"hot": "热点", "major": "重大事件", "trend": "行业趋势"}, "items": [{"title": "吉伦泰研制的靶向整合素αvβ3治疗核药获得国家药监局临床试验批件", "url": "https://www.jiemian.com/article/15038371.html", "summary": "", "source": "界面新闻", "category": "major"}, {"title": "《深圳经济特区促进脑机接口产业创新发展若干规定》公开征求意见", "url": "https://www.jiemian.com/article/15038360.html", "summary": "《深圳经济特区促进脑机接口产业创新发展若干规定（征求意见稿）》公开征求意见。其中提到，市人民政府应当将脑机接口产业发展纳入本市国民经济和社会发展规划和科技创新专项规划，建立健全促进脑机接口产业发展的议事协调机制，统筹协调脑机接口技术创新、产业发展、行业应用、安全治理等方面的重要事项。市人民政府应当保障脑机接口基础研究领…", "source": "界面新闻", "category": "major"}, {"title": "沪深两市成交额突破5000亿元", "url": "https://www.jiemian.com/article/15038357.html", "summary": "", "source": "界面新闻", "category": "major"}, {"title": "*ST西旅：法院同意启动预重整并指定临时管理人", "url": "https://www.jiemian.com/article/15038299.html", "summary": "若重整失败，公司存在被宣告破产及终止上市的风险。", "source": "界面新闻", "category": "major"}, {"title": "西安天大拟以6736万元同北方发展投资有限公司签署《厂房定制买卖合同》", "url": "https://www.jiemian.com/article/15038246.html", "summary": "合同金额总计约6736万元。", "source": "界面新闻", "category": "major"}, {"title": "高端算力供应呈现全链紧缺，南方基金王博关注算力产业发展", "url": "https://www.jiemian.com/article/15038207.html", "summary": "南方基金王博把握AI硬件链投资主线，以公司质地、成长性、合理估值作为主要选股标准，精选抵御经济周期波动的龙头公司，长期专注大科技板块研究。", "source": "界面新闻", "category": "major"}, {"title": "国产集成电路供应链成果密集亮相，南方基金郑晓曦聚焦集成电路产业自主可控", "url": "https://www.jiemian.com/article/15038216.html", "summary": "南方基金郑晓曦关注半导体产业链投资机遇。", "source": "界面新闻", "category": "major"}, {"title": "固态电池全球首个国际标准立项，南方基金钟贇关注新能源产业发展", "url": "https://www.jiemian.com/article/15038222.html", "summary": "南方基金钟贇看好高景气成长赛道，聚焦产业红利持续释放的成长周期，重点关注AI、新能源、机器人、创新药等兼具趋势空间与业绩兑现能力的主线方向，力争在成长产业浪潮中捕捉优质投资机会。", "source": "界面新闻", "category": "major"}, {"title": "摩根大通继续超配中国股票，将沪深300目标定为5200点", "url": "https://www.jiemian.com/article/15038263.html", "summary": "8月31日，媒体报道称，摩根大通中国股票策略师张晓宁最新表示，AI硬件供给约束至少持续至2028年，主流科技企业债券评级均处投资级，债务担忧属“过度反应”。", "source": "界面新闻", "category": "major"}, {"title": "北大科研团队：受气候变化影响，南极冰川融化正在释放剧毒汞", "url": "https://www.jiemian.com/article/15038298.html", "summary": "这些汞会通过海鲜进入人体吗？专家认为，存在潜在风险，但风险范围相对有限。", "source": "界面新闻", "category": "major"}, {"title": "《功夫女足》成2026年暑期档票房冠军", "url": "https://www.jiemian.com/article/15038293.html", "summary": "9月1日，据猫眼专业版数据，《功夫女足》2026暑期档总票房23.15亿元，总观影人次6735.7万，成2026年暑期档票房冠军。", "source": "界面新闻", "category": "major"}, {"title": "C-Beauty出海2.0：国货美妆离全球化还有多远？", "url": "https://www.jiemian.com/article/15037864.html", "summary": "告别“单打独斗”， 协同出海将成为标配。", "source": "界面新闻", "category": "major"}, {"title": "鸿蒙智行8月交付新车42101台，同比下降5.56%", "url": "https://www.jiemian.com/article/15038259.html", "summary": "9月1日，鸿蒙智行宣布，2026年8月交付新车42101台，上年同期交付44579辆；年内累计交付同比增长10.8%。截至目前，鸿蒙智行全系累计交付已超152万台。", "source": "界面新闻", "category": "major"}, {"title": "创业板指跌逾1%", "url": "https://www.jiemian.com/article/15038251.html", "summary": "", "source": "界面新闻", "category": "major"}, {"title": "2026年网安周将于9月14日至20日在全国举行", "url": "https://www.jiemian.com/article/15038245.html", "summary": "今天（9月1日），2026年国家网络安全宣传周新闻发布会在北京举行。今年网安周的主题为“网络安全为人民 网络安全靠人民——智能时代 网安护航”，将于9月14日至20日在全国范围内统一举行，由中央宣传部、中央网信办、教育部、工业和信息化部、公安部、中国人民银行、国家广播电视总局、全国总工会、共青团中央、全国妇联等十部门联…", "source": "界面新闻", "category": "major"}, {"title": "出版板块持续走强，粤传媒等多股涨停", "url": "https://www.jiemian.com/article/15038240.html", "summary": "", "source": "界面新闻", "category": "major"}, {"title": "电影《蜘蛛侠：崭新之日》成2026年暑期档进口片票房冠军", "url": "https://www.jiemian.com/article/15038239.html", "summary": "9月1日，据猫眼专业版数据，电影《蜘蛛侠：崭新之日》2026暑期档总票房15.39亿元，总观影人次3882.9万，成2026年暑期档进口片票房冠军。", "source": "界面新闻", "category": "major"}, {"title": "化学制药板块盘初走弱，冀衡医药、神奇制药双双跌停", "url": "https://www.jiemian.com/article/15038226.html", "summary": "", "source": "界面新闻", "category": "major"}, {"title": "官渡区3所改扩建学校集中投用", "url": "https://www.jiemian.com/article/15038182.html", "summary": "官渡区南站实验学校、国贸片区配套学校新建项目，以及云大附中星耀学校提升改造项目全部完成验收竣备。", "source": "界面新闻", "category": "major"}, {"title": "农业种植概念盘初异动拉升，京粮控股、新赛股份双双涨停", "url": "https://www.jiemian.com/article/15038205.html", "summary": "", "source": "界面新闻", "category": "major"}, {"title": "习近平会见普京", "url": "https://m.baidu.com/s?word=%E4%B9%A0%E8%BF%91%E5%B9%B3%E4%BC%9A%E8%A7%81%E6%99%AE%E4%BA%AC&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "华为小米荣耀手机今日集体调价", "url": "https://m.baidu.com/s?word=%E5%8D%8E%E4%B8%BA%E5%B0%8F%E7%B1%B3%E8%8D%A3%E8%80%80%E6%89%8B%E6%9C%BA%E4%BB%8A%E6%97%A5%E9%9B%86%E4%BD%93%E8%B0%83%E4%BB%B7&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "为何不炸开一条泄流通道", "url": "https://m.baidu.com/s?word=%E4%B8%BA%E4%BD%95%E4%B8%8D%E7%82%B8%E5%BC%80%E4%B8%80%E6%9D%A1%E6%B3%84%E6%B5%81%E9%80%9A%E9%81%93&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "女子被踢845个群被迫离职 当地通报", "url": "https://m.baidu.com/s?word=%E5%A5%B3%E5%AD%90%E8%A2%AB%E8%B8%A2845%E4%B8%AA%E7%BE%A4%E8%A2%AB%E8%BF%AB%E7%A6%BB%E8%81%8C+%E5%BD%93%E5%9C%B0%E9%80%9A%E6%8A%A5&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "一家16口包中巴送新生上大学", "url": "https://m.baidu.com/s?word=%E4%B8%80%E5%AE%B616%E5%8F%A3%E5%8C%85%E4%B8%AD%E5%B7%B4%E9%80%81%E6%96%B0%E7%94%9F%E4%B8%8A%E5%A4%A7%E5%AD%A6&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "西藏吉隆举行泥石流灾害哀悼活动", "url": "https://m.baidu.com/s?word=%E8%A5%BF%E8%97%8F%E5%90%89%E9%9A%86%E4%B8%BE%E8%A1%8C%E6%B3%A5%E7%9F%B3%E6%B5%81%E7%81%BE%E5%AE%B3%E5%93%80%E6%82%BC%E6%B4%BB%E5%8A%A8&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "郑钦文终结柳托娃9连胜 对手被打哭", "url": "https://m.baidu.com/s?word=%E9%83%91%E9%92%A6%E6%96%87%E7%BB%88%E7%BB%93%E6%9F%B3%E6%89%98%E5%A8%839%E8%BF%9E%E8%83%9C+%E5%AF%B9%E6%89%8B%E8%A2%AB%E6%89%93%E5%93%AD&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "胡军给陈丽君当助理处得像父女", "url": "https://m.baidu.com/s?word=%E8%83%A1%E5%86%9B%E7%BB%99%E9%99%88%E4%B8%BD%E5%90%9B%E5%BD%93%E5%8A%A9%E7%90%86%E5%A4%84%E5%BE%97%E5%83%8F%E7%88%B6%E5%A5%B3&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "横店竖屏短剧火爆海外", "url": "https://m.baidu.com/s?word=%E6%A8%AA%E5%BA%97%E7%AB%96%E5%B1%8F%E7%9F%AD%E5%89%A7%E7%81%AB%E7%88%86%E6%B5%B7%E5%A4%96&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "“外卖员向饮料里加百草枯”系谣言", "url": "https://m.baidu.com/s?word=%E2%80%9C%E5%A4%96%E5%8D%96%E5%91%98%E5%90%91%E9%A5%AE%E6%96%99%E9%87%8C%E5%8A%A0%E7%99%BE%E8%8D%89%E6%9E%AF%E2%80%9D%E7%B3%BB%E8%B0%A3%E8%A8%80&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "包贝尔因出轨风波新剧被除名", "url": "https://m.baidu.com/s?word=%E5%8C%85%E8%B4%9D%E5%B0%94%E5%9B%A0%E5%87%BA%E8%BD%A8%E9%A3%8E%E6%B3%A2%E6%96%B0%E5%89%A7%E8%A2%AB%E9%99%A4%E5%90%8D&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "“香港大药房”不卖药也不在香港", "url": "https://m.baidu.com/s?word=%E2%80%9C%E9%A6%99%E6%B8%AF%E5%A4%A7%E8%8D%AF%E6%88%BF%E2%80%9D%E4%B8%8D%E5%8D%96%E8%8D%AF%E4%B9%9F%E4%B8%8D%E5%9C%A8%E9%A6%99%E6%B8%AF&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "折叠屏手机大战9月", "url": "https://m.baidu.com/s?word=%E6%8A%98%E5%8F%A0%E5%B1%8F%E6%89%8B%E6%9C%BA%E5%A4%A7%E6%88%989%E6%9C%88&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "江苏省委：坚决拥护党中央决定", "url": "https://m.baidu.com/s?word=%E6%B1%9F%E8%8B%8F%E7%9C%81%E5%A7%94%EF%BC%9A%E5%9D%9A%E5%86%B3%E6%8B%A5%E6%8A%A4%E5%85%9A%E4%B8%AD%E5%A4%AE%E5%86%B3%E5%AE%9A&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "六大行房贷余额少了5000多亿", "url": "https://m.baidu.com/s?word=%E5%85%AD%E5%A4%A7%E8%A1%8C%E6%88%BF%E8%B4%B7%E4%BD%99%E9%A2%9D%E5%B0%91%E4%BA%865000%E5%A4%9A%E4%BA%BF&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "小猫纵身一跳主人直接看崩溃", "url": "https://m.baidu.com/s?word=%E5%B0%8F%E7%8C%AB%E7%BA%B5%E8%BA%AB%E4%B8%80%E8%B7%B3%E4%B8%BB%E4%BA%BA%E7%9B%B4%E6%8E%A5%E7%9C%8B%E5%B4%A9%E6%BA%83&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "喜马拉雅冰川消融加速65%", "url": "https://m.baidu.com/s?word=%E5%96%9C%E9%A9%AC%E6%8B%89%E9%9B%85%E5%86%B0%E5%B7%9D%E6%B6%88%E8%9E%8D%E5%8A%A0%E9%80%9F65%25&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "女子赢2600万后失联欠200万律师费", "url": "https://m.baidu.com/s?word=%E5%A5%B3%E5%AD%90%E8%B5%A22600%E4%B8%87%E5%90%8E%E5%A4%B1%E8%81%94%E6%AC%A0200%E4%B8%87%E5%BE%8B%E5%B8%88%E8%B4%B9&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "暑期结束 中国游客都去哪玩了", "url": "https://m.baidu.com/s?word=%E6%9A%91%E6%9C%9F%E7%BB%93%E6%9D%9F+%E4%B8%AD%E5%9B%BD%E6%B8%B8%E5%AE%A2%E9%83%BD%E5%8E%BB%E5%93%AA%E7%8E%A9%E4%BA%86&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "我是NBA球员你是谁", "url": "https://m.baidu.com/s?word=%E6%88%91%E6%98%AFNBA%E7%90%83%E5%91%98%E4%BD%A0%E6%98%AF%E8%B0%81&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "中国铜、金重大找矿成果", "url": "https://m.baidu.com/s?word=%E4%B8%AD%E5%9B%BD%E9%93%9C%E3%80%81%E9%87%91%E9%87%8D%E5%A4%A7%E6%89%BE%E7%9F%BF%E6%88%90%E6%9E%9C&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "百万级产能缺口 订单排到3年后", "url": "https://m.baidu.com/s?word=%E7%99%BE%E4%B8%87%E7%BA%A7%E4%BA%A7%E8%83%BD%E7%BC%BA%E5%8F%A3+%E8%AE%A2%E5%8D%95%E6%8E%92%E5%88%B03%E5%B9%B4%E5%90%8E&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "捐赠者为研究莽山烙铁头手指中毒截肢", "url": "https://m.baidu.com/s?word=%E6%8D%90%E8%B5%A0%E8%80%85%E4%B8%BA%E7%A0%94%E7%A9%B6%E8%8E%BD%E5%B1%B1%E7%83%99%E9%93%81%E5%A4%B4%E6%89%8B%E6%8C%87%E4%B8%AD%E6%AF%92%E6%88%AA%E8%82%A2&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "吉隆口岸大楼只剩地基", "url": "https://m.baidu.com/s?word=%E5%90%89%E9%9A%86%E5%8F%A3%E5%B2%B8%E5%A4%A7%E6%A5%BC%E5%8F%AA%E5%89%A9%E5%9C%B0%E5%9F%BA&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "美国炸鸡巨头中国首店开业排队2小时", "url": "https://m.baidu.com/s?word=%E7%BE%8E%E5%9B%BD%E7%82%B8%E9%B8%A1%E5%B7%A8%E5%A4%B4%E4%B8%AD%E5%9B%BD%E9%A6%96%E5%BA%97%E5%BC%80%E4%B8%9A%E6%8E%92%E9%98%9F2%E5%B0%8F%E6%97%B6&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "男子扫墓发现家族祖坟被破坏", "url": "https://m.baidu.com/s?word=%E7%94%B7%E5%AD%90%E6%89%AB%E5%A2%93%E5%8F%91%E7%8E%B0%E5%AE%B6%E6%97%8F%E7%A5%96%E5%9D%9F%E8%A2%AB%E7%A0%B4%E5%9D%8F&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "当地通报中学收220元入校门禁费", "url": "https://m.baidu.com/s?word=%E5%BD%93%E5%9C%B0%E9%80%9A%E6%8A%A5%E4%B8%AD%E5%AD%A6%E6%94%B6220%E5%85%83%E5%85%A5%E6%A0%A1%E9%97%A8%E7%A6%81%E8%B4%B9&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "台风沙德尔复活", "url": "https://m.baidu.com/s?word=%E5%8F%B0%E9%A3%8E%E6%B2%99%E5%BE%B7%E5%B0%94%E5%A4%8D%E6%B4%BB&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "杨瀚森倒地后被自家球迷拿球砸", "url": "https://m.baidu.com/s?word=%E6%9D%A8%E7%80%9A%E6%A3%AE%E5%80%92%E5%9C%B0%E5%90%8E%E8%A2%AB%E8%87%AA%E5%AE%B6%E7%90%83%E8%BF%B7%E6%8B%BF%E7%90%83%E7%A0%B8&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "女童头部摔伤当晚没事 次日颅内出血", "url": "https://m.baidu.com/s?word=%E5%A5%B3%E7%AB%A5%E5%A4%B4%E9%83%A8%E6%91%94%E4%BC%A4%E5%BD%93%E6%99%9A%E6%B2%A1%E4%BA%8B+%E6%AC%A1%E6%97%A5%E9%A2%85%E5%86%85%E5%87%BA%E8%A1%80&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "高校开学季“科技迎新”", "url": "https://m.baidu.com/s?word=%E9%AB%98%E6%A0%A1%E5%BC%80%E5%AD%A6%E5%AD%A3%E2%80%9C%E7%A7%91%E6%8A%80%E8%BF%8E%E6%96%B0%E2%80%9D&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "trend"}, {"title": "百度完成双重主要上市", "url": "https://m.baidu.com/s?word=%E7%99%BE%E5%BA%A6%E5%AE%8C%E6%88%90%E5%8F%8C%E9%87%8D%E4%B8%BB%E8%A6%81%E4%B8%8A%E5%B8%82&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "trend"}, {"title": "希音上市首日一度跌近10%", "url": "https://m.baidu.com/s?word=%E5%B8%8C%E9%9F%B3%E4%B8%8A%E5%B8%82%E9%A6%96%E6%97%A5%E4%B8%80%E5%BA%A6%E8%B7%8C%E8%BF%9110%25&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "trend"}, {"title": "深圳：拟统筹规划脑解析与脑模拟重大科技设施", "url": "https://www.jiemian.com/article/15038382.html", "summary": "", "source": "界面新闻", "category": "trend"}, {"title": "阿里云宣布Qwen3-VL-Rerank模型降价", "url": "https://www.jiemian.com/article/15038365.html", "summary": "9月1日，阿里云公告，大模型服务平台百炼将于北京时间2026年8月31日10:13:53起，对北京地域Qwen3-VL-Rerank模型计费单价进行下调调整：将文本输入从0.7元/百万tokens下调至0.5元/百万tokens，多模态输入从1.8元/百万tokens下调至0.5元/百万tokens。", "source": "界面新闻", "category": "trend"}, {"title": "AI人工智能ETF平安(512930)标的指数多空胶着，智谱上半年开放平台及API收入暴增2736%", "url": "https://www.jiemian.com/article/15038307.html", "summary": "联接基金(A类：023384；C类：023385；E类：024610)。", "source": "界面新闻", "category": "trend"}, {"title": "希音-W港股上市首日一度跌近10%", "url": "https://www.jiemian.com/article/15038312.html", "summary": "希音-W港股上市首日一度跌近10%。公开资料显示，希音是一家全球线上时尚和生活方式公司，在2025年期间为约160个市场的约2.73亿活跃顾客提供服务。", "source": "界面新闻", "category": "trend"}, {"title": "相关部门启动人工智能应用服务商培育专项行动，南方基金吴春林关注国产AI产业发展", "url": "https://www.jiemian.com/article/15038236.html", "summary": "南方基金吴春林把握AI产业浪潮，聚焦国产科技核心资产。", "source": "界面新闻", "category": "trend"}, {"title": "中国开始小规模生产HBM3E，国产芯片供应瓶颈有望缓解，科创芯片设计ETF易方达(589030)、半导体设备ETF易方达(159558)备受关注", "url": "https://www.jiemian.com/article/15038301.html", "summary": "聚焦国产AI芯片机会—科创芯片设计ETF易方达（589030，联接A/C：027606/027607）；聚焦造芯片的工具—半导体设备ETF易方达（159558，联接A/C：021893/021894）", "source": "界面新闻", "category": "trend"}, {"title": "智能体请求暴增9.4倍，token账单却没涨：Uber 公开AI软件工厂省钱方法", "url": "https://www.infoq.cn/article/WGj2Jx0K2sbP3dhUXeC5?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "从出片到出海：AI MediaKit 重塑短剧全链路生产力", "url": "https://www.infoq.cn/article/L7P7cA3UMXXQJcBfyHuJ?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "AI 写代码飞快，为何交付没有变快？小红书 Muse 的 Agentic 架构实践", "url": "https://www.infoq.cn/article/l88X1azz8wfwphDyECoP?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "智能体适应度函数：将演进式架构扩展至确定性规则之外", "url": "https://www.infoq.cn/article/8iWWrov7bkk1hz5CcFft?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "AI Coding 之后，如何让 Agent 进入企业研发全链路？得物推荐的 Harness 实践", "url": "https://www.infoq.cn/article/sDyQxrWR6zDPJuLX4FA8?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "当数采设备不再稀缺，具身数据下一步拼什么？", "url": "https://www.infoq.cn/article/D2r6SJ2oYVAXGMBkPcRM?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "OpenClaw 从意外爆红到“无人问津”：一个开源 AI Agent 的八个月过山车", "url": "https://www.infoq.cn/article/4KQHJC49t8J8FPqaEVLv?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "“烂代码”转正？Bun稳定版终落地：跳票一个半月，2900个问题清零", "url": "https://www.infoq.cn/article/olsG3w9zkyKRqbQesB1g?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "不抢最贵GPU，专捡“没人要”的算力：前英伟达工程师搞出一套“拾荒者”打法", "url": "https://www.infoq.cn/article/6gFLptyMHRQhrILOlQ9Q?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "Rx.NET 7.0 拆分 Windows UI 支持，大幅缩减应用部署体积", "url": "https://www.infoq.cn/article/tiJTwoTI7Z0pI6huyRPW?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "自研Runtime、Agent Loop、Infra：一家通用Agent公司的全栈赌注", "url": "https://www.infoq.cn/article/NUGYDLvivgYXMV9u637z?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "Cisco 给 9 万员工配上个人 Agent：记住你的一切，还能替你跨系统办事", "url": "https://www.infoq.cn/article/HQXDr69U4tUQUDzEiidW?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "OpenAI 将全面断供 Cursor：SpaceX 收购后触发控制权条款", "url": "https://www.infoq.cn/article/YiHrlKLX6I6IP92BgV7K?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "Kubeflow扩展了AI功能，项目临近CNCF毕业", "url": "https://www.infoq.cn/article/grb2X7v7fr6kUNuuRkvt?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "Netflix采用云原生作业队列系统Kueue替代内部解决方案", "url": "https://www.infoq.cn/article/d1qT2acYJodVCcKaBe4u?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}, {"title": "长鑫存储起诉美国防部；Anthropic面试流程曝光，额度明升暗降引众怒；网易推出带薪“宠物陪护假” | AI周报", "url": "https://www.infoq.cn/article/8Ot7gRMNDMICpCW2Rk34?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend"}], "brief": "今日为您精选 75 条要闻：20 条重大事件、30 条热点、25 条行业趋势，点击标题即可跳转原文阅读。"};
+  var NEWS_DATA = {"generated_at": "2026-09-01 14:26:54", "date": "2026-09-01", "date_cn": "2026年09月01日", "weekday": "星期二", "total": 75, "categories": {"hot": "热点", "major": "重大事件", "trend": "行业趋势"}, "trend_subcategories": {"science": "科学技术", "robotics": "机器人AI", "finance": "金融", "digital": "数码电子", "industrial": "工业制造", "construction": "建筑施工", "other": "其他"}, "trend_subcategory_order": ["science", "robotics", "finance", "digital", "industrial", "construction", "other"], "items": [{"title": "佛山陶博会：“秋季陶博会不办了”等相关言论不实", "url": "https://www.jiemian.com/article/15039893.html", "summary": "9月1日，佛山陶博会组委会发布声明称，组委会注意到市场上出现关于第45届佛山陶博会举办情况的不实信息，包括“秋季陶博会不办了”“陶博会取消了”“陶博会没有华夏馆了”等相关言论，引发部分参展商和采购商的担忧。对此，组委会声明，第45届中国（佛山）国际陶瓷及卫浴博览交易会将如期于2026年10月18日至23日在佛山举办，举…", "source": "界面新闻", "category": "major"}, {"title": "“85后”白金分析师屠亦婷将升任申万宏源研究副所长", "url": "https://www.jiemian.com/article/15039883.html", "summary": "9月1日，记者获悉，现任上海申银万国证券研究所有限公司（下称“申万宏源研究”）总经理助理的屠亦婷，将升任申万宏源研究副总经理。公开资料显示，屠亦婷是一名“85后”，毕业于清华大学经济管理学院金融本硕，拥有16年造纸及轻工行业研究经验，2024年获《新财富》白金分析师称号。2024年12月，屠亦婷任申万宏源研究总经理助理…", "source": "界面新闻", "category": "major"}, {"title": "国家药监局：将愈美制剂非处方药转换为处方药", "url": "https://www.jiemian.com/article/15039879.html", "summary": "", "source": "界面新闻", "category": "major"}, {"title": "国家药监局：进一步加强药品信息化追溯管理工作", "url": "https://www.jiemian.com/article/15039862.html", "summary": "国家药监局发布关于进一步加强药品信息化追溯管理工作的公告。其中提到，依照《中华人民共和国药品管理法》《中华人民共和国药品管理法实施条例》，全面压实持有人、境内责任人、生产企业、经营企业、使用单位、追溯系统运营单位等各方责任，实现全品种赋码、应赋尽赋，全链条扫码、见码必扫。", "source": "界面新闻", "category": "major"}, {"title": "美国联合包裹服务公司宣布高管人事调整，向全球运营模式转型", "url": "https://www.jiemian.com/article/15039845.html", "summary": "美国联合包裹服务公司（UPS）8月31日宣布，执行副总裁兼国际、医疗保健和供应链解决方案总裁凯特·古特曼（Kate Gutmann）将因个人家庭原因退休，继任者为公司资深高管Wilfredo Ramos。UPS另外宣布将向全球运营模式转型，在此模式下，公司将在各地区实现关键运营流程的标准化，同时保持必要灵活性，以满足当…", "source": "界面新闻", "category": "major"}, {"title": "索迪斯任命乐慕鸿为大中华区董事长、总经理", "url": "https://www.jiemian.com/article/15039832.html", "summary": "9月1日，全球餐饮及设施管理服务供应商索迪斯宣布，任命乐慕鸿（Jérôme Lemouchoux）为索迪斯大中华区董事长、总经理，该任命将于2026年10月1日起正式生效。他将直接向索迪斯亚太、中东和非洲地区（APMEA）首席执行官兰承易（Nicolas Lannuzel）汇报，并加入APMEA领导团队。", "source": "界面新闻", "category": "major"}, {"title": "农牧渔集体走强！大北农涨超7%，养殖ETF汇添富(159172)标的指数涨超1%，冲击四连涨！半年报收官，两大信号透视生猪产能去化进程", "url": "https://www.jiemian.com/article/15039814.html", "summary": "9月1日，截至13:36，全市场“含猪量”更高更纯的养殖ETF汇添富（159172）标的指数——中证畜牧养殖产业指数（931946）涨1.38%，冲击四连涨。", "source": "界面新闻", "category": "major"}, {"title": "A股中期分红数量创历史新高，867家公司拟派现超7100亿元，中证红利低波动100指数涨超1%", "url": "https://www.jiemian.com/article/15039816.html", "summary": "截至2026年9月1日 13:46，中证红利低波动100指数(930955)强势上涨1.08%，成分股上港集团上涨5.70%，苏垦农发上涨5.65%，仙琚制药上涨4.13%，邮储银行、苏农银行等个股跟涨。", "source": "界面新闻", "category": "major"}, {"title": "养殖ETF平安(516760)标的指数上涨1.4%，生猪产能调减进入冲刺阶段", "url": "https://www.jiemian.com/article/15039797.html", "summary": "截至2026年9月1日 14:00，养殖ETF平安(516760)标的指数中证畜牧养殖指数(930707)强势上涨1.40%，成分股大北农上涨6.71%，金河生物上涨5.62%，华英农业上涨3.37%。", "source": "界面新闻", "category": "major"}, {"title": "存量消费时代，旧货开始影响下一笔订单", "url": "https://www.jiemian.com/article/15039712.html", "summary": "当“多拥有一件”的空间逐渐缩小，提高已有商品的周转效率，也会成为消费增长的一部分。", "source": "界面新闻", "category": "major"}, {"title": "机构：CXO、创新药及科研服务引领医药板块业绩增长，港股通创新药ETF易方达(159316)聚焦港股创新药核心资产", "url": "https://www.jiemian.com/article/15039688.html", "summary": "截至2026年9月1日 13:37，港股通创新药ETF易方达(159316)跟踪指数恒生港股通创新药指数(HSSCID)下跌1.93%。", "source": "界面新闻", "category": "major"}, {"title": "交易员：印度央行在外汇市场抛售美元以支撑卢比", "url": "https://www.jiemian.com/article/15039782.html", "summary": "多位知情交易员表示，印度央行在在岸及离岸外汇市场抛售美元，用以托举卢比汇率；因无对外发言权限，相关人士要求匿名。亚洲交易时段盘中，美元兑印度卢比下跌 0.1%，报 95.0437。1 个月期美元兑印度卢比无本金远期合约最大跌幅 0.2%，报 95.21。布伦特原油连续第二个交易日走高，中东新一轮冲突加剧市场对霍尔木兹海…", "source": "界面新闻", "category": "major"}, {"title": "我国难选铁矿资源综合利用取得重要突破", "url": "https://www.jiemian.com/article/15039773.html", "summary": "我国是全球最大的铁矿石消费国，铁矿石消耗量占全球半数以上，对外依存度高，资源定价权和供应链安全长期面临挑战。为了摆脱这种局面，中国科学院过程工程研究所经过二十余年持续攻关，在国际上首次突破了难选铁矿高效利用的核心技术瓶颈。基于该技术建成的全球最大难选铁矿磁化焙烧工程也在今天（9月1日）竣工验收。", "source": "界面新闻", "category": "major"}, {"title": "蔚来港股盘中一度跌超10%", "url": "https://www.jiemian.com/article/15039759.html", "summary": "蔚来港股盘中一度跌超10%。此前，蔚来公司发布的数据显示，2026年8月，蔚来公司交付新车35836台，同比增长14.5%。", "source": "界面新闻", "category": "major"}, {"title": "尼泊尔泥石流灾害已致1010人遇难", "url": "https://www.jiemian.com/article/15039758.html", "summary": "根据尼泊尔警方今天（9月1日）公布的最新消息，尼泊尔泥石流灾害造成的遇难人数升至1010人。（CCTV国际时讯）", "source": "界面新闻", "category": "major"}, {"title": "增加4台抢险设备，G216国道距抢通还剩800米", "url": "https://www.jiemian.com/article/15039734.html", "summary": "截至9月1日12时，吉隆口岸方向受阻路段作业面稳步延伸，距全线贯通仅剩800米。应急管理部调派中国安能专业救援力量158人，投入挖掘机、装载机等主战及监测装备33台套，在西藏日喀则市吉隆县G216国道水毁路段持续攻坚。目前，抢险工作正在全力开展。", "source": "界面新闻", "category": "major"}, {"title": "商务部：三方面推动中国-东盟贸易合作提质升级", "url": "https://www.jiemian.com/article/15039731.html", "summary": "9月1日，商务部亚洲司司长王立平在国新办新闻发布会上介绍，近年来，中国同东盟携手同行，已成为亚太区域合作中最为成功、最具活力的典范。2025年，中国—东盟贸易总额已经超过1万亿美元，约占我国对外贸易总额的17%。下一步将重点从三个方面发力，推动中国—东盟贸易合作提质升级、行稳致远。释放开放合作红利。中方将积极推动已签署…", "source": "界面新闻", "category": "major"}, {"title": "儒意电影成立澳洲发行厂牌寰映发行", "url": "https://www.jiemian.com/article/15039729.html", "summary": "9月1日，儒意电影正式宣布成立澳洲本土电影发行厂牌寰映发行。首部发行项目锁定影片《欢迎来龙餐馆》，将于2026年9月11日正式登陆澳大利亚、新西兰院线。", "source": "界面新闻", "category": "major"}, {"title": "“你以为买的是 DeepSeek Flash，到手可能是 1.5 bit 缩水版”：Pi 核心贡献者谈 AI Token 黑箱", "url": "https://www.infoq.cn/article/rsiiPG7xwQakgyulC88D?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "major"}, {"title": "Meta用一整年证明Agent无法取代员工：事故增四成，工程师救火多七成", "url": "https://www.infoq.cn/article/OCUqGd8wceo7UK23B7NO?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "major"}, {"title": "永久的友好近邻 真诚的合作伙伴", "url": "https://m.baidu.com/s?word=%E6%B0%B8%E4%B9%85%E7%9A%84%E5%8F%8B%E5%A5%BD%E8%BF%91%E9%82%BB+%E7%9C%9F%E8%AF%9A%E7%9A%84%E5%90%88%E4%BD%9C%E4%BC%99%E4%BC%B4&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "抖音崩了", "url": "https://m.baidu.com/s?word=%E6%8A%96%E9%9F%B3%E5%B4%A9%E4%BA%86&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "一年级家长年龄相差近30岁", "url": "https://m.baidu.com/s?word=%E4%B8%80%E5%B9%B4%E7%BA%A7%E5%AE%B6%E9%95%BF%E5%B9%B4%E9%BE%84%E7%9B%B8%E5%B7%AE%E8%BF%9130%E5%B2%81&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "新生入学如何准备", "url": "https://m.baidu.com/s?word=%E6%96%B0%E7%94%9F%E5%85%A5%E5%AD%A6%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "深圳校服 全市统一商超可买", "url": "https://m.baidu.com/s?word=%E6%B7%B1%E5%9C%B3%E6%A0%A1%E6%9C%8D+%E5%85%A8%E5%B8%82%E7%BB%9F%E4%B8%80%E5%95%86%E8%B6%85%E5%8F%AF%E4%B9%B0&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "一学期只有一次课堂紧急如厕机会", "url": "https://m.baidu.com/s?word=%E4%B8%80%E5%AD%A6%E6%9C%9F%E5%8F%AA%E6%9C%89%E4%B8%80%E6%AC%A1%E8%AF%BE%E5%A0%82%E7%B4%A7%E6%80%A5%E5%A6%82%E5%8E%95%E6%9C%BA%E4%BC%9A&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "网红曹奶奶离世", "url": "https://m.baidu.com/s?word=%E7%BD%91%E7%BA%A2%E6%9B%B9%E5%A5%B6%E5%A5%B6%E7%A6%BB%E4%B8%96&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "方文山再发文：交给律师了", "url": "https://m.baidu.com/s?word=%E6%96%B9%E6%96%87%E5%B1%B1%E5%86%8D%E5%8F%91%E6%96%87%EF%BC%9A%E4%BA%A4%E7%BB%99%E5%BE%8B%E5%B8%88%E4%BA%86&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "抖音：正加急排查", "url": "https://m.baidu.com/s?word=%E6%8A%96%E9%9F%B3%EF%BC%9A%E6%AD%A3%E5%8A%A0%E6%80%A5%E6%8E%92%E6%9F%A5&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "女子被踢845个群被迫离职 当地通报", "url": "https://m.baidu.com/s?word=%E5%A5%B3%E5%AD%90%E8%A2%AB%E8%B8%A2845%E4%B8%AA%E7%BE%A4%E8%A2%AB%E8%BF%AB%E7%A6%BB%E8%81%8C+%E5%BD%93%E5%9C%B0%E9%80%9A%E6%8A%A5&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "车越重越安全系谣言", "url": "https://m.baidu.com/s?word=%E8%BD%A6%E8%B6%8A%E9%87%8D%E8%B6%8A%E5%AE%89%E5%85%A8%E7%B3%BB%E8%B0%A3%E8%A8%80&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "失踪几十年遗体在冰川出现 麻烦大了", "url": "https://m.baidu.com/s?word=%E5%A4%B1%E8%B8%AA%E5%87%A0%E5%8D%81%E5%B9%B4%E9%81%97%E4%BD%93%E5%9C%A8%E5%86%B0%E5%B7%9D%E5%87%BA%E7%8E%B0+%E9%BA%BB%E7%83%A6%E5%A4%A7%E4%BA%86&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "男子花千万33年走遍全球233个国家", "url": "https://m.baidu.com/s?word=%E7%94%B7%E5%AD%90%E8%8A%B1%E5%8D%83%E4%B8%8733%E5%B9%B4%E8%B5%B0%E9%81%8D%E5%85%A8%E7%90%83233%E4%B8%AA%E5%9B%BD%E5%AE%B6&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "退休阿姨81天环游20国 仅花3.7万元", "url": "https://m.baidu.com/s?word=%E9%80%80%E4%BC%91%E9%98%BF%E5%A7%A881%E5%A4%A9%E7%8E%AF%E6%B8%B820%E5%9B%BD+%E4%BB%85%E8%8A%B13.7%E4%B8%87%E5%85%83&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "淘宝五金冠女装老店突然闭店", "url": "https://m.baidu.com/s?word=%E6%B7%98%E5%AE%9D%E4%BA%94%E9%87%91%E5%86%A0%E5%A5%B3%E8%A3%85%E8%80%81%E5%BA%97%E7%AA%81%E7%84%B6%E9%97%AD%E5%BA%97&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "一个年级90个班？多地初中现超大校额", "url": "https://m.baidu.com/s?word=%E4%B8%80%E4%B8%AA%E5%B9%B4%E7%BA%A790%E4%B8%AA%E7%8F%AD%EF%BC%9F%E5%A4%9A%E5%9C%B0%E5%88%9D%E4%B8%AD%E7%8E%B0%E8%B6%85%E5%A4%A7%E6%A0%A1%E9%A2%9D&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "空调费20元注射96元 医院收费被质疑", "url": "https://m.baidu.com/s?word=%E7%A9%BA%E8%B0%83%E8%B4%B920%E5%85%83%E6%B3%A8%E5%B0%8496%E5%85%83+%E5%8C%BB%E9%99%A2%E6%94%B6%E8%B4%B9%E8%A2%AB%E8%B4%A8%E7%96%91&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "美国炸鸡巨头中国首店开业排队2小时", "url": "https://m.baidu.com/s?word=%E7%BE%8E%E5%9B%BD%E7%82%B8%E9%B8%A1%E5%B7%A8%E5%A4%B4%E4%B8%AD%E5%9B%BD%E9%A6%96%E5%BA%97%E5%BC%80%E4%B8%9A%E6%8E%92%E9%98%9F2%E5%B0%8F%E6%97%B6&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "年轻人结婚开始用金条代替三金", "url": "https://m.baidu.com/s?word=%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%BB%93%E5%A9%9A%E5%BC%80%E5%A7%8B%E7%94%A8%E9%87%91%E6%9D%A1%E4%BB%A3%E6%9B%BF%E4%B8%89%E9%87%91&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "美航母抵达前 泰国警方大力扫黄", "url": "https://m.baidu.com/s?word=%E7%BE%8E%E8%88%AA%E6%AF%8D%E6%8A%B5%E8%BE%BE%E5%89%8D+%E6%B3%B0%E5%9B%BD%E8%AD%A6%E6%96%B9%E5%A4%A7%E5%8A%9B%E6%89%AB%E9%BB%84&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "“出现大量1折票” 机票价格降了", "url": "https://m.baidu.com/s?word=%E2%80%9C%E5%87%BA%E7%8E%B0%E5%A4%A7%E9%87%8F1%E6%8A%98%E7%A5%A8%E2%80%9D+%E6%9C%BA%E7%A5%A8%E4%BB%B7%E6%A0%BC%E9%99%8D%E4%BA%86&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "医生称开学前已接诊大量老年病孩子", "url": "https://m.baidu.com/s?word=%E5%8C%BB%E7%94%9F%E7%A7%B0%E5%BC%80%E5%AD%A6%E5%89%8D%E5%B7%B2%E6%8E%A5%E8%AF%8A%E5%A4%A7%E9%87%8F%E8%80%81%E5%B9%B4%E7%97%85%E5%AD%A9%E5%AD%90&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "张颂文称拿影帝难拉动票房", "url": "https://m.baidu.com/s?word=%E5%BC%A0%E9%A2%82%E6%96%87%E7%A7%B0%E6%8B%BF%E5%BD%B1%E5%B8%9D%E9%9A%BE%E6%8B%89%E5%8A%A8%E7%A5%A8%E6%88%BF&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "女子赢2600万后失联欠200万律师费", "url": "https://m.baidu.com/s?word=%E5%A5%B3%E5%AD%90%E8%B5%A22600%E4%B8%87%E5%90%8E%E5%A4%B1%E8%81%94%E6%AC%A0200%E4%B8%87%E5%BE%8B%E5%B8%88%E8%B4%B9&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "“25块钱就能举报别人500次”", "url": "https://m.baidu.com/s?word=%E2%80%9C25%E5%9D%97%E9%92%B1%E5%B0%B1%E8%83%BD%E4%B8%BE%E6%8A%A5%E5%88%AB%E4%BA%BA500%E6%AC%A1%E2%80%9D&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "45岁高梓淇恋情曝光", "url": "https://m.baidu.com/s?word=45%E5%B2%81%E9%AB%98%E6%A2%93%E6%B7%87%E6%81%8B%E6%83%85%E6%9B%9D%E5%85%89&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "杨瀚森倒地后被自家球迷拿球砸", "url": "https://m.baidu.com/s?word=%E6%9D%A8%E7%80%9A%E6%A3%AE%E5%80%92%E5%9C%B0%E5%90%8E%E8%A2%AB%E8%87%AA%E5%AE%B6%E7%90%83%E8%BF%B7%E6%8B%BF%E7%90%83%E7%A0%B8&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "苹果迈入“特努斯时代”", "url": "https://m.baidu.com/s?word=%E8%8B%B9%E6%9E%9C%E8%BF%88%E5%85%A5%E2%80%9C%E7%89%B9%E5%8A%AA%E6%96%AF%E6%97%B6%E4%BB%A3%E2%80%9D&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "六大行房贷余额少了5000多亿", "url": "https://m.baidu.com/s?word=%E5%85%AD%E5%A4%A7%E8%A1%8C%E6%88%BF%E8%B4%B7%E4%BD%99%E9%A2%9D%E5%B0%91%E4%BA%865000%E5%A4%9A%E4%BA%BF&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "粗心家长将婴儿遗落公交站台", "url": "https://m.baidu.com/s?word=%E7%B2%97%E5%BF%83%E5%AE%B6%E9%95%BF%E5%B0%86%E5%A9%B4%E5%84%BF%E9%81%97%E8%90%BD%E5%85%AC%E4%BA%A4%E7%AB%99%E5%8F%B0&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "hot"}, {"title": "环球晶董事长：预期未来两年半导体材料市场很可能呈现两位数成长", "url": "https://www.jiemian.com/article/15039789.html", "summary": "9月1日，环球晶董事长徐秀兰在一场论坛上表示，AI在半导体产业具有两个角色，一方面是AI带动需求成长，是最重大的动力；另方面，AI帮助采购、人资、制造及研发。她预期未来两年半导体材料市场很可能呈现两位数成长，因为客户都在大规模扩产，一方面是价格的改善，一方面是数量增长，呈现价量齐扬的表现。", "source": "界面新闻", "category": "trend", "subcategory": "science"}, {"title": "NASA 的「超广角」太空望远镜上天了，5 年要扫描 10 亿个星系", "url": "https://www.ifanr.com/1677738?utm_source=rss&utm_medium=rss&utm_campaign=", "summary": "辽阔太空，一瞬尽收眼底#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。", "source": "爱范儿", "category": "trend", "subcategory": "science"}, {"title": "男子听信AI被困后埋怨 AI：哈哈确实", "url": "https://m.baidu.com/s?word=%E7%94%B7%E5%AD%90%E5%90%AC%E4%BF%A1AI%E8%A2%AB%E5%9B%B0%E5%90%8E%E5%9F%8B%E6%80%A8+AI%EF%BC%9A%E5%93%88%E5%93%88%E7%A1%AE%E5%AE%9E&sa=fyb_news", "summary": "", "source": "百度热搜", "category": "trend", "subcategory": "robotics"}, {"title": "苹果指控OpenAI“销毁证据”，称前工程师“带走机密并在OpenAI使用”", "url": "https://www.jiemian.com/article/15039859.html", "summary": "据报道，苹果针对OpenAI的法律战升级，在新的法庭文件声称OpenAI“积极销毁关键证据”，且跳槽OpenAI的前iPhone工程师Chang Liu“不仅下载了苹果的机密电路原理图，还在OpenAI的工作中使用”。这份法庭书面文件于当地时间8月31日提交，旨在支持苹果提出的加速审前事实调查的动议，苹果指控OpenA…", "source": "界面新闻", "category": "trend", "subcategory": "robotics"}, {"title": "明略科技-W(2718.HK)盘中一度涨逾18%，上半年智能体化服务收入同比增长605.7%", "url": "https://www.jiemian.com/article/15039745.html", "summary": "9月1日，明略科技-W（02718.HK）股价上涨。8月31日，明略科技发布中期业绩公告。报告期内，公司Agentic Services（智能体化服务）收入为1.709亿元，同比增长605.7%，占总收入的22.5%。", "source": "界面新闻", "category": "trend", "subcategory": "robotics"}, {"title": "韩国2027年预算增12.8%创纪录，拟扩张财政押注AI战略投资", "url": "https://www.jiemian.com/article/15039768.html", "summary": "韩国计划与预算部9月1日宣布，政府提议2027年财政支出规模达到820.9万亿韩元，较今年预算增长12.8%。这一增幅创下韩国财政史上最高纪录，超过2009年全球金融危机时期的10.6%和2020年新冠疫情期间的9.1%。该预算方案的核心是设立一项新的“未来应对基金”，旨在将超出长期财政收入趋势水平的税收收入纳入专项管…", "source": "界面新闻", "category": "trend", "subcategory": "robotics"}, {"title": "从2999份作品出发：GOAI四大赛道的AI创新观察", "url": "https://www.infoq.cn/article/fovhGGuNSwa7tG44WBFm?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "Expedia和Airbnb引入LLM生成的GraphQL模拟数据，不过规范相对滞后", "url": "https://www.infoq.cn/article/Su2betkPUhxX0JTVazBi?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "智能体请求暴增9.4倍，token账单却没涨：Uber 公开AI软件工厂省钱方法", "url": "https://www.infoq.cn/article/WGj2Jx0K2sbP3dhUXeC5?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "AI 写代码飞快，为何交付没有变快？小红书 Muse 的 Agentic 架构实践", "url": "https://www.infoq.cn/article/l88X1azz8wfwphDyECoP?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "智能体适应度函数：将演进式架构扩展至确定性规则之外", "url": "https://www.infoq.cn/article/8iWWrov7bkk1hz5CcFft?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "AI Coding 之后，如何让 Agent 进入企业研发全链路？得物推荐的 Harness 实践", "url": "https://www.infoq.cn/article/sDyQxrWR6zDPJuLX4FA8?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "OpenClaw 从意外爆红到“无人问津”：一个开源 AI Agent 的八个月过山车", "url": "https://www.infoq.cn/article/4KQHJC49t8J8FPqaEVLv?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "不抢最贵GPU，专捡“没人要”的算力：前英伟达工程师搞出一套“拾荒者”打法", "url": "https://www.infoq.cn/article/6gFLptyMHRQhrILOlQ9Q?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "自研Runtime、Agent Loop、Infra：一家通用Agent公司的全栈赌注", "url": "https://www.infoq.cn/article/NUGYDLvivgYXMV9u637z?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "Cisco 给 9 万员工配上个人 Agent：记住你的一切，还能替你跨系统办事", "url": "https://www.infoq.cn/article/HQXDr69U4tUQUDzEiidW?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "OpenAI 将全面断供 Cursor：SpaceX 收购后触发控制权条款", "url": "https://www.infoq.cn/article/YiHrlKLX6I6IP92BgV7K?utm_source=rss&utm_medium=article", "summary": "点击查看原文>", "source": "InfoQ中文", "category": "trend", "subcategory": "robotics"}, {"title": "500 万人围观，AI 终于造出了「无限泔水机」", "url": "https://www.ifanr.com/1677378?utm_source=rss&utm_medium=rss&utm_campaign=", "summary": "内容无限，但精力有限#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。", "source": "爱范儿", "category": "trend", "subcategory": "robotics"}, {"title": "机器人运动会散场后，自变量给机器人建了一座「虚拟训练场」", "url": "https://www.ifanr.com/1677048?utm_source=rss&utm_medium=rss&utm_campaign=", "summary": "具身智能的「ChatGPT 时刻」，看谁能更快走进现实#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。", "source": "爱范儿", "category": "trend", "subcategory": "robotics"}, {"title": "为什么苹果、小米的 AI 电脑，都在死磕「内存墙」｜AI 器物志", "url": "https://www.ifanr.com/1676852?utm_source=rss&utm_medium=rss&utm_campaign=", "summary": "算力飞奔，内存掉队#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。", "source": "爱范儿", "category": "trend", "subcategory": "robotics"}, {"title": "智元机器人「奥运」首秀封神，戴着工牌狂揽 18 枚金牌", "url": "https://www.ifanr.com/1676970?utm_source=rss&utm_medium=rss&utm_campaign=", "summary": "刚下工厂，就上赛场，金牌榜奖牌榜双领跑#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。", "source": "爱范儿", "category": "trend", "subcategory": "robotics"}, {"title": "OpenAI 的中场战事", "url": "https://www.ifanr.com/1676929?utm_source=rss&utm_medium=rss&utm_campaign=", "summary": "当领先者不易，当追赶者更不易#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。", "source": "爱范儿", "category": "trend", "subcategory": "robotics"}, {"title": "半导体ETF鹏华(159813)盘中净申购4000万份，芯片国产化按下加速键", "url": "https://www.jiemian.com/article/15039824.html", "summary": "资金逢低布局半导体，半导体ETF鹏华(159813)盘中净申购4000万份。", "source": "界面新闻", "category": "trend", "subcategory": "finance"}, {"title": "中信金融资产：将聚焦房地产风险化解、上市公司纾困等重点领域，主动出击", "url": "https://www.jiemian.com/article/15039743.html", "summary": "9月1日，中信金融资产举行2026年中期业绩发布会，总裁李子民在展望全年业绩时表示，下半年，外部环境和挑战依然严峻，情况复杂多变，同样充满不确定性。公司要做的就是保持战略定力，聚焦打造行业标杆目标，继续做难而正确的事，用内部自身的确定性来应对外部的不确定性。（澎湃新闻）", "source": "界面新闻", "category": "trend", "subcategory": "finance"}, {"title": "像素级抄袭小米？13 万的极狐阿尔法 T7 边翻车边庆功", "url": "https://www.ifanr.com/1677538?utm_source=rss&utm_medium=rss&utm_campaign=", "summary": "骗骗大伙儿可以，别把自己骗了。#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。", "source": "爱范儿", "category": "trend", "subcategory": "digital"}], "brief": "今日为您精选 75 条要闻：20 条重大事件、30 条热点、25 条行业趋势，点击标题即可跳转原文阅读。"};
 
   var CAT_LABEL = NEWS_DATA.categories || { hot: "热点", major: "重大事件", trend: "行业趋势" };
   var ORDER = ["major", "hot", "trend"];
+
+  // 行业趋势子分类
+  var SUB_LABEL = NEWS_DATA.trend_subcategories || {
+    science: "科学技术", robotics: "机器人AI", digital: "数码电子",
+    industrial: "工业制造", construction: "建筑施工", other: "其他"
+  };
+  var SUB_ORDER = NEWS_DATA.trend_subcategory_order ||
+    ["science", "robotics", "digital", "industrial", "construction", "other"];
 
   document.getElementById("dateLabel").textContent =
     (NEWS_DATA.date_cn || "") + " " + (NEWS_DATA.weekday || "");
@@ -150,18 +180,51 @@
     b.className = "tab" + (t.key === "all" ? " active" : "");
     b.dataset.key = t.key;
     b.innerHTML = t.label + '<span class="count">' + (counts[t.key] || 0) + "</span>";
-    b.onclick = function() { render(t.key); };
+    b.onclick = function() { setMainTab(t.key); };
     tabsEl.appendChild(b);
   });
 
-  var listEl = document.getElementById("list");
+  // 构建子分类导航（仅行业趋势下显示）
+  var subTabsEl = document.getElementById("subTabs");
+  SUB_ORDER.forEach(function(key) {
+    var b = document.createElement("button");
+    b.className = "sub-tab" + (key === "all" ? " active" : "");
+    b.dataset.sub = key;
+    b.textContent = SUB_LABEL[key] || key;
+    b.onclick = function() { setSubTab(key); };
+    subTabsEl.appendChild(b);
+  });
 
-  function render(key) {
+  var listEl = document.getElementById("list");
+  var curMain = "all";   // 当前主分类
+  var curSub = "all";    // 当前子分类（all = 全部）
+
+  function setMainTab(key) {
+    curMain = key;
+    curSub = "all";
     var btns = tabsEl.querySelectorAll(".tab");
     btns.forEach(function(b) { b.classList.toggle("active", b.dataset.key === key); });
+    // 只有行业趋势才显示子分类栏
+    subTabsEl.classList.toggle("show", key === "trend");
+    if (key === "trend") {
+      var subs = subTabsEl.querySelectorAll(".sub-tab");
+      subs.forEach(function(s) { s.classList.toggle("active", s.dataset.sub === "all"); });
+    }
+    render();
+  }
 
+  function setSubTab(sub) {
+    curSub = sub;
+    var subs = subTabsEl.querySelectorAll(".sub-tab");
+    subs.forEach(function(s) { s.classList.toggle("active", s.dataset.sub === sub); });
+    render();
+  }
+
+  function render() {
     var items = NEWS_DATA.items.filter(function(it) {
-      return key === "all" || it.category === key;
+      if (curMain !== "all" && it.category !== curMain) return false;
+      if (curMain === "trend" && curSub !== "all" && (it.subcategory || "other") !== curSub) return false;
+      return true;
     });
 
     if (!items.length) {
@@ -171,10 +234,13 @@
 
     listEl.innerHTML = items.map(function(it) {
       var label = CAT_LABEL[it.category] || it.category;
+      var subLabel = (it.category === "trend" && it.subcategory)
+        ? '<span class="tag sub">' + (SUB_LABEL[it.subcategory] || "其他") + "</span>" : "";
       return (
         '<a class="card" href="' + it.url + '" target="_blank" rel="noopener noreferrer">' +
           '<div class="card-top">' +
             '<span class="tag ' + it.category + '">' + label + "</span>" +
+            subLabel +
             '<span class="source">' + (it.source || "") + "</span>" +
           "</div>" +
           "<h2>" + escapeHtml(it.title) + "</h2>" +
@@ -190,7 +256,7 @@
     });
   }
 
-  render("all");
+  render();
 </script>
 </body>
 </html>

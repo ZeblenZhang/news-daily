@@ -16,7 +16,7 @@
     --major: #1a5276;
     --trend: #1e7a4f;
     --chip-bg: #f1efe9;
-    --radius: 14px;
+    --radius: 12px;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -24,79 +24,99 @@
       "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     background: var(--bg);
     color: var(--ink);
-    line-height: 1.65;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  .container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
   /* 头部 */
-  header { padding: 56px 0 28px; }
+  header { padding: 34px 0 20px; }
   .masthead {
     display: flex; align-items: baseline; justify-content: space-between;
-    flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 8px;
   }
-  .brand { font-size: 15px; letter-spacing: .28em; color: var(--sub); text-transform: uppercase; }
+  .brand { font-size: 13px; letter-spacing: .28em; color: var(--sub); text-transform: uppercase; }
   .date { font-size: 13px; color: var(--sub); }
   h1 {
-    font-size: 40px; font-weight: 700; letter-spacing: -.5px; line-height: 1.2;
-    margin-bottom: 14px;
+    font-size: 30px; font-weight: 700; letter-spacing: -.5px; line-height: 1.2;
+    margin-bottom: 10px;
     font-family: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
   }
   .brief {
-    font-size: 16px; color: var(--sub); max-width: 640px;
-    border-left: 3px solid var(--accent); padding-left: 16px;
+    font-size: 14px; color: var(--sub); max-width: 720px;
+    border-left: 3px solid var(--accent); padding-left: 14px;
   }
 
   /* 标签导航 */
   .tabs {
-    display: flex; gap: 8px; flex-wrap: wrap; margin: 32px 0 24px;
-    position: sticky; top: 0; background: var(--bg); padding: 12px 0; z-index: 10;
+    display: flex; gap: 8px; flex-wrap: wrap; margin: 20px 0 16px;
+    position: sticky; top: 0; background: var(--bg); padding: 10px 0; z-index: 10;
   }
   .tab {
     border: 1px solid var(--line); background: var(--card); color: var(--sub);
-    padding: 8px 18px; border-radius: 999px; font-size: 14px; cursor: pointer;
+    padding: 6px 16px; border-radius: 999px; font-size: 13px; cursor: pointer;
     transition: all .18s ease; user-select: none;
   }
   .tab:hover { border-color: #c9c4bd; color: var(--ink); }
   .tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
-  .tab .count { font-size: 12px; opacity: .6; margin-left: 4px; }
+  .tab .count { font-size: 11px; opacity: .6; margin-left: 4px; }
 
-  /* 新闻列表 */
-  .list { display: flex; flex-direction: column; gap: 14px; padding-bottom: 60px; }
+  /* 子分类导航（行业趋势内） */
+  .sub-tabs {
+    display: none; gap: 6px; flex-wrap: wrap; margin: 0 0 14px;
+  }
+  .sub-tabs.show { display: flex; }
+  .sub-tab {
+    border: 1px solid var(--line); background: var(--card); color: var(--sub);
+    padding: 4px 12px; border-radius: 999px; font-size: 12px; cursor: pointer;
+    transition: all .15s ease; user-select: none;
+  }
+  .sub-tab:hover { border-color: #c9c4bd; color: var(--ink); }
+  .sub-tab.active { background: var(--trend); color: #fff; border-color: var(--trend); }
+
+  /* 新闻列表：紧凑卡片，多列网格 */
+  .list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-bottom: 60px; }
   .card {
     background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 20px 22px; display: block; text-decoration: none; color: inherit;
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    padding: 13px 15px; display: block; text-decoration: none; color: inherit;
+    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
   }
   .card:hover {
-    transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.06);
+    transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.06);
     border-color: #d8d3cb;
   }
-  .card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .card-top { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
   .tag {
-    font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 600;
-    letter-spacing: .03em; white-space: nowrap;
+    font-size: 10px; padding: 2px 8px; border-radius: 5px; font-weight: 600;
+    letter-spacing: .02em; white-space: nowrap;
   }
   .tag.hot   { background: #fbe9e7; color: var(--hot); }
   .tag.major { background: #e8f0f7; color: var(--major); }
   .tag.trend { background: #e6f4ec; color: var(--trend); }
-  .source { font-size: 12px; color: var(--sub); }
+  .tag.sub   { background: var(--chip-bg); color: var(--sub); }
+  .source { font-size: 11px; color: #aaa; margin-left: auto; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .card h2 {
-    font-size: 18px; font-weight: 600; line-height: 1.45; margin-bottom: 6px;
+    font-size: 15px; font-weight: 600; line-height: 1.4; margin-bottom: 4px;
     font-family: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
   }
-  .card .summary { font-size: 14px; color: var(--sub); }
-  .empty { text-align: center; color: var(--sub); padding: 60px 0; }
+  .card .summary {
+    font-size: 12.5px; color: var(--sub); line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .empty { text-align: center; color: var(--sub); padding: 60px 0; grid-column: 1 / -1; }
 
   footer {
-    text-align: center; color: #aaa; font-size: 12px; padding: 32px 0 48px;
+    text-align: center; color: #aaa; font-size: 12px; padding: 28px 0 44px;
   }
   footer a { color: #999; text-decoration: none; }
 
+  @media (max-width: 700px) {
+    .list { grid-template-columns: 1fr; }
+  }
   @media (max-width: 600px) {
-    h1 { font-size: 30px; }
-    .card { padding: 16px 18px; }
-    .card h2 { font-size: 16px; }
+    h1 { font-size: 26px; }
+    .card { padding: 12px 14px; }
   }
 </style>
 </head>
@@ -113,6 +133,8 @@
 
   <nav class="tabs" id="tabs"></nav>
 
+  <nav class="sub-tabs" id="subTabs"></nav>
+
   <main class="list" id="list"></main>
 
   <footer>
@@ -126,6 +148,14 @@
 
   var CAT_LABEL = NEWS_DATA.categories || { hot: "热点", major: "重大事件", trend: "行业趋势" };
   var ORDER = ["major", "hot", "trend"];
+
+  // 行业趋势子分类
+  var SUB_LABEL = NEWS_DATA.trend_subcategories || {
+    science: "科学技术", robotics: "机器人AI", digital: "数码电子",
+    industrial: "工业制造", construction: "建筑施工", other: "其他"
+  };
+  var SUB_ORDER = NEWS_DATA.trend_subcategory_order ||
+    ["science", "robotics", "digital", "industrial", "construction", "other"];
 
   document.getElementById("dateLabel").textContent =
     (NEWS_DATA.date_cn || "") + " " + (NEWS_DATA.weekday || "");
@@ -150,18 +180,51 @@
     b.className = "tab" + (t.key === "all" ? " active" : "");
     b.dataset.key = t.key;
     b.innerHTML = t.label + '<span class="count">' + (counts[t.key] || 0) + "</span>";
-    b.onclick = function() { render(t.key); };
+    b.onclick = function() { setMainTab(t.key); };
     tabsEl.appendChild(b);
   });
 
-  var listEl = document.getElementById("list");
+  // 构建子分类导航（仅行业趋势下显示）
+  var subTabsEl = document.getElementById("subTabs");
+  SUB_ORDER.forEach(function(key) {
+    var b = document.createElement("button");
+    b.className = "sub-tab" + (key === "all" ? " active" : "");
+    b.dataset.sub = key;
+    b.textContent = SUB_LABEL[key] || key;
+    b.onclick = function() { setSubTab(key); };
+    subTabsEl.appendChild(b);
+  });
 
-  function render(key) {
+  var listEl = document.getElementById("list");
+  var curMain = "all";   // 当前主分类
+  var curSub = "all";    // 当前子分类（all = 全部）
+
+  function setMainTab(key) {
+    curMain = key;
+    curSub = "all";
     var btns = tabsEl.querySelectorAll(".tab");
     btns.forEach(function(b) { b.classList.toggle("active", b.dataset.key === key); });
+    // 只有行业趋势才显示子分类栏
+    subTabsEl.classList.toggle("show", key === "trend");
+    if (key === "trend") {
+      var subs = subTabsEl.querySelectorAll(".sub-tab");
+      subs.forEach(function(s) { s.classList.toggle("active", s.dataset.sub === "all"); });
+    }
+    render();
+  }
 
+  function setSubTab(sub) {
+    curSub = sub;
+    var subs = subTabsEl.querySelectorAll(".sub-tab");
+    subs.forEach(function(s) { s.classList.toggle("active", s.dataset.sub === sub); });
+    render();
+  }
+
+  function render() {
     var items = NEWS_DATA.items.filter(function(it) {
-      return key === "all" || it.category === key;
+      if (curMain !== "all" && it.category !== curMain) return false;
+      if (curMain === "trend" && curSub !== "all" && (it.subcategory || "other") !== curSub) return false;
+      return true;
     });
 
     if (!items.length) {
@@ -171,10 +234,13 @@
 
     listEl.innerHTML = items.map(function(it) {
       var label = CAT_LABEL[it.category] || it.category;
+      var subLabel = (it.category === "trend" && it.subcategory)
+        ? '<span class="tag sub">' + (SUB_LABEL[it.subcategory] || "其他") + "</span>" : "";
       return (
         '<a class="card" href="' + it.url + '" target="_blank" rel="noopener noreferrer">' +
           '<div class="card-top">' +
             '<span class="tag ' + it.category + '">' + label + "</span>" +
+            subLabel +
             '<span class="source">' + (it.source || "") + "</span>" +
           "</div>" +
           "<h2>" + escapeHtml(it.title) + "</h2>" +
@@ -190,7 +256,7 @@
     });
   }
 
-  render("all");
+  render();
 </script>
 </body>
 </html>

@@ -20,7 +20,10 @@ except ImportError:
     print("[warn] 缺少依赖，请先执行: pip install -r scraper/requirements.txt")
     sys.exit(1)
 
-from sources import SOURCES, KEYWORD_RULES, CATEGORY_LABEL, HEADERS
+from sources import (
+    SOURCES, KEYWORD_RULES, CATEGORY_LABEL, HEADERS,
+    TREND_SUBCATEGORY_ORDER, TREND_SUBCATEGORY_LABEL, classify_trend_subcategory,
+)
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = os.path.join(BASE_DIR, "data")
@@ -183,9 +186,23 @@ def main():
 
     all_items = dedup(all_items)
 
-    # 排序：重大事件 > 热点 > 行业趋势，同分类内保持来源抓取顺序
+    # 为行业趋势条目打子分类标签
+    for it in all_items:
+        if it.get("category") == "trend":
+            it["subcategory"] = classify_trend_subcategory(it["title"])
+
+    # 排序：重大事件 > 热点 > 行业趋势；行业趋势内按子分类顺序排序
     order = {"major": 0, "hot": 1, "trend": 2}
-    all_items.sort(key=lambda x: order.get(x["category"], 3))
+    suborder = {k: i for i, k in enumerate(TREND_SUBCATEGORY_ORDER)}
+
+    def sort_key(x):
+        cat = x.get("category", "hot")
+        base = order.get(cat, 3)
+        if cat == "trend":
+            return (base, suborder.get(x.get("subcategory", "other"), 99))
+        return (base, 0)
+
+    all_items.sort(key=sort_key)
 
     # 截断：重大 20、热点 30、趋势 25，总量控制在 60 内
     limits = {"major": 20, "hot": 30, "trend": 25}
@@ -205,6 +222,8 @@ def main():
         "weekday": "星期" + "一二三四五六日"[now.weekday()],
         "total": len(final),
         "categories": CATEGORY_LABEL,
+        "trend_subcategories": TREND_SUBCATEGORY_LABEL,
+        "trend_subcategory_order": TREND_SUBCATEGORY_ORDER,
         "items": final,
     }
 
