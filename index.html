@@ -152,34 +152,19 @@
     font-size: 12.5px; color: var(--sub); line-height: 1.5;
     display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
   }
-  /* 英文原文 */
+  /* 英文原文翻译按钮 */
   .card .en {
-    font-size: 11.5px; color: #999; font-style: italic; margin-top: 5px;
-    line-height: 1.4; padding-top: 5px; border-top: 1px dashed rgba(0,0,0,.12);
-    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    display: inline-block; margin-top: 8px; font-size: 12px; color: var(--major);
+    cursor: pointer; font-weight: 600; user-select: none;
+    padding: 3px 10px; border-radius: 4px; border: 1px solid rgba(26,60,110,.2);
+    background: rgba(26,60,110,.06); transition: all .15s ease;
   }
-  body.night .card .en { color: rgba(255,255,255,.55); border-top-color: rgba(255,255,255,.16); }
+  .card .en:hover { background: rgba(26,60,110,.12); }
+  body.night .card .en { color: #7eb8ff; border-color: rgba(126,184,255,.3); background: rgba(126,184,255,.1); }
+  body.night .card .en:hover { background: rgba(126,184,255,.2); }
+  .card .en.translated { color: var(--sub); border-style: dashed; background: transparent; cursor: default; }
+  body.night .card .en.translated { color: rgba(255,255,255,.6); }
   .empty { text-align: center; color: var(--sub); padding: 60px 0; grid-column: 1 / -1; }
-
-  /* 划词翻译浮窗 */
-  .trans-pop {
-    position: fixed; z-index: 9999; max-width: 340px;
-    background: #fff; border: 1px solid #ddd; border-radius: 8px;
-    box-shadow: 0 8px 28px rgba(0,0,0,.18); padding: 10px 12px;
-    font-size: 13px; line-height: 1.55; color: #1a1a1a;
-    display: none; word-break: break-word;
-  }
-  .trans-pop.show { display: block; }
-  .trans-pop .tp-orig { font-size: 12px; color: #888; margin-bottom: 6px; font-style: italic; }
-  .trans-pop .tp-result { color: #111; }
-  .trans-pop .tp-loading { color: #999; }
-  .trans-pop .tp-err { color: #c0392b; }
-  body.night .trans-pop {
-    background: #1e1e1e; border-color: #444; color: #eee;
-    box-shadow: 0 8px 28px rgba(0,0,0,.6);
-  }
-  body.night .trans-pop .tp-orig { color: #999; }
-  body.night .trans-pop .tp-result { color: #fff; }
 
   footer { text-align: center; color: #aaa; font-size: 12px; padding: 28px 0 44px; }
   footer a { color: #999; text-decoration: none; }
@@ -212,9 +197,6 @@
     数据由脚本每日自动抓取 · 内容版权归原媒体所有 · <a href="#" id="genInfo"></a>
   </footer>
 </div>
-
-<!-- 划词翻译浮窗 -->
-<div class="trans-pop" id="transPop"></div>
 
 <script>
   // 数据由 build.py 注入
@@ -327,22 +309,24 @@
       var sub = it.category === "trend" ? (it.subcategory || "other") : null;
       var subLabel = sub
         ? '<span class="tag sub-' + sub + '">' + (SUB_LABEL[sub] || "其他") + "</span>" : "";
-      // 英文原文展示（国外源）
+      // 英文原文：点击翻译
       var enHtml = "";
       if (it.lang === "en" && it.title_en) {
-        enHtml = '<p class="en">' + escapeHtml(it.title_en) + "</p>";
+        enHtml = '<span class="en" data-en="' + escapeHtml(it.title_en) + '" onclick="event.stopPropagation(); showTransInline(this);">\u2192 点击翻译</span>';
       }
       return (
-        '<a class="card cat-' + it.category + '" href="' + it.url + '" target="_blank" rel="noopener noreferrer">' +
-          '<div class="card-top">' +
-            '<span class="tag ' + it.category + '">' + label + "</span>" +
-            subLabel +
-            '<span class="source">' + (it.source || "") + "</span>" +
-          "</div>" +
-          "<h2>" + escapeHtml(it.title) + "</h2>" +
-          (it.summary ? '<p class="summary">' + escapeHtml(it.summary) + "</p>" : "") +
+        '<div class="card cat-' + it.category + '">' +
+          '<a href="' + it.url + '" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;display:block;">' +
+            '<div class="card-top">' +
+              '<span class="tag ' + it.category + '">' + label + "</span>" +
+              subLabel +
+              '<span class="source">' + (it.source || "") + "</span>" +
+            "</div>" +
+            "<h2>" + escapeHtml(it.title) + "</h2>" +
+            (it.summary ? '<p class="summary">' + escapeHtml(it.summary) + "</p>" : "") +
+          "</a>" +
           enHtml +
-        "</a>"
+        "</div>"
       );
     }).join("");
   }
@@ -356,12 +340,8 @@
   render();
   startBackgroundTimer();
 
-  /* ============ 划词翻译（选中英文自动翻译成中文） ============ */
-  var transPop = document.getElementById("transPop");
-  var transTimer = null;
-
+  /* ============ 点击翻译（国外源英文标题） ============ */
   function translateText(text, cb) {
-    // 主接口：MyMemory（免费，无需 key，支持 CORS）
     var url = "https://api.mymemory.translated.net/get?q=" +
       encodeURIComponent(text) + "&langpair=en|zh-CN";
     fetch(url)
@@ -375,7 +355,6 @@
         }
       })
       .catch(function(e) {
-        // 备用接口：Google 非官方端点
         var url2 = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=zh-CN&dt=t&q=" +
           encodeURIComponent(text);
         fetch(url2)
@@ -388,60 +367,21 @@
       });
   }
 
-  function hideTransPop() {
-    transPop.classList.remove("show");
-  }
-
-  function showTransPop(x, y, text) {
-    transPop.innerHTML = '<div class="tp-orig">' + escapeHtml(text) + '</div><div class="tp-loading">翻译中…</div>';
-    // 先定位（粗略），等翻译完成后保持不变
-    var pw = 340, ph = 80;
-    var left = Math.min(x, window.innerWidth - pw - 10);
-    var top = Math.min(y + 8, window.innerHeight - ph - 10);
-    left = Math.max(10, left);
-    top = Math.max(10, top);
-    transPop.style.left = left + "px";
-    transPop.style.top = top + "px";
-    transPop.classList.add("show");
-
+  // 全局函数：点击翻译按钮时调用
+  window.showTransInline = function(el) {
+    if (el.classList.contains("translated")) return;
+    var text = el.getAttribute("data-en");
+    if (!text) return;
+    el.textContent = "翻译中…";
     translateText(text, function(err, result) {
       if (err) {
-        transPop.innerHTML = '<div class="tp-orig">' + escapeHtml(text) + '</div><div class="tp-err">翻译失败，请重试</div>';
+        el.textContent = "翻译失败";
       } else {
-        transPop.innerHTML = '<div class="tp-orig">' + escapeHtml(text) + '</div><div class="tp-result">' + escapeHtml(result) + '</div>';
+        el.textContent = result;
+        el.classList.add("translated");
       }
     });
-  }
-
-  // 监听 mouseup：选中含英文字母的文字时自动翻译（覆盖英文标题/原文/摘要）
-  document.addEventListener("mouseup", function(e) {
-    var sel = window.getSelection();
-    var text = (sel && sel.toString()) ? sel.toString().trim() : "";
-    if (!text) { hideTransPop(); return; }
-
-    // 排除在输入框/文本域内的选区
-    var node = sel.anchorNode;
-    if (node) {
-      var el = node.nodeType === 1 ? node : node.parentElement;
-      if (el && (el.tagName === "INPUT" || el.tagName === "TEXTAREA")) {
-        hideTransPop(); return;
-      }
-    }
-
-    // 仅翻译含英文字母的文本（中文选区不处理）
-    if (!/[a-zA-Z]/.test(text)) { hideTransPop(); return; }
-    if (text.length > 500) text = text.slice(0, 500);
-
-    clearTimeout(transTimer);
-    transTimer = setTimeout(function() {
-      showTransPop(e.clientX, e.clientY, text);
-    }, 250);  // 250ms 防抖，避免拖动时频繁触发
-  });
-
-  // 点击空白处关闭浮窗
-  document.addEventListener("mousedown", function(e) {
-    if (!transPop.contains(e.target)) { hideTransPop(); }
-  });
+  };
 </script>
 </body>
 </html>
