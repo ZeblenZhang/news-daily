@@ -15,7 +15,6 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_FILE = os.path.join(BASE_DIR, "data", "latest.json")
 TEMPLATE_FILE = os.path.join(BASE_DIR, "template", "index.html")
 OUTPUT_FILE = os.path.join(BASE_DIR, "index.html")
-
 BRIEF_TEMPLATE = (
     "今日为您精选 {total} 条要闻：{major} 条重大事件、{hot} 条热点、{trend} 条行业趋势，"
     "点击标题即可跳转原文阅读。"
@@ -58,6 +57,16 @@ def main():
         hot=counts["hot"],
         trend=counts["trend"],
     )
+
+    # 抓取背景图（自然风光 + 宇宙星空）
+    try:
+        sys.path.insert(0, os.path.join(BASE_DIR, "scraper"))
+        from background import get_backgrounds
+        data["backgrounds"] = get_backgrounds()
+        print(f">> 背景图：白天 {len(data['backgrounds']['day'])} 张 / 夜晚 {len(data['backgrounds']['night'])} 张")
+    except Exception as exc:  # noqa: BLE001
+        print(f"[warn] 背景图抓取失败（不影响主流程）: {exc}")
+        data["backgrounds"] = {"day": [], "night": []}
 
     with open(TEMPLATE_FILE, "r", encoding="utf-8") as f:
         template = f.read()
