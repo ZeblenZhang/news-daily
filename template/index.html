@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日世界要闻</title>
+<style>
+  :root {
+    --bg: #faf9f7;
+    --card: #ffffff;
+    --ink: #1a1a1a;
+    --sub: #6b6b6b;
+    --line: #e9e6e1;
+    --accent: #b7410e;
+    --hot: #c0392b;
+    --major: #1a5276;
+    --trend: #1e7a4f;
+    --chip-bg: #f1efe9;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+      "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+  /* 头部 */
+  header { padding: 56px 0 28px; }
+  .masthead {
+    display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
+  }
+  .brand { font-size: 15px; letter-spacing: .28em; color: var(--sub); text-transform: uppercase; }
+  .date { font-size: 13px; color: var(--sub); }
+  h1 {
+    font-size: 40px; font-weight: 700; letter-spacing: -.5px; line-height: 1.2;
+    margin-bottom: 14px;
+    font-family: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
+  }
+  .brief {
+    font-size: 16px; color: var(--sub); max-width: 640px;
+    border-left: 3px solid var(--accent); padding-left: 16px;
+  }
+
+  /* 标签导航 */
+  .tabs {
+    display: flex; gap: 8px; flex-wrap: wrap; margin: 32px 0 24px;
+    position: sticky; top: 0; background: var(--bg); padding: 12px 0; z-index: 10;
+  }
+  .tab {
+    border: 1px solid var(--line); background: var(--card); color: var(--sub);
+    padding: 8px 18px; border-radius: 999px; font-size: 14px; cursor: pointer;
+    transition: all .18s ease; user-select: none;
+  }
+  .tab:hover { border-color: #c9c4bd; color: var(--ink); }
+  .tab.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .tab .count { font-size: 12px; opacity: .6; margin-left: 4px; }
+
+  /* 新闻列表 */
+  .list { display: flex; flex-direction: column; gap: 14px; padding-bottom: 60px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 20px 22px; display: block; text-decoration: none; color: inherit;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,.06);
+    border-color: #d8d3cb;
+  }
+  .card-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .tag {
+    font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 600;
+    letter-spacing: .03em; white-space: nowrap;
+  }
+  .tag.hot   { background: #fbe9e7; color: var(--hot); }
+  .tag.major { background: #e8f0f7; color: var(--major); }
+  .tag.trend { background: #e6f4ec; color: var(--trend); }
+  .source { font-size: 12px; color: var(--sub); }
+  .card h2 {
+    font-size: 18px; font-weight: 600; line-height: 1.45; margin-bottom: 6px;
+    font-family: "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
+  }
+  .card .summary { font-size: 14px; color: var(--sub); }
+  .empty { text-align: center; color: var(--sub); padding: 60px 0; }
+
+  footer {
+    text-align: center; color: #aaa; font-size: 12px; padding: 32px 0 48px;
+  }
+  footer a { color: #999; text-decoration: none; }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 30px; }
+    .card { padding: 16px 18px; }
+    .card h2 { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="masthead">
+      <span class="brand">DAILY BRIEFING</span>
+      <span class="date" id="dateLabel"></span>
+    </div>
+    <h1>今日世界要闻</h1>
+    <p class="brief" id="brief"></p>
+  </header>
+
+  <nav class="tabs" id="tabs"></nav>
+
+  <main class="list" id="list"></main>
+
+  <footer>
+    数据由脚本每日自动抓取 · 内容版权归原媒体所有 · <a href="#" id="genInfo"></a>
+  </footer>
+</div>
+
+<script>
+  // 数据由 build.py 注入
+  var NEWS_DATA = __DATA__;
+
+  var CAT_LABEL = NEWS_DATA.categories || { hot: "热点", major: "重大事件", trend: "行业趋势" };
+  var ORDER = ["major", "hot", "trend"];
+
+  document.getElementById("dateLabel").textContent =
+    (NEWS_DATA.date_cn || "") + " " + (NEWS_DATA.weekday || "");
+
+  document.getElementById("brief").textContent = NEWS_DATA.brief ||
+    "以下为今日热点、重大事件与行业趋势精选，点击标题可跳转原文阅读全文。";
+
+  document.getElementById("genInfo").textContent =
+    "更新于 " + (NEWS_DATA.generated_at || "");
+
+  // 统计各分类数量
+  var counts = { all: NEWS_DATA.items.length };
+  NEWS_DATA.items.forEach(function(it) { counts[it.category] = (counts[it.category] || 0) + 1; });
+
+  var tabs = [ { key: "all", label: "全部" } ].concat(
+    ORDER.map(function(k) { return { key: k, label: CAT_LABEL[k] || k }; })
+  );
+
+  var tabsEl = document.getElementById("tabs");
+  tabs.forEach(function(t) {
+    var b = document.createElement("button");
+    b.className = "tab" + (t.key === "all" ? " active" : "");
+    b.dataset.key = t.key;
+    b.innerHTML = t.label + '<span class="count">' + (counts[t.key] || 0) + "</span>";
+    b.onclick = function() { render(t.key); };
+    tabsEl.appendChild(b);
+  });
+
+  var listEl = document.getElementById("list");
+
+  function render(key) {
+    var btns = tabsEl.querySelectorAll(".tab");
+    btns.forEach(function(b) { b.classList.toggle("active", b.dataset.key === key); });
+
+    var items = NEWS_DATA.items.filter(function(it) {
+      return key === "all" || it.category === key;
+    });
+
+    if (!items.length) {
+      listEl.innerHTML = '<div class="empty">暂无内容</div>';
+      return;
+    }
+
+    listEl.innerHTML = items.map(function(it) {
+      var label = CAT_LABEL[it.category] || it.category;
+      return (
+        '<a class="card" href="' + it.url + '" target="_blank" rel="noopener noreferrer">' +
+          '<div class="card-top">' +
+            '<span class="tag ' + it.category + '">' + label + "</span>" +
+            '<span class="source">' + (it.source || "") + "</span>" +
+          "</div>" +
+          "<h2>" + escapeHtml(it.title) + "</h2>" +
+          (it.summary ? '<p class="summary">' + escapeHtml(it.summary) + "</p>" : "") +
+        "</a>"
+      );
+    }).join("");
+  }
+
+  function escapeHtml(s) {
+    return String(s || "").replace(/[&<>"']/g, function(c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  render("all");
+</script>
+</body>
+</html>
