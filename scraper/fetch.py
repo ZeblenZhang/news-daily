@@ -137,12 +137,33 @@ def parse_rss(url, src):
             "category": src["category"],
             "lang": lang,
         }
-        # 国外源：保留英文原文标题/摘要，供前端双语展示
+        # 国外源：保留英文原文标题/摘要，并提取完整正文（供页面内阅读模式，规避广告/会员墙）
         if lang == "en":
             item["title_en"] = title
             item["summary_en"] = summary
+            full = extract_full_content(e)
+            if full:
+                item["content_en"] = full
         items.append(item)
     return items
+
+
+def extract_full_content(entry):
+    """从 RSS 条目提取完整正文（优先 content 字段，其次 summary/description）。"""
+    # 优先 content（feedparser 里是 list）
+    content = entry.get("content")
+    if content:
+        val = content[0].get("value", "") if isinstance(content, list) and content else ""
+        if val:
+            cleaned = clean_text(val)
+            if len(cleaned) > 120:
+                return cleaned
+    # 其次 summary/description 的完整原文（非截断版）
+    raw = entry.get("summary", "") or entry.get("description", "")
+    cleaned = clean_text(raw)
+    if len(cleaned) > 200:
+        return cleaned
+    return ""
 
 
 def classify(title, default_cat):

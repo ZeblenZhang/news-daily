@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-09-01 15:30:57",
+  "generated_at": "2026-09-01 16:54:50",
   "date": "2026-09-01",
   "date_cn": "2026年09月01日",
   "weekday": "星期二",
-  "total": 102,
+  "total": 103,
   "categories": {
     "hot": "热点",
     "major": "重大事件",
@@ -29,6 +29,14 @@
   ],
   "items": [
     {
+      "title": "习近平出席2026年上合峰会",
+      "url": "https://m.baidu.com/s?word=%E4%B9%A0%E8%BF%91%E5%B9%B3%E5%87%BA%E5%B8%AD2026%E5%B9%B4%E4%B8%8A%E5%90%88%E5%B3%B0%E4%BC%9A&sa=fyb_news",
+      "summary": "",
+      "source": "百度热搜",
+      "category": "major",
+      "lang": "zh"
+    },
+    {
       "title": "尼泊尔泥石流灾害遇难者已逾千人",
       "url": "https://m.baidu.com/s?word=%E5%B0%BC%E6%B3%8A%E5%B0%94%E6%B3%A5%E7%9F%B3%E6%B5%81%E7%81%BE%E5%AE%B3%E9%81%87%E9%9A%BE%E8%80%85%E5%B7%B2%E9%80%BE%E5%8D%83%E4%BA%BA&sa=fyb_news",
       "summary": "",
@@ -37,160 +45,152 @@
       "lang": "zh"
     },
     {
-      "title": "国产丝杠通过0到1关卡，但1到10还隔着3关",
-      "url": "https://www.jiemian.com/article/15040195.html",
-      "summary": "人形丝杠国产替代攻坚量产。",
+      "title": "英国国债延续跌势",
+      "url": "https://www.jiemian.com/article/15041168.html",
+      "summary": "10年期收益率涨11个基点至5.25%。",
       "source": "界面新闻",
       "category": "major",
       "lang": "zh"
     },
     {
-      "title": "俄强调美在日部署中导系统不可接受",
-      "url": "https://www.jiemian.com/article/15040282.html",
-      "summary": "俄罗斯外交部发言人扎哈罗娃今天（9月1日）在记者会上表示，美国在日本部署“堤丰”中程导弹系统——即使仅用于军事演习目的——对俄罗斯而言也是不可接受的，对俄罗斯安全构成威胁。扎哈罗娃强调，俄罗斯敦促日本回归和平主义政策。（CCTV国际时讯）",
+      "title": "如何构建宽基配置组合，能够稳定跑赢偏股基金指数？",
+      "url": "https://www.jiemian.com/article/15041001.html",
+      "summary": "跑赢偏股基金指数，听起来需要高深的研究和精准的择时，但近十四年的回测给出的答案出乎意料地朴素：四个宽基指数、七三比例、每月再平衡一次，仅此而已。",
       "source": "界面新闻",
       "category": "major",
       "lang": "zh"
     },
     {
-      "title": "尼泊尔泥石流已致1010人死亡、4599人失联",
-      "url": "https://www.jiemian.com/article/15040263.html",
-      "summary": "尼泊尔警方9月1日在社交媒体发文说，该国泥石流受灾地区已发现1010具遇难者遗体，另有4599人失联。（新华社）",
+      "title": "叫成长的指数那么多，怎么选到未来业绩弹性更高的？",
+      "url": "https://www.jiemian.com/article/15041005.html",
+      "summary": "回到标题——叫成长的指数那么多，怎么选到未来业绩弹性更高的？答案就是关注国证成长100、上证科创板成长、创业板成长这三只。",
       "source": "界面新闻",
       "category": "major",
       "lang": "zh"
     },
     {
-      "title": "中国牵头制定！全球首个腿式机器人国际标准发布",
-      "url": "https://www.jiemian.com/article/15040235.html",
-      "summary": "由我国专家牵头制定的全球首个腿式机器人国际标准《机器人——服务机器人性能规范及其试验方法 第5部分：腿式机器人运动》近日正式发布。标准的一大亮点就是面向真实场景评价运动性能。不只看“能不能动”，更看“动得好不好”。同一台机器人在平地上走得很好，并不意味着它面对楼梯、坡面或者障碍物时也同样表现出色。这项标准将楼梯、坡面、…",
+      "title": "拿1只股vs拿一篮子：你能承受多大的波动？",
+      "url": "https://www.jiemian.com/article/15041013.html",
+      "summary": "在这样的环境里，要精准预判哪只股票是下一个赢家，难度比以往更高；而借道宽基指数，则有望更加从容地获取未来可能的反弹修复收益。",
       "source": "界面新闻",
       "category": "major",
       "lang": "zh"
     },
     {
-      "title": "广州白云机场今年入出境外国人超500万人次，创年度最快纪录",
-      "url": "https://www.jiemian.com/article/15040234.html",
-      "summary": "白云边检站消息，截至8月31日24时，今年以来，经广州白云机场口岸入境、出境的外国人累计突破500万人次，同比增长超三成，创口岸同期历史最快纪录。据边检部门介绍，受到240小时过境免签政策适用范围扩大、APEC重大外事活动带动、中国影视作品海外走红等影响，白云机场口岸外国人往来持续热络。外国人客流走高的同时，中国公民出…",
+      "title": "金价持续反弹，如何看懂当下的核心驱动与配置逻辑",
+      "url": "https://www.jiemian.com/article/15041024.html",
+      "summary": "黄金相关产品：黄金ETF易方达（159934），易方达黄金ETF联接A/C（000307 / 002963）",
       "source": "界面新闻",
       "category": "major",
       "lang": "zh"
     },
     {
-      "title": "习近平出席上海合作组织成员国元首理事会第二十六次会议并发表重要讲话",
-      "url": "https://www.jiemian.com/article/15040213.html",
+      "title": "从一款“大药”说起，为什么mRNA能点燃市场对创新药行业的想象？",
+      "url": "https://www.jiemian.com/article/15041031.html",
+      "summary": "对投资者朋友们来说，mRNA涉及的公司分散在研发、原料、制造等多个环节，逐一跟踪难度较高。通过指数基金来布局整条产业链，或许是一种更为高效、省力的方式。",
+      "source": "界面新闻",
+      "category": "major",
+      "lang": "zh"
+    },
+    {
+      "title": "印度总理莫迪呼吁民众少买黄金，称自力更生有助应对外部冲击",
+      "url": "https://www.jiemian.com/article/15041077.html",
+      "summary": "随着印度贸易逆差扩大和卢比走弱给经济带来压力，印度总理纳伦德拉·莫迪再次呼吁抑制黄金需求，表示若非必要印度民众应避免购买黄金。这是莫迪今年第二次发出类似呼吁。早在5月，莫迪曾要求印度民众至少一年内不要购买黄金，以节省外汇储备。“如果没有必要，就不要买黄金。”莫迪9月1日表示。随着战争扰乱全球供应链，印度需要增强自力更生…",
+      "source": "界面新闻",
+      "category": "major",
+      "lang": "zh"
+    },
+    {
+      "title": "WTI原油突破88美元/桶",
+      "url": "https://www.jiemian.com/article/15041163.html",
       "summary": "",
       "source": "界面新闻",
       "category": "major",
       "lang": "zh"
     },
     {
-      "title": "交易所制定L2行情使用规范，严禁“绕道抢跑”",
-      "url": "https://www.jiemian.com/article/15040194.html",
+      "title": "宁德时代今日大宗交易成交94万股，成交额3.37亿元",
+      "url": "https://www.jiemian.com/article/15041162.html",
       "summary": "",
       "source": "界面新闻",
       "category": "major",
       "lang": "zh"
     },
     {
-      "title": "化工ETF鹏华(159870)盘中净申购1.23亿份，中间体、染料价格大幅上涨叠加供需紧张，催化板块行情",
-      "url": "https://www.jiemian.com/article/15040079.html",
-      "summary": "消息面上，中间体、染料价格大幅上涨。百川盈孚H酸报价上调至10万元/吨，年内涨幅达150%，个别厂商报价达15万元/吨，下游活性染料报价40元/千克，年内涨幅82%。",
-      "source": "界面新闻",
-      "category": "major",
-      "lang": "zh"
-    },
-    {
-      "title": "新修订农业法明确粮食安全战略，全球粮价上行预期升温！粮食ETF永赢(158047)9月7日起发行",
-      "url": "https://www.jiemian.com/article/15040083.html",
-      "summary": "粮食ETF永赢（158047）将于2026年9月7日至9月16日发行，该产品跟踪国证粮食产业指数指数。",
-      "source": "界面新闻",
-      "category": "major",
-      "lang": "zh"
-    },
-    {
-      "title": "三菱在美召回逾6.7万辆汽车，软件故障或导致倒车影像无法显示",
-      "url": "https://www.jiemian.com/article/15040185.html",
-      "summary": "9月1日， 美国国家公路交通安全管理局（NHTSA）发布信息称，三菱汽车北美公司将召回部分2025—2026款Outlander及2026款Outlander PHEV车型，共计约6.71万辆。召回原因是车载信息娱乐系统软件编程不当，车辆挂入倒挡时可能无法显示后视摄像头影像，影响驾驶员观察车辆后方情况，增加碰撞风险。",
-      "source": "界面新闻",
-      "category": "major",
-      "lang": "zh"
-    },
-    {
-      "title": "商务部：《汽车行业境外竞争行为与合规建设指引》有助于引导汽车行业企业更好融入东道国经济社会发展",
-      "url": "https://www.jiemian.com/article/15040183.html",
-      "summary": "一是突出公共服务属性。《汽车指引》作为海外综合服务体系建设的一项具体成果，是服务汽车行业企业出海的公共服务产品，有助于企业及时规范境外竞争行为、加强合规建设，提高国际化经营水平和影响力。二是突出实践应用导向。《汽车指引》制定过程中，充分结合了我国企业境外生产经营现状，参考了行业领军企业合规实践经验，为汽车行业企业出海提…",
-      "source": "界面新闻",
-      "category": "major",
-      "lang": "zh"
-    },
-    {
-      "title": "长鑫存储开启2027全球校园招聘",
-      "url": "https://www.jiemian.com/article/15040176.html",
+      "title": "美年健康今日大宗交易折价成交2455.85万股，成交额1.05亿元",
+      "url": "https://www.jiemian.com/article/15041150.html",
       "summary": "",
       "source": "界面新闻",
       "category": "major",
       "lang": "zh"
     },
     {
-      "title": "福特在美召回近14.9万辆Mustang，线束接地连接故障或致动力丧失",
-      "url": "https://www.jiemian.com/article/15040167.html",
-      "summary": "9月1日，美国国家公路交通安全管理局（NHTSA）发布信息称，福特汽车将召回部分2024—2026款Mustang车型，共计约14.87万辆。召回原因是发动机舱线束接地连接可能断裂，导致车辆动力丧失，或造成挡风玻璃清洗系统、前照灯、空调及发动机冷却风扇等功能失效，从而增加碰撞风险。",
-      "source": "界面新闻",
-      "category": "major",
-      "lang": "zh"
-    },
-    {
-      "title": "福特在美召回逾1万辆汽车，因发动机活塞制造缺陷或致动力丧失",
-      "url": "https://www.jiemian.com/article/15040161.html",
-      "summary": "9月1日，美国国家公路交通安全管理局（NHTSA）发布信息称，福特汽车将召回部分2026款Explorer、Bronco、Bronco Sport、Mustang和Ranger车型，共计约1.001万辆。召回原因是发动机活塞顶部制造不当，可能导致活塞顶部失效并造成车辆动力丧失，增加碰撞风险。",
-      "source": "界面新闻",
-      "category": "major",
-      "lang": "zh"
-    },
-    {
-      "title": "上犹江水电站：“江西水电之母”如何进化为现代“调节性枢纽”？",
-      "url": "https://www.jiemian.com/article/15039867.html",
-      "summary": "上犹江水电站正升级为现代意义上的“调节性枢纽”。",
-      "source": "界面新闻",
-      "category": "major",
-      "lang": "zh"
-    },
-    {
-      "title": "今日涨跌停股分析：86只涨停股、0只跌停股，农业种植概念走强，金健米业12天7板，隆平高科、登海种业等涨停",
-      "url": "https://www.jiemian.com/article/15040128.html",
-      "summary": "9月1日，A股全天下来共有86只涨停股、0只跌停股。农业种植概念走强，金健米业12天7板，万向德农11天8板，新赛股份4连板，敦煌种业3天2板，隆平高科、登海种业等涨停；离境退税概念上涨，供销大集、茂业商业涨停。",
-      "source": "界面新闻",
-      "category": "major",
-      "lang": "zh"
-    },
-    {
-      "title": "西藏吉隆普热普强藏布堰塞湖已完全泄洪",
-      "url": "https://www.jiemian.com/article/15040124.html",
-      "summary": "西藏自治区吉隆县“8·26”泥石流灾害应急救援指挥部9月1日消息，根据专家组分析研判评估，在西藏吉隆泥石流灾害过程中形成的普热普强藏布堰塞湖，目前已完全泄洪、风险可控。（新华社）",
-      "source": "界面新闻",
-      "category": "major",
-      "lang": "zh"
-    },
-    {
-      "title": "“香港大药房”不在香港不卖药，35家违规店铺被下架",
-      "url": "https://www.jiemian.com/article/15039761.html",
-      "summary": "多家以“香港大药房”名义开设的网店销售“透骨膏”“无湿丸”等产品，在直播营销中涉嫌虚假宣传。",
-      "source": "界面新闻",
-      "category": "major",
-      "lang": "zh"
-    },
-    {
-      "title": "沪深两市今日成交额合计2.03万亿元，中际旭创成交额居首",
-      "url": "https://www.jiemian.com/article/15040117.html",
+      "title": "巨人网络今日大宗交易折价成交333.1万股，成交额8347.51万元",
+      "url": "https://www.jiemian.com/article/15041102.html",
       "summary": "",
       "source": "界面新闻",
       "category": "major",
       "lang": "zh"
     },
     {
-      "title": "永久的友好近邻 真诚的合作伙伴",
-      "url": "https://m.baidu.com/s?word=%E6%B0%B8%E4%B9%85%E7%9A%84%E5%8F%8B%E5%A5%BD%E8%BF%91%E9%82%BB+%E7%9C%9F%E8%AF%9A%E7%9A%84%E5%90%88%E4%BD%9C%E4%BC%99%E4%BC%B4&sa=fyb_news",
+      "title": "山东文旅观察 | 环游胶州湾航线火爆全国，青岛让老轮渡重新“开口说话”",
+      "url": "https://www.jiemian.com/article/15040846.html",
+      "summary": "当轮渡不再只是往返两岸的交通工具，当老旧码头跳出交通功能的固有框架，一条环游胶州湾的海上环线，悄然拿下了国家级海上精品航线的头衔。",
+      "source": "界面新闻",
+      "category": "major",
+      "lang": "zh"
+    },
+    {
+      "title": "水利部：尼泊尔错坚河冲击坑周边冰川仍有崩落可能",
+      "url": "https://www.jiemian.com/article/15041016.html",
+      "summary": "今天（9月1日），水利部继续组织会商，滚动研判西藏吉隆泥石流灾害全链条风险。经近期遥感影像对比分析，吉隆藏布流域前期排查出的14个冰湖水面面积未发生显著变化，整体处于相对稳定状态。根据今天8时无人机影像，尼泊尔错坚河冲击坑积水已基本排空，下游河道正常过流。尼泊尔错坚河冲击坑周边冰川仍有崩落可能，存在重大风险隐患。（央视…",
+      "source": "界面新闻",
+      "category": "major",
+      "lang": "zh"
+    },
+    {
+      "title": "四年前错过红利，这一次还要再等等吗？——从股债利差看红利资产的相对性价比",
+      "url": "https://www.jiemian.com/article/15040997.html",
+      "summary": "截至8月21日，10年期国债收益率降至1.68%，随着近年来传统低风险资产收益中枢的明显下移，对于关注现金回报的投资者朋友们而言，红利资产的相对吸引力正在逐步提升。",
+      "source": "界面新闻",
+      "category": "major",
+      "lang": "zh"
+    },
+    {
+      "title": "长安启源8月全球交付45885辆",
+      "url": "https://www.jiemian.com/article/15040990.html",
+      "summary": "",
+      "source": "界面新闻",
+      "category": "major",
+      "lang": "zh"
+    },
+    {
+      "title": "澳大利亚对涉华精密钢管作出第一次反倾销日落复审终裁",
+      "url": "https://www.jiemian.com/article/15040984.html",
+      "summary": "8月24日，澳大利亚反倾销委员会发布第2026/097号公告称，澳大利亚工业、创新和科学部长通过了澳大利亚反倾销委员会对进口自中国和韩国的精密钢管作出的第一次反倾销日落复审终裁建议、对进口自中国的精密钢管作出第一次反补贴日落复审终裁建议，决定自2026年9月29日起继续征收反倾销税和反补贴税：中国出口商大连斯瑞特高新技…",
+      "source": "界面新闻",
+      "category": "major",
+      "lang": "zh"
+    },
+    {
+      "title": "三组人分工协作，国道216线水毁路段抢通工作持续进行中",
+      "url": "https://www.jiemian.com/article/15040977.html",
+      "summary": "今天（9月1日），应急管理部调派中国安能专业救援力量158人，投入挖掘机、装载机等主战及监测装备33台套，在G216国道水毁路段持续攻坚，同时加强两侧山体的监测，吉隆口岸方向受阻路段作业面稳步延伸。截至目前，216国道抢通作业面已经拓展到了距离吉隆口岸不到800米的地方，整体的抢通作业进展是平稳有序的。国网日喀则供电公…",
+      "source": "界面新闻",
+      "category": "major",
+      "lang": "zh"
+    },
+    {
+      "title": "长实、长和、李嘉诚基金会：捐款1500万元支援西藏赈灾",
+      "url": "https://www.jiemian.com/article/15040969.html",
+      "summary": "",
+      "source": "界面新闻",
+      "category": "major",
+      "lang": "zh"
+    },
+    {
+      "title": "新生家长群已集齐70、80、90、00后",
+      "url": "https://m.baidu.com/s?word=%E6%96%B0%E7%94%9F%E5%AE%B6%E9%95%BF%E7%BE%A4%E5%B7%B2%E9%9B%86%E9%BD%9070%E3%80%8180%E3%80%8190%E3%80%8100%E5%90%8E&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
@@ -205,6 +205,14 @@
       "lang": "zh"
     },
     {
+      "title": "第二届北京范儿大赛即将启动",
+      "url": "https://m.baidu.com/s?word=%E7%AC%AC%E4%BA%8C%E5%B1%8A%E5%8C%97%E4%BA%AC%E8%8C%83%E5%84%BF%E5%A4%A7%E8%B5%9B%E5%8D%B3%E5%B0%86%E5%90%AF%E5%8A%A8&sa=fyb_news",
+      "summary": "",
+      "source": "百度热搜",
+      "category": "hot",
+      "lang": "zh"
+    },
+    {
       "title": "“25块钱就能举报别人500次”",
       "url": "https://m.baidu.com/s?word=%E2%80%9C25%E5%9D%97%E9%92%B1%E5%B0%B1%E8%83%BD%E4%B8%BE%E6%8A%A5%E5%88%AB%E4%BA%BA500%E6%AC%A1%E2%80%9D&sa=fyb_news",
       "summary": "",
@@ -213,24 +221,24 @@
       "lang": "zh"
     },
     {
-      "title": "新生入学如何准备",
-      "url": "https://m.baidu.com/s?word=%E6%96%B0%E7%94%9F%E5%85%A5%E5%AD%A6%E5%A6%82%E4%BD%95%E5%87%86%E5%A4%87&sa=fyb_news",
+      "title": "全球将迎来本年度第三次“时间重叠”",
+      "url": "https://m.baidu.com/s?word=%E5%85%A8%E7%90%83%E5%B0%86%E8%BF%8E%E6%9D%A5%E6%9C%AC%E5%B9%B4%E5%BA%A6%E7%AC%AC%E4%B8%89%E6%AC%A1%E2%80%9C%E6%97%B6%E9%97%B4%E9%87%8D%E5%8F%A0%E2%80%9D&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
       "lang": "zh"
     },
     {
-      "title": "男子花千万33年走遍全球233个国家",
-      "url": "https://m.baidu.com/s?word=%E7%94%B7%E5%AD%90%E8%8A%B1%E5%8D%83%E4%B8%8733%E5%B9%B4%E8%B5%B0%E9%81%8D%E5%85%A8%E7%90%83233%E4%B8%AA%E5%9B%BD%E5%AE%B6&sa=fyb_news",
+      "title": "宜家宣布降价",
+      "url": "https://m.baidu.com/s?word=%E5%AE%9C%E5%AE%B6%E5%AE%A3%E5%B8%83%E9%99%8D%E4%BB%B7&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
       "lang": "zh"
     },
     {
-      "title": "亚运会男足大名单公布",
-      "url": "https://m.baidu.com/s?word=%E4%BA%9A%E8%BF%90%E4%BC%9A%E7%94%B7%E8%B6%B3%E5%A4%A7%E5%90%8D%E5%8D%95%E5%85%AC%E5%B8%83&sa=fyb_news",
+      "title": "宇树员工：公司奖惩机制只有罚没有奖",
+      "url": "https://m.baidu.com/s?word=%E5%AE%87%E6%A0%91%E5%91%98%E5%B7%A5%EF%BC%9A%E5%85%AC%E5%8F%B8%E5%A5%96%E6%83%A9%E6%9C%BA%E5%88%B6%E5%8F%AA%E6%9C%89%E7%BD%9A%E6%B2%A1%E6%9C%89%E5%A5%96&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
@@ -245,16 +253,16 @@
       "lang": "zh"
     },
     {
-      "title": "一年级家长年龄相差近30岁",
-      "url": "https://m.baidu.com/s?word=%E4%B8%80%E5%B9%B4%E7%BA%A7%E5%AE%B6%E9%95%BF%E5%B9%B4%E9%BE%84%E7%9B%B8%E5%B7%AE%E8%BF%9130%E5%B2%81&sa=fyb_news",
+      "title": "第1天送宝宝去幼儿园 爸爸哭成泪人",
+      "url": "https://m.baidu.com/s?word=%E7%AC%AC1%E5%A4%A9%E9%80%81%E5%AE%9D%E5%AE%9D%E5%8E%BB%E5%B9%BC%E5%84%BF%E5%9B%AD+%E7%88%B8%E7%88%B8%E5%93%AD%E6%88%90%E6%B3%AA%E4%BA%BA&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
       "lang": "zh"
     },
     {
-      "title": "A股收盘：创业板指、深成指均跌超1%",
-      "url": "https://m.baidu.com/s?word=A%E8%82%A1%E6%94%B6%E7%9B%98%EF%BC%9A%E5%88%9B%E4%B8%9A%E6%9D%BF%E6%8C%87%E3%80%81%E6%B7%B1%E6%88%90%E6%8C%87%E5%9D%87%E8%B7%8C%E8%B6%851%25&sa=fyb_news",
+      "title": "中国男篮确认杨瀚森无缘后续世预赛",
+      "url": "https://m.baidu.com/s?word=%E4%B8%AD%E5%9B%BD%E7%94%B7%E7%AF%AE%E7%A1%AE%E8%AE%A4%E6%9D%A8%E7%80%9A%E6%A3%AE%E6%97%A0%E7%BC%98%E5%90%8E%E7%BB%AD%E4%B8%96%E9%A2%84%E8%B5%9B&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
@@ -285,24 +293,16 @@
       "lang": "zh"
     },
     {
-      "title": "退休阿姨81天环游20国 仅花3.7万元",
-      "url": "https://m.baidu.com/s?word=%E9%80%80%E4%BC%91%E9%98%BF%E5%A7%A881%E5%A4%A9%E7%8E%AF%E6%B8%B820%E5%9B%BD+%E4%BB%85%E8%8A%B13.7%E4%B8%87%E5%85%83&sa=fyb_news",
+      "title": "一年级家长年龄相差近30岁",
+      "url": "https://m.baidu.com/s?word=%E4%B8%80%E5%B9%B4%E7%BA%A7%E5%AE%B6%E9%95%BF%E5%B9%B4%E9%BE%84%E7%9B%B8%E5%B7%AE%E8%BF%9130%E5%B2%81&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
       "lang": "zh"
     },
     {
-      "title": "吉隆普热普强藏布堰塞湖已完全泄洪",
-      "url": "https://m.baidu.com/s?word=%E5%90%89%E9%9A%86%E6%99%AE%E7%83%AD%E6%99%AE%E5%BC%BA%E8%97%8F%E5%B8%83%E5%A0%B0%E5%A1%9E%E6%B9%96%E5%B7%B2%E5%AE%8C%E5%85%A8%E6%B3%84%E6%B4%AA&sa=fyb_news",
-      "summary": "",
-      "source": "百度热搜",
-      "category": "hot",
-      "lang": "zh"
-    },
-    {
-      "title": "医生称开学前已接诊大量老年病孩子",
-      "url": "https://m.baidu.com/s?word=%E5%8C%BB%E7%94%9F%E7%A7%B0%E5%BC%80%E5%AD%A6%E5%89%8D%E5%B7%B2%E6%8E%A5%E8%AF%8A%E5%A4%A7%E9%87%8F%E8%80%81%E5%B9%B4%E7%97%85%E5%AD%A9%E5%AD%90&sa=fyb_news",
+      "title": "外籍个人股息红利不再免征个税",
+      "url": "https://m.baidu.com/s?word=%E5%A4%96%E7%B1%8D%E4%B8%AA%E4%BA%BA%E8%82%A1%E6%81%AF%E7%BA%A2%E5%88%A9%E4%B8%8D%E5%86%8D%E5%85%8D%E5%BE%81%E4%B8%AA%E7%A8%8E&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
@@ -317,16 +317,24 @@
       "lang": "zh"
     },
     {
-      "title": "新生家长群已集齐70、80、90、00后",
-      "url": "https://m.baidu.com/s?word=%E6%96%B0%E7%94%9F%E5%AE%B6%E9%95%BF%E7%BE%A4%E5%B7%B2%E9%9B%86%E9%BD%9070%E3%80%8180%E3%80%8190%E3%80%8100%E5%90%8E&sa=fyb_news",
+      "title": "女子被踢845个群被迫离职 当地通报",
+      "url": "https://m.baidu.com/s?word=%E5%A5%B3%E5%AD%90%E8%A2%AB%E8%B8%A2845%E4%B8%AA%E7%BE%A4%E8%A2%AB%E8%BF%AB%E7%A6%BB%E8%81%8C+%E5%BD%93%E5%9C%B0%E9%80%9A%E6%8A%A5&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
       "lang": "zh"
     },
     {
-      "title": "深圳校服 全市统一商超可买",
-      "url": "https://m.baidu.com/s?word=%E6%B7%B1%E5%9C%B3%E6%A0%A1%E6%9C%8D+%E5%85%A8%E5%B8%82%E7%BB%9F%E4%B8%80%E5%95%86%E8%B6%85%E5%8F%AF%E4%B9%B0&sa=fyb_news",
+      "title": "黄磊回应不再参加《向往的生活》",
+      "url": "https://m.baidu.com/s?word=%E9%BB%84%E7%A3%8A%E5%9B%9E%E5%BA%94%E4%B8%8D%E5%86%8D%E5%8F%82%E5%8A%A0%E3%80%8A%E5%90%91%E5%BE%80%E7%9A%84%E7%94%9F%E6%B4%BB%E3%80%8B&sa=fyb_news",
+      "summary": "",
+      "source": "百度热搜",
+      "category": "hot",
+      "lang": "zh"
+    },
+    {
+      "title": "曝宇树超100元报销都需王兴兴批",
+      "url": "https://m.baidu.com/s?word=%E6%9B%9D%E5%AE%87%E6%A0%91%E8%B6%85100%E5%85%83%E6%8A%A5%E9%94%80%E9%83%BD%E9%9C%80%E7%8E%8B%E5%85%B4%E5%85%B4%E6%89%B9&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
@@ -341,24 +349,8 @@
       "lang": "zh"
     },
     {
-      "title": "女子被踢845个群被迫离职 当地通报",
-      "url": "https://m.baidu.com/s?word=%E5%A5%B3%E5%AD%90%E8%A2%AB%E8%B8%A2845%E4%B8%AA%E7%BE%A4%E8%A2%AB%E8%BF%AB%E7%A6%BB%E8%81%8C+%E5%BD%93%E5%9C%B0%E9%80%9A%E6%8A%A5&sa=fyb_news",
-      "summary": "",
-      "source": "百度热搜",
-      "category": "hot",
-      "lang": "zh"
-    },
-    {
-      "title": "年轻人结婚开始用金条代替三金",
-      "url": "https://m.baidu.com/s?word=%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%BB%93%E5%A9%9A%E5%BC%80%E5%A7%8B%E7%94%A8%E9%87%91%E6%9D%A1%E4%BB%A3%E6%9B%BF%E4%B8%89%E9%87%91&sa=fyb_news",
-      "summary": "",
-      "source": "百度热搜",
-      "category": "hot",
-      "lang": "zh"
-    },
-    {
-      "title": "美航母抵达前 泰国警方大力扫黄",
-      "url": "https://m.baidu.com/s?word=%E7%BE%8E%E8%88%AA%E6%AF%8D%E6%8A%B5%E8%BE%BE%E5%89%8D+%E6%B3%B0%E5%9B%BD%E8%AD%A6%E6%96%B9%E5%A4%A7%E5%8A%9B%E6%89%AB%E9%BB%84&sa=fyb_news",
+      "title": "“私募冠军”叶飞出狱后演短剧",
+      "url": "https://m.baidu.com/s?word=%E2%80%9C%E7%A7%81%E5%8B%9F%E5%86%A0%E5%86%9B%E2%80%9D%E5%8F%B6%E9%A3%9E%E5%87%BA%E7%8B%B1%E5%90%8E%E6%BC%94%E7%9F%AD%E5%89%A7&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
@@ -373,48 +365,32 @@
       "lang": "zh"
     },
     {
-      "title": "女子赢2600万后失联欠200万律师费",
-      "url": "https://m.baidu.com/s?word=%E5%A5%B3%E5%AD%90%E8%B5%A22600%E4%B8%87%E5%90%8E%E5%A4%B1%E8%81%94%E6%AC%A0200%E4%B8%87%E5%BE%8B%E5%B8%88%E8%B4%B9&sa=fyb_news",
+      "title": "男子花千万33年走遍全球233个国家",
+      "url": "https://m.baidu.com/s?word=%E7%94%B7%E5%AD%90%E8%8A%B1%E5%8D%83%E4%B8%8733%E5%B9%B4%E8%B5%B0%E9%81%8D%E5%85%A8%E7%90%83233%E4%B8%AA%E5%9B%BD%E5%AE%B6&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
       "lang": "zh"
     },
     {
-      "title": "“出现大量1折票” 机票价格降了",
-      "url": "https://m.baidu.com/s?word=%E2%80%9C%E5%87%BA%E7%8E%B0%E5%A4%A7%E9%87%8F1%E6%8A%98%E7%A5%A8%E2%80%9D+%E6%9C%BA%E7%A5%A8%E4%BB%B7%E6%A0%BC%E9%99%8D%E4%BA%86&sa=fyb_news",
+      "title": "李沐宸谈挑战《重案六组》季洁压力大",
+      "url": "https://m.baidu.com/s?word=%E6%9D%8E%E6%B2%90%E5%AE%B8%E8%B0%88%E6%8C%91%E6%88%98%E3%80%8A%E9%87%8D%E6%A1%88%E5%85%AD%E7%BB%84%E3%80%8B%E5%AD%A3%E6%B4%81%E5%8E%8B%E5%8A%9B%E5%A4%A7&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
       "lang": "zh"
     },
     {
-      "title": "空调费20元注射96元 医院收费被质疑",
-      "url": "https://m.baidu.com/s?word=%E7%A9%BA%E8%B0%83%E8%B4%B920%E5%85%83%E6%B3%A8%E5%B0%8496%E5%85%83+%E5%8C%BB%E9%99%A2%E6%94%B6%E8%B4%B9%E8%A2%AB%E8%B4%A8%E7%96%91&sa=fyb_news",
+      "title": "深圳校服 全市统一商超可买",
+      "url": "https://m.baidu.com/s?word=%E6%B7%B1%E5%9C%B3%E6%A0%A1%E6%9C%8D+%E5%85%A8%E5%B8%82%E7%BB%9F%E4%B8%80%E5%95%86%E8%B6%85%E5%8F%AF%E4%B9%B0&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
       "lang": "zh"
     },
     {
-      "title": "一学期只有一次课堂紧急如厕机会",
-      "url": "https://m.baidu.com/s?word=%E4%B8%80%E5%AD%A6%E6%9C%9F%E5%8F%AA%E6%9C%89%E4%B8%80%E6%AC%A1%E8%AF%BE%E5%A0%82%E7%B4%A7%E6%80%A5%E5%A6%82%E5%8E%95%E6%9C%BA%E4%BC%9A&sa=fyb_news",
-      "summary": "",
-      "source": "百度热搜",
-      "category": "hot",
-      "lang": "zh"
-    },
-    {
-      "title": "珍贵蛇标本被损坏 77岁捐赠者发声",
-      "url": "https://m.baidu.com/s?word=%E7%8F%8D%E8%B4%B5%E8%9B%87%E6%A0%87%E6%9C%AC%E8%A2%AB%E6%8D%9F%E5%9D%8F+77%E5%B2%81%E6%8D%90%E8%B5%A0%E8%80%85%E5%8F%91%E5%A3%B0&sa=fyb_news",
-      "summary": "",
-      "source": "百度热搜",
-      "category": "hot",
-      "lang": "zh"
-    },
-    {
-      "title": "医生幽默回应吃几个饺子就长胖",
-      "url": "https://m.baidu.com/s?word=%E5%8C%BB%E7%94%9F%E5%B9%BD%E9%BB%98%E5%9B%9E%E5%BA%94%E5%90%83%E5%87%A0%E4%B8%AA%E9%A5%BA%E5%AD%90%E5%B0%B1%E9%95%BF%E8%83%96&sa=fyb_news",
+      "title": "18条中日航线8月取消全部航班",
+      "url": "https://m.baidu.com/s?word=18%E6%9D%A1%E4%B8%AD%E6%97%A5%E8%88%AA%E7%BA%BF8%E6%9C%88%E5%8F%96%E6%B6%88%E5%85%A8%E9%83%A8%E8%88%AA%E7%8F%AD&sa=fyb_news",
       "summary": "",
       "source": "百度热搜",
       "category": "hot",
@@ -429,6 +405,30 @@
       "lang": "zh"
     },
     {
+      "title": "年轻人结婚开始用金条代替三金",
+      "url": "https://m.baidu.com/s?word=%E5%B9%B4%E8%BD%BB%E4%BA%BA%E7%BB%93%E5%A9%9A%E5%BC%80%E5%A7%8B%E7%94%A8%E9%87%91%E6%9D%A1%E4%BB%A3%E6%9B%BF%E4%B8%89%E9%87%91&sa=fyb_news",
+      "summary": "",
+      "source": "百度热搜",
+      "category": "hot",
+      "lang": "zh"
+    },
+    {
+      "title": "退休阿姨81天环游20国 仅花3.7万元",
+      "url": "https://m.baidu.com/s?word=%E9%80%80%E4%BC%91%E9%98%BF%E5%A7%A881%E5%A4%A9%E7%8E%AF%E6%B8%B820%E5%9B%BD+%E4%BB%85%E8%8A%B13.7%E4%B8%87%E5%85%83&sa=fyb_news",
+      "summary": "",
+      "source": "百度热搜",
+      "category": "hot",
+      "lang": "zh"
+    },
+    {
+      "title": "医生称开学前已接诊大量老年病孩子",
+      "url": "https://m.baidu.com/s?word=%E5%8C%BB%E7%94%9F%E7%A7%B0%E5%BC%80%E5%AD%A6%E5%89%8D%E5%B7%B2%E6%8E%A5%E8%AF%8A%E5%A4%A7%E9%87%8F%E8%80%81%E5%B9%B4%E7%97%85%E5%AD%A9%E5%AD%90&sa=fyb_news",
+      "summary": "",
+      "source": "百度热搜",
+      "category": "hot",
+      "lang": "zh"
+    },
+    {
       "title": "The Google TV Streamer now costs $50 more",
       "url": "https://www.theverge.com/tech/987032/google-tv-streamer-price-increase",
       "summary": "Google raised the price of its 4K streaming box to $149, up $50 from its original $99 price. The new price is currently live at the Google Store and Best Buy, b…",
@@ -437,6 +437,7 @@
       "lang": "en",
       "title_en": "The Google TV Streamer now costs $50 more",
       "summary_en": "Google raised the price of its 4K streaming box to $149, up $50 from its original $99 price. The new price is currently live at the Google Store and Best Buy, b…",
+      "content_en": "Google raised the price of its 4K streaming box to $149, up $50 from its original $99 price. The new price is currently live at the Google Store and Best Buy, but Amazon appears to still be offering the original price. The price hike comes just a couple of weeks after Google launched its new lineup of Pixel 11 phones with a $100 price hike over their Pixel 10 counterparts. The Google TV Streamer originally launched in 2024 and doubles as a smart home hub. It isn't the only streaming device getting more expensive - component shortages have been driving up prices on everything from laptops to game consoles. Earlier this month, Amazon incre … Read the full story at The Verge.",
       "subcategory": "digital"
     },
     {
@@ -448,6 +449,7 @@
       "lang": "en",
       "title_en": "9to5Mac Daily: August 31, 2026 – Apple TV price hikes, more",
       "summary_en": "Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available on iTunes and Apple’s Podcasts app, Stitcher, TuneIn, Google Play, or t…",
+      "content_en": "Listen to a recap of the top stories of the day from 9to5Mac. 9to5Mac Daily is available on iTunes and Apple’s Podcasts app, Stitcher, TuneIn, Google Play, or through our dedicated RSS feed for Overcast and other podcast players. Sponsored by Stuff: Stuff helps you get everything out of your head and into a simple, elegant system—closing open loops and reducing mental stress. A simple to-do list for iPhone, iPad, and Mac, with powerful tools that make organizing, tracking, and checking off your tasks a whole lot more satisfying. Get Stuff done. more…",
       "subcategory": "digital"
     },
     {
@@ -459,6 +461,7 @@
       "lang": "en",
       "title_en": "Roland's new digital piano has built-in Wi-Fi that integrates with a teaching app",
       "summary_en": "Roland's latest digital piano will get software updates and have an improved teaching experience, thanks to built-in Wi-Fi.",
+      "content_en": "Roland's latest digital piano will get software updates and have an improved teaching experience, thanks to built-in Wi-Fi.",
       "subcategory": "digital"
     },
     {
@@ -481,6 +484,7 @@
       "lang": "en",
       "title_en": "JMGO’s very bright all-in-one projector looks ideal for gamers and sports",
       "summary_en": "JMGO's 4K 120Hz Iris Ultra Max all-in-one Google TV projector is now available outside China. It gets its name from a new dual-iris system that lets it produce …",
+      "content_en": "JMGO’s Iris Ultra Max 4K 120Hz Google TV projector. | Image: JMGO JMGO's 4K 120Hz Iris Ultra Max all-in-one Google TV projector is now available outside China. It gets its name from a new dual-iris system that lets it produce an impressive 10,000:1 native contrast, according to JMGO. It boosts the contrast - always an issue with projectors - by placing two separate physical apertures (irises) along different points of the internal optical path to control light scatter and brightness far more aggressively than a single iris can. It also promises to produce a very bright 6,500 ISO lumen image from its triple-laser light engine. Last year at IFA, 6,000 lumens from an all-in-one projector was breaking new gro … Read the full story at The Verge.",
       "subcategory": "digital"
     },
     {
@@ -492,6 +496,7 @@
       "lang": "en",
       "title_en": "How I’m using Codex and ChatGPT on my Mac",
       "summary_en": "9to5Mac is brought to you by Memoket: The Memoket Gem is an 11g AI wearable that slots beside your Apple Watch in a co-wear band. Press once to capture a conver…",
+      "content_en": "9to5Mac is brought to you by Memoket: The Memoket Gem is an 11g AI wearable that slots beside your Apple Watch in a co-wear band. Press once to capture a conversation, and Gem connects it to what you discussed weeks ago — surfacing the earlier thread with a source link. From $179, shipping August 2026. In 2023, early adopters were just getting to know ChatGPT and AI chatbot tech. Three years later, OpenAI’s Codex agent, now part of the ChatGPT desktop app, has brought about a similar season of learning. Here’s how I’m using ChatGPT, Codex, and more on my Mac. more…",
       "subcategory": "digital"
     },
     {
@@ -503,6 +508,7 @@
       "lang": "en",
       "title_en": "Video Friday: Meet Microduck",
       "summary_en": "Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcomin…",
+      "content_en": "Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.Humanoids Summit Seoul: 22–23 September 2026, SEOULIROS 2026: 27 September–1 October 2026, PITTSBURGHCoRL 2026: 9–12 November 2026, AUSTIN, TEXASEnjoy today’s videos! Nvidia just paid US $12.9 billion for the company that acquired Pollen Robotics, and this must be why.Meet Microduck. 🦆 The 25-centimeter, 780-gram robot that waddles, falls, gets back up, and learns new tricks.Packed inside: 15 degrees of freedom, a front camera, an 8x8 lidar, two IMUs, mics, a speaker, NFC, Wi-Fi, and Bluetooth.Out of the box, Microduck already walks, sits, crouches, roller skates, picks up objects with its articulated beak, and recovers from falls on its own. Drive it with a game controller, plug-in accessories, and NFC tagged objects, run autonomous behaviors, or gather several Microducks for races and football. Software fully open source. Ready for whatever you throw at it. On pre-order for an astonishingly low $399, and ships before Christmas.[ Microduck ]Thanks, Matthieu!If you’ve chosen to ignore all the earlier DARPA Lift Challenge videos that we’ve posted, now you can get all caught up in about five minutes.[ DARPA ]You had me at “54-gram robot that out-jumps a kangaroo.”[ IEEE Transactions on Robotics ]Sometimes, you just need a video like this.Most fish-inspired robots are built for one size and one job, so scaling them up or down usually means starting from scratch. A team of engineers says it has found a way to solve that problem. They’ve unveiled ScaFi, a robot modeled on fish like cod and mackerel.[ New York University ]Thanks, Leah!Martin writes, “We’re a small robotics team in Czechia, Europe, building practical hardware around the Unitree G1. Here’s a short demo of our lightweight gripper picking up a strawberry; the gripper weighs under 200 grams and is designed for simple, sensitive manipulation without adding a complex multifinger hand.[ Sentio Robotix ]Thanks, Martin!Hybrid visual markers that are useful for both cameras and lidar is a neat idea.[ Hello Robot ]Thanks, Binit!EmoLo brings emotion-inspired expressive locomotion to Open Duck Mini V2, a low-cost, open-source bipedal robot inspired by Disney’s BDX droids. With a single reinforcement learning policy, the robot can generate distinct walking styles associated with different emotional expressions, showing how characterful and expressive whole-body motion can be achieved on an accessible robotic platform.[ EmoLo ]Thanks, Masato!If it’s possible for a robot with a completely immobile face to look frustrated, this robot absolutely does, starting at three minutes into this video.[ DLR RM ]Noble Machines deployed its first general-purpose robots to a Fortune Global 500 industrial customer within 18 months of the company’s launch and met its first delivery milestone, made possible by its AI-driven whole-body control and industry-leading end-to-end autonomy.[ Noble Machines ]We’ve reduced the time it takes to go from physical prompt → robot behavior. The faster anyone can teach a robot to do something new, the easier it becomes to scale physical work.[ Generalist ]I know this video is mostly a gimmick, but I would totally rent a moderately heavy lift quadruped for a couple of days to help with a move.[ DEEP Robotics ]Is taking two minutes to excellently fold a shirt too long, or do we even care how long it takes, as long as it’s a robot doing it?[ Tokyo Robotics ]TRON 2 × Wuji Hand 2 handles TCM pharmacy work: picking, weighing, grinding, and packaging. The omnidirectional base frees the hands, while precise gripping and dual-arm force control enable midair operations.[ LimX Dynamics ]Person who genuinely knows things about robots, Christian Hubicki, explains everything about robots smashing into walls.[ Christian Hubicki ]",
       "subcategory": "industrial"
     },
     {
@@ -514,6 +520,7 @@
       "lang": "en",
       "title_en": "AI Companion Robots Are Closing the Human Connection in Modern Homes",
       "summary_en": "This article is brought to you by Ollobot.From about 2017, individuals began to truly connect with the initial wave of companion robots. These devices had perso…",
+      "content_en": "This article is brought to you by Ollobot.From about 2017, individuals began to truly connect with the initial wave of companion robots. These devices had personality, moved around, joked, and answered when you spoke to them. Most early companion robots, however, were still limited by simple voice-command interactions and narrow functionality. Once the novelty wore off, many ended up sitting unused on shelves. As some of those companies went out of business and turned off their servers, many owners likened it to losing a pet.What Ollobot describes as “gentle intelligence” is a useful way to think about where the serious work in this category is going. Not toward more powerful assistants, but toward more present ones.The problem companion robots were trying to solveLoneliness is not a niche issue. According to one study, nearly one out of three elderly adults resides alone, meaning they do not have daily companions. Research also shows that children whose parents have migrated for work, leaving them in the care of relatives, were 2.5 times more likely to experience loneliness than children whose parents remain with them. Among working adults living alone in urban environments, similar patterns of social isolation emerge, even if they are less visible.Over the years, technology has time and again attempted to solve this problem via video calls, smart speakers, and messaging apps without much success. Those tools are geared towards communication between people that already have relationships. They do not create presence. They schedule it. That is the gap that a new generation of AI companion robots is being engineered to fill.Today’s AI robots are differentToday’s companion robots are not just cute and cuddly. They are designed with psychological research, clinical insight and long-term interaction models to be truly useful in real homes.Three fundamental shifts define the current generation:From reactive to proactive response. Older robots relied on you speaking to them, but modern robots monitor a room with cameras, microphones, and surroundings sensors to initiate interactions without your input, and they can pick up on your emotions.From function-oriented to emotion-oriented design. The original pitch for companion robots was about what they could do. The question driving the serious work now is how they make you feel, which is a harder engineering problem and a more honest framing of what the product is actually for.From standalone hardware to connected ecosystems. Leading brands are creating platforms rather than devices with software included as a built-in layer and remote access from the beginning.The global AI companion market size was valued at US $36.8 billion in 2025 and is projected to grow from $48 billion in 2026 to $318 billion by 2033, at a compound annual growth rate of 31 percent from 2026 to 2033.Three household scenarios and interaction modelsOllobot’s advanced AI family companion robot OlloNi SS1 addresses a number of gaps in what existing technology offers.Elderly individuals living alone. The combination of proactive interaction, fall detection, and persistent presence addresses both safety and companionship without the social overhead of asking family members to check in more frequently.Children in households where parents work far from home. The SS1 functions as a consistent companion that already knows a child, their preferences, their moods, and their routines. The remote connection features allow parents to stay present without requiring a scheduled call, and the life recording system gives them a passive window into their child’s days that feels less clinical than a monitoring camera.Single professionals living alone in cities. The SS1 adapts to daily routines, builds up a preference model over time, and provides ambient social presence without demands. OlloNi SS1 adapts to daily routines over time.OllobotWhat OlloNi SS1 is doing differently?Ollobot’s goal in building intelligent companion robots is to address the gaps in technology and capability, using innovation not to automate tasks but to fill emotional voids.Much of the robotics industry has historically pursued human imitation — machines that speak, look, or behave like people. The SS1 is instead designed around familiarity and long-term coexistence rather than realism.The system integrates multiple subsystems operating in parallel, including visual perception, audio processing, mobility control, and interaction management. It is equipped with a multi-chip AI 4K vision module capable of facial recognition and motion tracking. One small but revealing detail is the inclusion of a physical privacy cover for the camera — a mechanical solution to concerns that software settings alone may not fully resolve. OlloNi SS1 can actively integrate into family activities, and it can autonomously move closer to capture memorable moments or reposition itself to remain engaged in ongoing interactions.OllobotThe robot supports advanced mobility across multiple indoor surfaces, including wooden floors, ceramic tiles, and low-pile carpets, with slope climbing capability up to 3.5 degrees. Rather than remaining in a fixed location, it can move naturally throughout the home to stay close to household members as daily activities unfold. For example, the OlloNi SS1 may greet family members when they arrive home, follow an older adult from the living room to the kitchen while continuing a conversation, remind a child to take a study break after a prolonged period of inactivity, or notice that someone appears unusually quiet and gently check in. During family activities, it can autonomously move closer to capture memorable moments or reposition itself to remain engaged in ongoing interactions.The robot continues to evolve over time, with over-the-air updates that deliver new features, performance improvements, and AI enhancementsIt also incorporates fall detection with optimized accuracy for safety monitoring scenarios. A 6-microphone array enables omnidirectional voice pickup with an effective voice capture range of up to 5 meters, supporting reliable wake-word detection and far-field interaction.To support continuous companionship, much of the robot’s AI processing takes place directly on the device through its “heart module” architecture, with 16 GB of memory and 64 GB of local storage. This enables the system to retain household memories, recognize familiar faces, and respond with lower latency, making interactions feel more natural even during everyday routines.Because companion robots are expected to remain available throughout the day rather than only during brief interactions, the SS1 is designed for extended operation, offering up to 12 hours of standby time and around 5 hours of active interaction on a single charge. This allows it to accompany users through meals, conversations, playtime, and other daily activities without frequent interruptions. To support engaging interactions, much of the robot’s AI processing takes place directly on the device through its “heart module” architecture.OllobotLike the relationships it is designed to build, the robot continues to evolve over time. Running on Android OS with over-the-air (OTA) updates, the system continuously receives new features, performance improvements, and AI enhancements, allowing its capabilities to grow alongside the household it serves.The robot’s behavioral model also improves over time. Rather than reacting to isolated commands, it attempts to establish a baseline understanding of household routines and individuals. Changes in behavior — prolonged quietness, unusual inactivity, or emotional cues — become triggers for interaction.Presence instead of utilitySeveral features in the OlloNi SS1 illustrate this emphasis on presence and continuity in its interactions.The system can identify different household members, including pets, and adapt responses accordingly. Remote communication features allow family members to connect through the device without treating every interaction like a scheduled call. Environmental sensors support contextual reminders tied to weather or room conditions.Its “2+1” multi-display configuration is also designed around emotional communication. Two circular side displays function as expressive “emotional eyes,” while a separate primary display handles information and structured interaction. The separation allows emotional signaling and functional communication to operate independently, creating more intuitive nonverbal interaction even when no dialogue is taking place. The robot’s behavioral model improves over time. Rather than reacting to isolated commands, it attempts to establish a baseline understanding of household routines and individuals.OllobotThe SS1 also includes an automated life-recording system built on facial recognition and behavioral-event detection that can capture moments such as laughter, physical closeness, or group interaction automatically. An integrated AI vlog engine can then organize those moments into edited short-form videos with automated sequencing and soundtrack generation. The design intent is to preserve spontaneous domestic moments without requiring active documentation behavior from users.An integrated AI vlog engine can organize recorded moments into edited short-form videos with automated sequencing and soundtrack generationVisual data is processed primarily on the device through the SS1’s on-device AI architecture, with household memories stored locally and managed within Ollobot’s proprietary ecosystem instead of being shared with third-party smart home platforms. Access to recordings and live feeds is restricted to authorized users through the companion app, while encrypted communication helps protect data during remote access. Users also retain direct control over recording preferences, and the physical camera privacy cover provides an additional hardware-level safeguard whenever visual monitoring is not desired. Learn more at ollobot.com.Remote communication is similarly structured around persistence rather than transaction. Traditional video calls are episodic and screen-bound; the SS1 instead acts as a continuously present interface embedded inside the household environment. Through autonomous mobility, environmental awareness, and persistent household memory, remote family members interact with an ongoing domestic context.The larger shift to “gentle intelligence”Ultimately, gentle intelligence is not about making robots behave more like humans — it is about helping them fit more naturally into human lives. Each OlloNi SS1 unit develops a unique behavioral profile based on its household. Two units running in different homes for a year will have become meaningfully different from each other, shaped by the specific people, habits, and rhythms of where they live.That kind of long-term personalization is what early companion robots never had. It is also what makes the difference between a product that ends up on a shelf and one that actually earns its place in a home.Learn more at ollobot.com.",
       "subcategory": "industrial"
     },
     {
@@ -525,6 +532,7 @@
       "lang": "en",
       "title_en": "Video Friday: Do We Need Superhuman Humanoid Robots?",
       "summary_en": "Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcomin…",
+      "content_en": "Video Friday is your weekly selection of awesome robotics videos, collected by your friends at IEEE Spectrum robotics. We also post a weekly calendar of upcoming robotics events for the next few months. Please send us your events for inclusion.Humanoids Summit Seoul: 22–23 September 2026, SEOULIROS 2026: 27 September–1 October 2026, PITTSBURGHCoRL 2026: 9–12 November 2026, AUSTINEnjoy today’s videos! This is very, very cool. But I’m trying to think of what the commercial use case will be, you know? I guess, high speed, incredibly dangerous package delivery to second-floor windows or something...?[ Unitree ]Humans have a remarkable ability to perform new physical skills from only one or a few examples. Our latest robot foundation model, GEN-1.5, exhibits the beginnings of that same ability: It can learn a new task in seconds, from a single example, without gradient updates or fine-tuning. It displays broad capabilities across one-shot and few-shots learning from demonstration, as well as zero-shot physical generalization. Although the tasks are simple and short-horizon, this is the first model we know for which one-shot and few-shots learning of physical skills have emerged at scale. We view these results as a significant step toward our mission of building general intelligence for the physical world.I will make the cautionary point that for many of these “the model figured it out” tasks, the blog post can only say that there was no relevant pretraining data “to the best of our knowledge.”[ Generalist ]BeanBot is a robot inspired by Mexican jumping beans, and I need say no more.[ IIT ]As a professional bagpiper who definitely pays very close attention to whatever that annoying tapping noise is coming from the back of the band, I can attest to this group of robot drummers being absolutely top-notch.[ AgileX Robotics ]What does it take for an aerial robot to move through a sequence of arbitrary poses—fast, precisely, and continuously? Rather than teaching the robot a behavior from data, we asked how far a first-principles analytical model could take us. Through a collaboration between the AIMS Group at the Hong Kong Polytechnic University and DRAGON Lab at the University of Tokyo, we developed the first sequential-convex-programming-based trajectory-optimization framework for generalized multirotors, covering both conventional and omnidirectional platforms.[ DRAGON Lab ]Thanks, Moju!This is a nifty idea that adapts a kind of interface frequently used for robot training and uses it for human training instead.[ MIT ]Gravis Robotics brings robotic intelligence to heavy construction machines. Our retrofit kit, the Gravis Rack, turns off-the-shelf hydraulic machines into robots. Cameras, lidar, and onboard compute lets your machine see and understand its surroundings, and learning-based control lets it work close to its limits, moving more dirt with full, fast cycles.[ Gravis Robotics ]Robust brachiation requires precise hand movements to grasp and release bars together with highly coordinated whole-body motion. To address this challenge, we propose a learning-based framework centered on waypoint-guided reinforcement learning (WGRL). WGRL guides the end effector through waypoints while allowing RL to explore and generate dynamic whole-body behaviors. With this approach, the learned policy demonstrated robust brachiation across diverse courses with different bar heights, spacings, and orientations in sim-to-sim experiments. In the real world, our life-size dual-arm robot successfully traversed four consecutive bars.[ EVARL ]Thanks, Ayumu!Well, here’s a different approach to welding in shipyards with robots.[ Kawasaki ]We should have a lot more robots in agriculture, if only they’d lettuce.[ Flexiv ]We’ve all had refs like these.[ PHYBOT ]I got stuck after the first 15 seconds of this video trying to imagine what any of these home humanoids would usefully do if they dropped a glass.[ Zhejiang Humanoid ]Shakey the Robot doesn’t get enough love.[ SRI ]This work introduces a novel approach to physical human-robot interaction (pHRI) by leveraging the joint torque sensors of standard collaborative robots. By mounting a passive, uninstrumented plexiglass touchpad to the robot’s flange, we transform the robot into a handwriting-based input interface.[ TS-Robotics ]",
       "subcategory": "industrial"
     },
     {
@@ -536,6 +544,7 @@
       "lang": "en",
       "title_en": "Drones With Claws Perch on Arctic Icebergs",
       "summary_en": "This article is part of our exclusive IEEE Journal Watch series in partnership with IEEE Xplore.Microspines are one of many ways to enable robots to latch onto …",
+      "content_en": "This article is part of our exclusive IEEE Journal Watch series in partnership with IEEE Xplore.Microspines are one of many ways to enable robots to latch onto surfaces like walls and ceilings. Now roboticists in Canada are using the mini spikes to get drones to land on a more challenging, remote surface: icebergs.Like a spider, the Ice Dart can land on and latch onto steep, slippery surfaces such as icebergs and glaciers—an increasingly useful capability as activity in the Arctic increases. The drone can grip onto icy slopes of nearly 60 degrees, which is way beyond what most humans could manage without special equipment. In a recent study, researchers explained how they developed the Ice Dart drone with a special landing gear that absorbs the impact of a hard landing while holding the drone in place with tiny spines that penetrate and grip the ice. Published in IEEE Transactions on Field Robotics, the study describes how the Ice Dart was able to land on icebergs and a glacier in southeast Iceland. Tests took place amid persistent winds and temperatures of 0 to 10 °C along the ruggedly breathtaking Fjallsjökull (pronounced “FYATLS-yuh-kuutl”) glacier, which empties into a lagoon filled with icebergs. The drone was able to successfully perch at speeds of up to 3 meters per second and slopes of up to 58 degrees, with a success rate of 100 percent even in wind speeds of 30 km/h.The researchers were motivated by a desire to allow drones to land almost anywhere in the world, since the availability of safe landing sites is one of the primary limitations on where and how drones can operate. The researchers already have a history of developing drones that can land on fast-moving trucks as well as trailers, boats, and steep roofs. Ice Perching“The ability to land rather than hover can fundamentally change how drones are used in the field,” says Alexis Lussier Desbiens, a professor of engineering at Université de Sherbrooke, in Sherbrooke, Quebec, Canada, who coauthored the study. “Once a drone has landed, energy consumption drops dramatically, allowing much longer observation periods with a small aircraft. The drone also becomes completely silent and can even reduce or eliminate its thermal and RF signature by shutting down major onboard systems.”Landing on icebergs specifically allows drones to monitor them for days or months, producing more detailed observation than a quick aerial surveillance mission. This could simplify iceberg tracking compared to methods such as helicopter deployment, dropped instruments, or dart-like tracking devices, and provide another data layer to satellite and ship-based iceberg detection, according to the researchers. It could also provide a means of monitoring icebergs that are otherwise untrackable.With its carbon-fiber construction, the Ice Dart drone weighs just 2.65 kg and has four legs arranged in an X shape, attached to its body with a pivot joint. Used in the group’s previous drone research, this landing gear disperses energy to reduce impact and overcomes multiple engineering challenges. The friction shock absorbers consist of 38 disks that generate friction torque as the legs move up and down upon impact. This lowers the UAV’s center of mass and helps spread out the kinetic energy of landing, but the real trick comes in the form of two retractable spines on each foot—one for uphill and one for downhill grip. The larger spine engages on the more heavily loaded downhill feet, and the smaller, thinner spine engages more easily on the uphill feet, even under very low loads on steep slopes. The spines only penetrate the ice as the suspension compresses, generating grip and protecting them from high-impact forces. “The inspiration for the retractable spines in the feet came from looking at a cat’s claws and their ability to deploy only when needed,” says Isaac Tunney, a Université de Sherbrooke postdoc in mechanical and robotics engineering who was lead author of the paper. “I wanted to create feet that would naturally and passively engage their spines in the ice at the right moment, regardless of the drone’s orientation, the surface geometry, or the ice conditions.”Arctic SurveillanceWilliam D. Harcourt is a researcher at the University of Aberdeen, in Aberdeen, Scotland, focused on Arctic glaciers, snow, and sea ice, as well as the use of remote sensing and machine learning techniques. Harcourt was not involved in the study, but he sees several potentially interesting applications of the technology. “Near the front of tidewater glaciers, these systems could enable measurement of stress and strain and help us understand calving processes,” Harcourt says. “Drones can be used as a mobile GPS, literally acting as a receiver on the ice, but the system would need to solve tilting issues as 3D change measurements usually required the antenna to be horizontal. However, if these problems can be solved, it could be used to track iceberg movements.”The researchers want to continue developing the Ice Dart technology for real-world applications, including autonomous landing site selection and an emergency takeoff capability to be used if an iceberg rolls over or breaks apart. This August, the drone will be deployed during a Canadian Arctic mission to land on icebergs, collect data, and help validate ship-based iceberg-detection systems.",
       "subcategory": "industrial"
     },
     {
@@ -547,6 +556,7 @@
       "lang": "en",
       "title_en": "Is Shipyard Welding the Right First Job for Humanoid Robots?",
       "summary_en": "Humanoids desperately need to stop making YouTube videos and get a job already, and Persona AI is one of the few humanoid companies that seems to be entirely fo…",
+      "content_en": "Humanoids desperately need to stop making YouTube videos and get a job already, and Persona AI is one of the few humanoid companies that seems to be entirely focused on making that happen. Persona AI’s approach has been to carefully select a job that is economically viable for robots right now, and they’ve found one that was also the job of one of the very first industrial robots ever sold: welding.IEEE Spectrum first spoke with Persona two years ago, shortly after it was founded by Nicolaus Radford and Jerry Pratt. Radford led the Valkyrie program at NASA’s Johnson Space Center back in the day and was also the founder of Nauticus Robotics, while Pratt led IHMC’s DARPA Robotics Challenge team before spending a couple of years as CTO of Figure. The Challenge of HumanoidsAs of our first conversation in 2024, Persona had committed to building an economically viable humanoid, but they hadn’t yet figured out where their focus was going to be. “We were all over the place,” Radford says. “Warehousing, automotive, we probably even mentioned the home.” These are the same environments with the same sorts of potential applications that basically every other humanoid robotics company is attempting to make economically viable, and despite an ever more exhaustive number of demonstrations, so far none have succeeded at any sort of useful scale. The challenge for Persona, and really for every robotics company, is that it’s not enough that you have a robot that is simply capable of doing a task. It’s also not enough that your robot can do that task in a way that is efficient, reliable, and safe. What’s required is that your robot can make money for both you and your customer. Most humanoid companies seek to achieve this by targeting baseline “unskilled” human labor.Persona did not see economic viability in the unskilled labor approach, Radford says. “We started forming this thesis around skilled trades and tool usage.” Persona is targeting much more expensive skilled labor with its robots, and the reason why this is feasible is because their entry point focuses on the kind of skills that robots are especially good at. “I like to call it ‘last-mover advantage.’ We’ve seen everything that everybody’s doing, and we’ve decided that there’s a different way.” Persona AI/YouTube A Humanoid for Shipyard WeldingThe first task that Persona’s humanoid is focusing on is welding—using a handheld tool to connect one piece of metal to another. “Tool use is pretty difficult,” Pratt says. “And we want to use the same tools that humans do, which makes it more difficult.” That difficulty is offset somewhat by the fact that Persona’s humanoid will first focus on making long, linear welds that are relatively uncomplicated. “This is not the hardest style of weld,” Radford says, “but in shipbuilding you need a lot of them—hundreds of kilometers of linear welds per ship.”Currently, Persona has two public partnerships: one with HD Hyundai, which is the world’s largest shipbuilder, and the other with POSCO, one of the largest steel producers in the world, both in Korea. Persona declined to get into detail, but Radford says that broadly speaking, the company is interested in customers who can support ‘hundreds’ of robots per location.Shipyard welding is an enticing application for Persona because there is a deficit of skilled (and highly paid) workers, it’s taxing physical labor, and it’s a comparatively easy skill for a humanoid to learn.The welding process is skilled in a very robot-friendly way. Because you can only weld as fast as metal melts, the top speed for the task is an easily manageable centimeter per second. And making a high quality weld involves millimeter-scale repeated motions, which robots excel at, especially over long periods of time—whereas humans tend to get tired or bored. Pratt expects that for these uncomplicated welds, performing on par with humans—if not eventually better—will be achievable soon.Shipyards make a compelling case for a humanoid with legs, as opposed to a more stable wheeled base. “These open-air shipyards are a couple hundred meters long, with horizontal and vertical spars that you have to step over all the time,” Radford says. “You’ve got to work on the ground, overhead, and through portholes.” Persona considered other form factors, like four legs (or even more), but determined a two-legged robot would be the least disruptive to existing shipyard rhythms.The Economic Viability of HumanoidsDeploying their robots in shipyards specifically brings additional advantages for Persona. The safety concerns that come with bipedal robots—such as potentially falling over on a human worker—are lessened because a shipyard environment is staffed with workers who are trained to work around potentially dangerous industrial equipment. The company is also less sensitive to competitive pricing because no other company is pursuing the use case. “We’re now in an industry where the value added by our robot can be high enough that we don’t have to cut corners on quality and features in order to reduce the price,” Pratt says. “With a robot for the home, for example, there would be a lot of competition and a ton of price pressure.”The added value for shipbuilders, Radford explains, doesn’t come from replacing humans with robots. “Our current partnerships are running at a significant backlog, and they’re labor-constrained. So we want to help our customers’ top line, not necessarily their bottom line.” In other words, rather than trying to argue that their robots will lower shipbuilding costs, Persona is instead arguing that their robots will allow more ships to be built. “Even if our robot was more expensive than a human, that would still be valuable to these companies, because it could unlock additional revenue,” Radford says. And when the additional skilled labor does not exist, Persona’s robots could be the next-best option for shipbuilders who need to scale. Shipyards are environments where legs are necessary for a robot to be useful.CFOTO/Future Publishing/Getty ImagesPersona’s Multipurpose FutureIn the current commercial humanoid climate, where the emphasis seems to be on developing a “general purpose” robot (whatever that means) that will somehow justify itself through some undefined scale in some equally undefined and perpetually receding future, Persona stands out with their focus on a seemingly viable, near-term, and very specific business case. It hasn’t been easy, though. “It hurts us a little bit,” Radford says. “We’ve been told that we’re not thinking big enough.” But a tool-using heavy industrial humanoid has plenty of future applications, many of which can be expanded from the welding skill even within shipyards. “Shipbuilding is a great beachhead,” Pratt says. “There are tons of adjacent markets, like grinding, painting, and other kinds of fabrication.” Persona’s ambition, Radford adds, is to be “the largest repository of industrial skills.” It’s going to take time to get there. That time will be needed to collect tens of thousands of hours of expert demonstration data, create high-fidelity simulations, and conduct real-world testing. And however promising Persona’s approach may seem, the company still has to prove that its idea for an economically viable robotics company can be realized. It’s the same challenge that every humanoid robot company is facing. “A lot of the technical problems are the same no matter whether you’re in a house or a shipyard,” Pratt says. “Everybody’s got a great team and smart people, and we’re all knocking these problems out together.”",
       "subcategory": "industrial"
     },
     {
@@ -558,6 +568,7 @@
       "lang": "en",
       "title_en": "Scale of snakebites estimated globally",
       "summary_en": "Nature, Published online: 31 August 2026; doi:10.1038/d41586-026-02642-xUsing available data and modelling to assess the incidence of snakebites and associated …",
+      "content_en": "Nature, Published online: 31 August 2026; doi:10.1038/d41586-026-02642-xUsing available data and modelling to assess the incidence of snakebites and associated deaths provides information needed for efforts to tackle this public-health concern.",
       "subcategory": "other"
     },
     {
@@ -569,6 +580,7 @@
       "lang": "en",
       "title_en": "NASA’s Roman Space Telescope launches to reveal the Universe’s darkest secrets",
       "summary_en": "NASA’s Roman Space Telescope has launched on a million mile journey to L2, where it will scan huge portions of the cosmos for clues about dark matter, dark ener…",
+      "content_en": "NASA’s Roman Space Telescope has launched on a million mile journey to L2, where it will scan huge portions of the cosmos for clues about dark matter, dark energy, and distant worlds. With survey speeds roughly 1,000 times faster than Hubble and a torrent of 1.4 terabytes of data per day, Roman could uncover cosmic surprises astronomers have never seen before.",
       "subcategory": "other"
     },
     {
@@ -580,6 +592,7 @@
       "lang": "en",
       "title_en": "Timothy Dexter’s William Pitt Statue in Newburyport, Massachusetts",
       "summary_en": "Newburyport is one of the most well-known and vibrant coastal communities in Massachusetts. Located near the mouth of the Merrimack River and Plum Island, it ha…",
+      "content_en": "Newburyport is one of the most well-known and vibrant coastal communities in Massachusetts. Located near the mouth of the Merrimack River and Plum Island, it has a long history of shipping, fishing, tourism, and is officially recognized as the founding location of the US Coast Guard. The Museum of Old Newbury is dedicated to the history of Newburyport, its surrounding communities, and is housed inside a grand Federal style mansion built in the early 1800s. There are many historic and unique artifacts on display, but perhaps the most striking that immediately grabs the attention of visitors, is the large wooden painted statue of a man in military uniform standing on the stairs and seemingly following you with its eyes. The peculiarity of this relic was most likely done intentionally, as it was once owned by one of the most peculiar and eccentric wealthy businessmen in early American history. Timothy Dexter was born in colonial Massachusetts in 1747 to a poor family of English and Irish ancestry. He dropped out of school at around age 8 to become a farmhand and at age 16 he became a tanner's apprentice. In 1769 at age 21, he moved to Newburyport and married 32-year-old Elizabeth Frothingham, a very rich widow. Using the money he acquired, he purchased a large mansion and began his incredibly bizarre yet prosperous business ventures. After the American Revolution had ended, Continental Dollars had depreciated to the point of worthlessness and could be acquired easily. Dexter bought huge sums of these dollars and when the US government decided to honor its debt, he made a considerable profit. He used the money to build two ships and began an export business to the Caribbean and Europe selling rather unusual items. He sold bed warmers, designed for cold New England winters to the West Indies, a tropical climate. It seemed illogical to do so, but the local molasses industry repurposed them as ladles instead. Dexter also sent a shipment of wool gloves to the West Indies which were purchased by Russian merchants who were docked at the time and later resold in Siberia. He also exported a large number of stray cats to the Caribbean which were purchased by locals to control the rodent population. He also hoarded a lot of whalebones which were later fashioned into corset stays. Dexter's success and uncommon good fortune made him the envy of New England high society who thought of ways to bankrupt him. Some suggested he \"sell coal to Newcastle\" in England, which was an idiom describing a pointless or futile action as the city was one of the largest coal producers in the world during the 18th century. Dexter took the suggestion literally and sent a large shipment of coal which was bought at a premium because the local miners were on strike at the time. He was also convinced to sell trousers, gloves, hides, and whale blubber to the East Indies which were bought just in time by Portuguese merchants on their way to China. Although snubbed and mocked by other elites in society, Dexter was proud of his particular style of business acumen and seeing value in items that others considered worthless. He used his immense wealth to decorate his home with minarets, a mausoleum for himself, and outside he placed 40 life-size sculptures of various famous men throughout his life including George Washington, Thomas Jefferson, Napoleon Bonaparte, William Pitt the Elder, and himself. The sculpture of himself he had engraved, \"I am the first in the East, the first in the West, and the greatest philosopher in the Western World\". He called himself \"Lord Timothy Dexter\" and offered money to people who called him \"Lord Chester\" whenever he was staying at his estate in Chester, New Hampshire. Other eccentric aspects of his personality included telling people his wife (who was alive) had died and the woman in their home was her ghost, faking his death and holding a mock funeral just to see how many people would show up, and sending repeated petitions to be appointed for public office in which he was given the title \"Informer of Deer\", which was to tell people whenever deer were in town and enforce local deer hunting laws despite the fact no deer lived in Newburyport. Towards the end of his life in 1802, he published a book titled A Pickle for the Knowing Ones, in which he complained mostly about politicians, the clergy, and his wife. The book is notable for having incredibly poor grammar, spelling, and having no punctuations of any kind. After his death in 1806, his estate and much of his belongings were auctioned off. The Great September Gale and New England Hurricane of 1815 destroyed most of the outdoor sculptures with those remaining being sold or salvaged for firewood. The only surviving sculpture today is the one of William Pitt the Elder which was once owned by the Smithsonian and restored before being returned to Newburyport where it’s on display at the Museum of Old Newbury. Both Dexter and the sculpture of William Pitt are certainly quite peculiar oddities and definitely worth taking a look and learning more about if you’re interested.",
       "subcategory": "other"
     },
     {
@@ -591,6 +604,7 @@
       "lang": "en",
       "title_en": "APOD: 2026 September 1 – A Plane Lunar Eclipse",
       "summary_en": "APOD Science APOD APOD: 2026 September 1 – A… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss APOD Astronomy Picture of the D…",
+      "content_en": "APOD Science APOD APOD: 2026 September 1 – A… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. A Plane Lunar Eclipse Explanation: Did you need to be on the right side of this airplane to see this eclipse? No. Lunar eclipses are routinely seen from the half of the Earth facing the Moon when the eclipse occurs, making them some of the most commonly witnessed astronomical events. You don’t even need any special equipment to see one — just your unaided eyes. Lunar eclipses are also some of the most photographed astronomical events because, unlike with a solar eclipse, your eyes and camera do not have to look toward the bright Sun. However, considering the featured image taken last week from Portugal, if you were on the left side of that airplane during takeoff, you might have trouble seeing it — at first. But even then, after takeoff, since lunar eclipses typically last for hours, you might soon be able to safely cross the aisle(s) to see it. Gallery: Lunar Eclipse of 2026 AugustAPOD’s main NASA site is moving: From apod.nasa.gov to science.nasa.gov/apodTomorrow’s picture: cultural eclipses Date September 1, 2026 Credit Paulo Ferreira Authors & editors: Robert Nemiroff, Jerry Bonnell, Cecilia Chirenti, Keighley Rockcliffe A service of: ASD at NASA / GSFC,NASA Science Activation & Michigan Tech. U. Random APOD Generator Yesterday’s Image APOD: 2026 August 31 – Launch of the Roman Space Telescope Tomorrow’s Image",
       "subcategory": "other"
     },
     {
@@ -602,6 +616,7 @@
       "lang": "en",
       "title_en": "What’s your lab’s archetype? The answer could inform how you use AI",
       "summary_en": "Nature, Published online: 31 August 2026; doi:10.1038/d41586-026-02543-zA white paper gives research groups four priority models, each of which uses artificial …",
+      "content_en": "Nature, Published online: 31 August 2026; doi:10.1038/d41586-026-02543-zA white paper gives research groups four priority models, each of which uses artificial intelligence differently.",
       "subcategory": "other"
     },
     {
@@ -613,6 +628,7 @@
       "lang": "en",
       "title_en": "Scientists find why the liver may not heal even after you stop drinking",
       "summary_en": "Alcohol-related liver disease may trap damaged liver cells in a regenerative limbo, preventing the organ from rebuilding itself even after drinking stops. Resea…",
+      "content_en": "Alcohol-related liver disease may trap damaged liver cells in a regenerative limbo, preventing the organ from rebuilding itself even after drinking stops. Researchers linked the problem to inflammation-driven RNA errors and identified a pathway that could potentially be targeted to restore liver repair.",
       "subcategory": "other"
     },
     {
@@ -624,6 +640,7 @@
       "lang": "en",
       "title_en": "Acueducto de La Partida in Madrid, Spain",
       "summary_en": "Madrid may have its famous fountains and grand boulevards, but hidden in the Casa de Campo is a rather more unexpected piece of engineering: a small 18th-centur…",
+      "content_en": "Madrid may have its famous fountains and grand boulevards, but hidden in the Casa de Campo is a rather more unexpected piece of engineering: a small 18th-century aqueduct. Built in 1778, the Acueducto de La Partida carried water from the park’s lake to the Huerta de la Partida, helping to irrigate the royal gardens and orchards. Its designer was Francisco Sabatini, the royal architect responsible for some of Madrid’s most monumental landmarks. Sabatini’s connection with the Casa de Campo does not end here. He was also involved with several of its bridges, including the Puente de la Culebra, although his exact role in their construction remains a matter of historical debate. It is a charming reminder that the man associated with the Puerta de Alcalá and the Palacio Real also turned his attention to the rather less glamorous business of getting water across a stream. Perhaps the most surprising thing is how little known this aqueduct is—even among Madrileños. The Casa de Campo contains the remains some otheraqueducts, built at different times to carry its intricate network of irrigation channels across streams and valleys. So while visitors stroll, cycle, jog, and picnic through one of Europe’s largest urban parks, they may be walking through a landscape quietly crisscrossed by forgotten waterways. The Acueducto de La Partida is the oldest surviving example, restored in 2016 and now standing rather proudly beside the paths near the lake. It may lack the monumental scale of Segovia’s famous aqueduct, but Madrid has never been particularly short of surprises—and this one comes with the added bonus of being designed by Sabatini.",
       "subcategory": "other"
     },
     {
@@ -635,7 +652,17 @@
       "lang": "en",
       "title_en": "Ice Island Survives Run-In With Joe Island",
       "summary_en": "In summer 2026, a substantial iceberg calved from Petermann Glacier in northwest Greenland and swiftly drifted into Nares Strait, colliding with an island along…",
+      "content_en": "Earth Observatory Science Earth Observatory Ice Island Survives Run-In… Earth Earth Observatory Image of the Day EO Explorer Topics All Topics Atmosphere Land Heat & Radiation Life on Earth Human Dimensions Natural Events Oceans Remote Sensing Technology Snow & Ice Water More Content Collections Global Maps World of Change Articles Earth Matters Blog Blue Marble: Next Generation EO Kids Mission: Biomes About About Us Subscribe 🛜 RSS Contact Us Search AUGUST 24 AUGUST 23 A satellite view shows the iceberg after it pivoted out of the fjord into Nares Strait, wedged against a small, brown island. NASA Earth Observatory / Lauren Dauphin A satellite view shows a large tabular iceberg at the junction of its home fjord and Nares Strait. NASA Earth Observatory / Lauren Dauphin AUGUST 24AUGUST 23 A satellite view shows the iceberg after it pivoted out of the fjord into Nares Strait, wedged against a small, brown island. NASA Earth Observatory / Lauren Dauphin A satellite view shows a large tabular iceberg at the junction of its home fjord and Nares Strait. NASA Earth Observatory / Lauren Dauphin AUGUST 24 AUGUST 23 CurtainToggle2-Up Image Details An iceberg from Petermann Glacier encounters Joe Island in northwestern Greenland, visible in images captured by the OLI (Operational Land Imager) on Landsat 9 on August 23, 2026 (right), and August 24, 2026 (left). NASA Earth Observatory images by Lauren Dauphin. Summer is prime iceberg season in Greenland’s glacier-fed fjords, and 2026 was no exception. Especially notable was the berg that broke from the Petermann Glacier along Greenland’s northwest coast in August. Roughly the size of St. Thomas in the U.S. Virgin Islands, it was the largest calving event by any Arctic glacier since 2020. Iceberg calving is a routine part of an outlet glacier’s life cycle. Scientists watch the process closely, however, along with numerous other observations of the ice and its environment, for longer-term signs of instability. Petermann is one of Greenland’s largest marine-terminating glaciers and acts as a gatekeeper for ice flowing from the ice sheet into the ocean. Its future stability has implications for sea level rise. The calving event of summer 2026 was spotted on August 4 by Adam Garbo, a doctoral student in glaciology at the University of Ottawa, in imagery from the European Space Agency’s Sentinel-1 mission. Garbo and an international team of colleagues have been using remote sensing to study and track the glacier’s ice tongue. The team reported that the large tabular iceberg, or “ice island,” measured just over 76 square kilometers (29 square miles) at the time it calved—the largest to break from the glacier since the ice island of 2012 (130 square kilometers). The 2012 calving followed earlier major events in 2008 (31 square kilometers) and 2010 (just over 250 square kilometers). The August 2026 event could have been even bigger. Garbo and colleagues had been expecting a major calving once one of the large rifts they were monitoring finally cut all the way across Petermann’s ice tongue. “What surprised us was that the calving instead followed a different fracture, producing a smaller ice island than we had originally anticipated,” Garbo said. As of late August, two large rifts remained and were expected to eventually produce new ice islands of roughly 94 square kilometers and 84 square kilometers, though the timing remained uncertain. August 24, 2026 NASA Earth Observatory/Lauren Dauphin Glaciologist Mauri Pelto of Nichols College has also been tracking the iceberg, using images from NASA-USGS Landsat satellites, as it drifted down Petermann Fjord toward Nares Strait. In the week since it calved, the berg drifted an average of 3 kilometers per day. It continued toward the fjord’s junction with Nares Strait, where it rammed into a small rocky outcrop known as Joe Island (Joe Ø). The brief encounter is visible in images captured by the OLI (Operational Land Imager) on Landsat 9 on August 23 (top right) and August 24 (top left). A detailed view of the August 24 image is shown above. Joe Island sits at the mouth of Petermann Fjord, making it one of the first obstacles a departing ice island meets. Collisions with it—like the one that split the 2010 ice island in two—often mark the start of a berg’s breakup. Petermann bergs tend to be thinner and more fragile than those calved by glaciers such as Greenland’s Jakobshavn and Helheim, and thinner still than Antarctica’s behemoths, Pelto noted. “We were certainly watching closely as it interacted with Joe Island and were impressed that it survived the interaction without further fragmentation,” Garbo said. The ice island was estimated to be less than 150 meters thick at the time of calving. Wind and surface currents have swept it out of the fjord, and satellite images show it pivoting away from Joe Island and continuing southwest through Nares Strait. As it drifts, it will fracture into smaller pieces as tides, winds, currents, and melting continue to weaken the ice. Thicker bergs that calve from tidewater glaciers without floating ice-shelf extensions can drag and even become grounded on the seafloor within the fjord, while ice islands, like those from Petermann, might run aground later in their drift. Many ice islands have become “grounded” off the coasts of Coburg and Baffin islands. Garbo and colleagues noted that ice islands and their fragments have been known to travel considerable distances, posing potential hazards to marine activities and infrastructure while also distributing freshwater through the ocean as they melt. NASA Earth Observatory images by Lauren Dauphin, using Landsat data from the U.S. Geological Survey. Story by Kathryn Hansen. Downloads August 23, 2026 JPEG (12.59 MB) August 24, 2026 JPEG (10.23 MB) References & Resources Åkesson, H., et al. (2022) Petermann ice shelf may not recover after a future breakup. Nature Communications, 13(2519). Crawford, A. J., et al. (2016) Journey of an Arctic Ice Island. Oceanography, 29(2), 254–263. Eos (2011, April 5) Context for the Recent Massive Petermann Glacier Calving Event. Accessed August 28, 2026. The European Space Agency (2026, August 21) Sentinel-1 captures major ice loss from Greenland glacier. Accessed August 28, 2026. Fahrner, D., et al. (2026) Petermann Glacier on the brink: Progress, challenges and insights. Science Advances, 12(33). From a Glaciers Perspective (2026, August 17) Petermann Glacier, NW Greenland Releases Massive Iceberg in August 2026. Accessed August 28, 2026. NASA Earth Observatory (2023, May 20) Retreat at Petermann Glacier. Accessed August 28, 2026. NASA Earth Observatory (2012, August 2) Ice Island Drifts away from Petermann Glacier. Accessed August 28, 2026. NASA Earth Observatory (2010, August 10) Ice Island calves off Petermann Glacier. Accessed August 28, 2026. uOttawa (2026, August 7) Greenland glacier break creates new ice island. Accessed August 28, 2026. You may also be interested in: Stay up-to-date with the latest content from NASA as we explore the universe and discover more about our home planet. Record-Setting Retreat of Hektoria Glacier 5 min read Scientists relied on satellite data to understand how the Antarctic glacier lost so much ice so rapidly. Article Pasterze Hangs on as Austria’s Largest Glacier 4 min read One narrowing icefall remains the linchpin for the Alpine glacier—and it may not be long for this world. Article An Uncommon Drifter in the Denmark Strait 4 min read A large iceberg, observed in summer 2026, had drifted more than 1,000 kilometers south from the northeastern Greenland bay where… Article 1 2 3 4 Next Keep Exploring Discover More from NASA Earth Science Subscribe to Earth Observatory Newsletters Subscribe to the Earth Observatory and get the Earth in your inbox. Earth Observatory Image of the Day NASA’s Earth Observatory brings you the Earth, every day, with in-depth stories and stunning imagery. Explore Earth Science Earth Science Data Open access to NASA’s archive of Earth science data",
       "subcategory": "other"
+    },
+    {
+      "title": "QDII-ETF市场日报 | 港股金融与生物科技领涨，中概互联网与恒生科技重挫",
+      "url": "https://www.jiemian.com/article/15040827.html",
+      "summary": "QDII-ETF市场呈现显著分化格局。港股通金融及标普生物科技方向领涨，巴西及纳指小幅收红；而中概互联网及恒生互联网方向遭遇全面杀跌，跌幅普遍超1.6%。",
+      "source": "界面新闻",
+      "category": "trend",
+      "lang": "zh",
+      "subcategory": "science"
     },
     {
       "title": "通过操作 DRAM 控制器寄存器可突破 CPU 内存隔离机制",
@@ -656,27 +683,9 @@
       "subcategory": "science"
     },
     {
-      "title": "为啥AI客服不受待见",
-      "url": "https://m.baidu.com/s?word=%E4%B8%BA%E5%95%A5AI%E5%AE%A2%E6%9C%8D%E4%B8%8D%E5%8F%97%E5%BE%85%E8%A7%81&sa=fyb_news",
-      "summary": "",
-      "source": "百度热搜",
-      "category": "trend",
-      "lang": "zh",
-      "subcategory": "robotics"
-    },
-    {
-      "title": "三部门：企业应采取必要措施确保车联网及自动驾驶相关信息收集、使用、保护及数据跨境传输等各类数据处理活动合规",
-      "url": "https://www.jiemian.com/article/15040188.html",
-      "summary": "商务部、工业和信息化部、市场监管总局近日发布《汽车行业境外竞争行为与合规建设指引》。其中指出，企业应采取必要措施确保车联网及自动驾驶相关信息收集、使用、保护及数据跨境传输等各类数据处理活动合规，遵守个人信息处理相关法律法规，保护消费者个人隐私。企业应遵守我国和东道国（地区）关于知识产权保护的法律法规，加强汽车行业相关自…",
-      "source": "界面新闻",
-      "category": "trend",
-      "lang": "zh",
-      "subcategory": "robotics"
-    },
-    {
-      "title": "全球AI资本开支仍处于强劲上行周期，AI人工智能ETF平安(512930)备受关注",
-      "url": "https://www.jiemian.com/article/15040164.html",
-      "summary": "联接基金(A类：023384；C类：023385；E类：024610)。",
+      "title": "欧洲央行：AI融资潮可能重塑欧元区债券市场",
+      "url": "https://www.jiemian.com/article/15040963.html",
+      "summary": "当地时间8月31日，欧洲央行在一篇博客文章中称，美国科技巨头为人工智能投资筹集资金而大举借债，可能是史无前例融资浪潮的开端，并可能重塑包括欧元区在内的债券市场。欧洲央行表示，超大规模云服务商未来的融资需求规模巨大，加之市场预计其盈利将持续强劲、但仍存在不确定性，这些情况值得密切监测。欧洲央行称，潜在的国际外溢效应、杠杆…",
       "source": "界面新闻",
       "category": "trend",
       "lang": "zh",
@@ -759,6 +768,24 @@
       "url": "https://www.infoq.cn/article/6gFLptyMHRQhrILOlQ9Q?utm_source=rss&utm_medium=article",
       "summary": "点击查看原文>",
       "source": "InfoQ中文",
+      "category": "trend",
+      "lang": "zh",
+      "subcategory": "robotics"
+    },
+    {
+      "title": "500 万人围观，AI 终于造出了「无限泔水机」",
+      "url": "https://www.ifanr.com/1677378?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "summary": "内容无限，但精力有限#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "source": "爱范儿",
+      "category": "trend",
+      "lang": "zh",
+      "subcategory": "robotics"
+    },
+    {
+      "title": "机器人运动会散场后，自变量给机器人建了一座「虚拟训练场」",
+      "url": "https://www.ifanr.com/1677048?utm_source=rss&utm_medium=rss&utm_campaign=",
+      "summary": "具身智能的「ChatGPT 时刻」，看谁能更快走进现实#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。",
+      "source": "爱范儿",
       "category": "trend",
       "lang": "zh",
       "subcategory": "robotics"
@@ -899,15 +926,6 @@
       "subcategory": "construction"
     },
     {
-      "title": "横漂短剧女演员：不让家人看AI短剧",
-      "url": "https://m.baidu.com/s?word=%E6%A8%AA%E6%BC%82%E7%9F%AD%E5%89%A7%E5%A5%B3%E6%BC%94%E5%91%98%EF%BC%9A%E4%B8%8D%E8%AE%A9%E5%AE%B6%E4%BA%BA%E7%9C%8BAI%E7%9F%AD%E5%89%A7&sa=fyb_news",
-      "summary": "",
-      "source": "百度热搜",
-      "category": "trend",
-      "lang": "zh",
-      "subcategory": "other"
-    },
-    {
       "title": "没有手艺都是科技 门店招牌装反走红",
       "url": "https://m.baidu.com/s?word=%E6%B2%A1%E6%9C%89%E6%89%8B%E8%89%BA%E9%83%BD%E6%98%AF%E7%A7%91%E6%8A%80+%E9%97%A8%E5%BA%97%E6%8B%9B%E7%89%8C%E8%A3%85%E5%8F%8D%E8%B5%B0%E7%BA%A2&sa=fyb_news",
       "summary": "",
@@ -917,10 +935,10 @@
       "subcategory": "other"
     },
     {
-      "title": "女生自学手搓AI历史短剧播放破亿",
-      "url": "https://m.baidu.com/s?word=%E5%A5%B3%E7%94%9F%E8%87%AA%E5%AD%A6%E6%89%8B%E6%90%93AI%E5%8E%86%E5%8F%B2%E7%9F%AD%E5%89%A7%E6%92%AD%E6%94%BE%E7%A0%B4%E4%BA%BF&sa=fyb_news",
-      "summary": "",
-      "source": "百度热搜",
+      "title": "AWS 发布 Aws-Bench，用于评估云任务中的智能代理",
+      "url": "https://www.infoq.cn/article/rs9FOZsLBIJPwWbeYNHO?utm_source=rss&utm_medium=article",
+      "summary": "点击查看原文>",
+      "source": "InfoQ中文",
       "category": "trend",
       "lang": "zh",
       "subcategory": "other"
@@ -928,6 +946,15 @@
     {
       "title": "shadcn 通过新推出的聊天组件将对话基础组件引入了 shadcn/ui",
       "url": "https://www.infoq.cn/article/TKOvaxoX6xF5yWHJ7dYg?utm_source=rss&utm_medium=article",
+      "summary": "点击查看原文>",
+      "source": "InfoQ中文",
+      "category": "trend",
+      "lang": "zh",
+      "subcategory": "other"
+    },
+    {
+      "title": "智元的“夺冠方法论”",
+      "url": "https://www.infoq.cn/article/Ql9rmriHMYtauB4R53Kw?utm_source=rss&utm_medium=article",
       "summary": "点击查看原文>",
       "source": "InfoQ中文",
       "category": "trend",
