@@ -9,9 +9,12 @@ on:
       - "build.py"
       - "index.html"
       - "data/**"
+      - ".github/workflows/**"
   schedule:
-    # UTC 01:30 = 北京时间 09:30，每天10点前完成更新
-    - cron: "30 1 * * *"
+    # UTC 00:30 = 北京时间 08:30（早间刷新）
+    - cron: "30 0 * * *"
+    # UTC 12:30 = 北京时间 20:30（晚间刷新）
+    - cron: "30 12 * * *"
   workflow_dispatch: {}
 
 permissions:
